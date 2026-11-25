@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>遊び · Minijuegos de japonés</title>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f1e3;--card:#fffaf0;--ink:#2b2220;--red:#c1272d;--mut:#7a6a5f;--ok:#2e7d4f;--bad:#b3261e;--line:#e3d6bd;--blue:#2a5d8f;--sh:#2b22201f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d1716;--card:#2a2120;--ink:#f3e9d8;--mut:#b5a595;--line:#43352f;--red:#e0545a;--blue:#7fb2e5;--sh:#0008}}
+:root[data-theme="dark"]{--bg:#1d1716;--card:#2a2120;--ink:#f3e9d8;--mut:#b5a595;--line:#43352f;--red:#e0545a;--blue:#7fb2e5;--sh:#0008}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',serif;background-image:radial-gradient(circle at 100% 100%,transparent 55%,var(--line) 56%,var(--line) 58%,transparent 59%),radial-gradient(circle at 0 100%,transparent 55%,var(--line) 56%,var(--line) 58%,transparent 59%);background-size:44px 22px;background-attachment:fixed}
+header{text-align:center;padding:30px 16px 6px}
+.sun{width:68px;height:68px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ef5b5f,var(--red));margin:0 auto 10px;display:grid;place-items:center;color:#fff;font-size:36px;font-weight:700;box-shadow:0 6px 18px #c1272d55;animation:fl 4s ease-in-out infinite;cursor:pointer}
+@keyframes fl{50%{transform:translateY(-5px)}}
+h1{margin:0;font-size:1.9rem;letter-spacing:.15em}header p{margin:4px 0 8px;color:var(--mut)}
+h2{margin:6px 0}.sec{text-align:center;letter-spacing:.1em;margin:18px 0 6px}
+.stats,.row,.acts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem;box-shadow:0 2px 6px var(--sh)}
+button{font:inherit;color:inherit;cursor:pointer}
+.f{border:1.5px solid var(--red);background:var(--card);color:var(--red);padding:7px 14px;border-radius:999px;transition:.15s}
+.f:hover{transform:translateY(-2px)}.f.on{background:var(--red);color:#fff}
+.act{border:0;background:linear-gradient(135deg,#d93a40,#a81e24);color:#fff;padding:11px 22px;border-radius:12px;font-weight:700;box-shadow:0 4px 12px #c1272d44}
+.act:hover:not(:disabled){filter:brightness(1.1)}.act:disabled{opacity:.45;cursor:not-allowed}
+.act.alt{background:linear-gradient(135deg,#2a5d8f,#1c3f66);box-shadow:0 4px 12px #2a5d8f44}
+#app{max-width:960px;margin:0 auto;padding:6px 14px 50px}
+.cnt{text-align:center;color:var(--mut);font-size:.9rem;margin:4px 0}
+.jp{font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif}
+.tag{display:inline-block;font-size:.72rem;border:1px solid var(--blue);color:var(--blue);border-radius:999px;padding:1px 8px;font-style:normal}
+.lb{font-size:.7rem;color:var(--red);font-weight:700;letter-spacing:.08em;margin:14px 0 6px;text-align:center}
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;margin-top:10px}
+.g{--cc:var(--red);display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:22px 16px;background:linear-gradient(180deg,color-mix(in srgb,var(--cc) 12%,var(--card)),var(--card) 55%);border:1px solid var(--line);border-top:5px solid var(--cc);border-radius:14px;box-shadow:0 6px 16px var(--sh);transition:.2s}
+.g:hover:not(:disabled){transform:translateY(-5px) rotate(-.4deg)}.g b{font-size:1.3rem;letter-spacing:.06em}.g small{color:var(--mut);font-size:.9rem;line-height:1.35}
+.g.soon{opacity:.55;cursor:default;border-style:dashed}
+.gi{font-size:2.6rem;width:84px;height:84px;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--cc) 18%,var(--card));box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--cc) 40%,transparent)}
+.panel{max-width:600px;margin:14px auto;padding:22px 16px;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px var(--sh)}
+.em{--cc:var(--red);font-size:3.4rem;width:96px;height:96px;display:grid;place-items:center;border-radius:50%;background:color-mix(in srgb,var(--cc) 18%,var(--card));box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--cc) 40%,transparent);margin:0 auto 6px}
+.em.big{font-size:4.6rem;width:128px;height:128px}
+.jbig{font-size:3.4rem;line-height:1.25;color:var(--red);margin:6px 0}
+.pr{font-size:1.7rem;margin:10px 0}
+.hud{display:flex;justify-content:space-between;gap:8px;font-weight:700;margin-bottom:8px}
+.tb{height:9px;border-radius:9px;background:var(--line);overflow:hidden;margin-bottom:10px}
+.tb i{display:block;height:100%;width:100%;background:var(--ok);transition:width .1s linear}
+.tb i.lo{background:var(--bad)}
+.og{display:grid;gap:8px;margin:10px 0}.og.ic{grid-template-columns:1fr 1fr}
+.o{display:block;width:100%;padding:11px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font-size:1.15rem;transition:.15s}
+.o small{display:block;font-size:.72rem;opacity:.7}
+.o.i{font-size:3.2rem;line-height:1.1;padding:12px 0}
+.o:hover:not(:disabled){border-color:var(--red);transform:scale(1.02)}
+.o.ok{background:var(--ok);color:#fff;border-color:var(--ok);animation:pop .4s}.o.bad{background:var(--bad);color:#fff;border-color:var(--bad);animation:sk .35s}
+@keyframes pop{50%{transform:scale(1.07)}}@keyframes sk{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.msg{min-height:34px;font-weight:700;margin:6px 0}.msg small{font-weight:400;color:var(--mut)}
+.sp{border:0;background:transparent;font-size:1.2rem;line-height:1}
+.sp.big{font-size:3rem;width:110px;height:110px;border-radius:50%;background:color-mix(in srgb,var(--blue) 15%,var(--card));box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--blue) 40%,transparent)}
+.note{color:var(--mut);font-size:.85rem;min-height:20px;margin:8px 0}
+.cats .f{--cc:var(--red);border-color:var(--cc);color:var(--cc);font-size:.85rem;padding:5px 11px}.cats .f.on{background:var(--cc);color:#fff}
+.ml{text-align:left;max-height:190px;overflow:auto;margin:10px 0;border-top:1px solid var(--line)}
+.ml div{padding:5px 4px;border-bottom:1px solid var(--line);font-size:.95rem}
+.mg{display:grid;gap:8px;margin:10px 0}
+.mc{perspective:700px;aspect-ratio:3/4;cursor:pointer}
+.in{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.mc.fl .in{transform:rotateY(180deg)}
+.s{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--line);border-radius:10px;box-shadow:0 3px 8px var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4px;overflow:hidden;line-height:1.15}
+.mf{background:linear-gradient(135deg,#d93a40,#a81e24);color:#fff;font-size:1.8rem;border-top:4px solid #f4b942}
+.mb{background:var(--card);transform:rotateY(180deg);font-size:.85rem}
+.mc.ok .mb{background:color-mix(in srgb,var(--ok) 25%,var(--card));border-color:var(--ok)}.mc.ok{animation:pop .5s}
+.mce{font-size:2.3rem}.mcj{font-size:1.2rem}.mb small{font-size:.65rem;color:var(--mut)}
+[hidden]{display:none!important}
+</style></head><body>
+<header><div class="sun" id="sun" title="Tema claro / oscuro">遊</div><h1>遊び · MINIJUEGOS</h1><p>Aprende japonés jugando</p><div id="st" class="stats"></div></header>
+<div id="app"></div>
+<!-- ═══ MAZO DE TARJETAS · formato: emoji|kanji (o -)|lectura kana|español|categoría. Para ampliar, añade líneas aquí ═══ -->
+<script type="text/plain" id="deck">
+# PARTE 1 · formato: emoji|kanji (o -)|lectura kana|español|categoría
+# an=Animales co=Comida fv=Frutas y verduras ob=Objetos lu=Lugares tr=Transporte na=Naturaleza cu=Personas y cuerpo ro=Ropa oc=Ocio y deporte
+🐶|犬|いぬ|perro|an
+🐱|猫|ねこ|gato|an
+🐭|鼠|ねずみ|ratón|an
+🐹|-|ハムスター|hámster|an
+🐰|兎|うさぎ|conejo|an
+🦊|狐|きつね|zorro|an
+🐻|熊|くま|oso|an
+🐼|-|パンダ|panda|an
+🐨|-|コアラ|koala|an
+🐯|虎|とら|tigre|an
+🦁|-|ライオン|león|an
+🐮|牛|うし|vaca|an
+🐷|豚|ぶた|cerdo|an
+🐸|蛙|かえる|rana|an
+🐵|猿|さる|mono|an
+🐔|鶏|にわとり|gallina|an
+🐧|-|ペンギン|pingüino|an
+🐦|鳥|とり|pájaro|an
+🦆|-|あひる|pato|an
+🦉|-|ふくろう|búho|an
+🐺|狼|おおかみ|lobo|an
+🐴|馬|うま|caballo|an
+🦄|-|ユニコーン|unicornio|an
+🐝|蜂|はち|abeja|an
+🐛|虫|むし|insecto|an
+🦋|蝶|ちょう|mariposa|an
+🐌|-|かたつむり|caracol|an
+🐞|-|てんとうむし|mariquita|an
+🐜|蟻|あり|hormiga|an
+🕷️|蜘蛛|くも|araña|an
+🐢|亀|かめ|tortuga|an
+🐍|蛇|へび|serpiente|an
+🦎|-|とかげ|lagartija|an
+🐙|-|たこ|pulpo|an
+🦑|-|いか|calamar|an
+🦀|蟹|かに|cangrejo|an
+🐠|魚|さかな|pez|an
+🐬|-|イルカ|delfín|an
+🐳|鯨|くじら|ballena|an
+🦈|-|サメ|tiburón|an
+🐘|象|ぞう|elefante|an
+🦒|-|キリン|jirafa|an
+🦓|-|シマウマ|cebra|an
+🐪|-|らくだ|camello|an
+🐑|羊|ひつじ|oveja|an
+🐐|-|やぎ|cabra|an
+🦌|鹿|しか|ciervo|an
+🦇|-|コウモリ|murciélago|an
+🦅|-|ワシ|águila|an
+🦜|-|オウム|loro|an
+🦢|白鳥|はくちょう|cisne|an
+🦔|-|ハリネズミ|erizo|an
+🦘|-|カンガルー|canguro|an
+🦥|-|ナマケモノ|perezoso|an
+🦦|-|カワウソ|nutria|an
+🐿️|-|リス|ardilla|an
+🦩|-|フラミンゴ|flamenco|an
+🦭|-|アザラシ|foca|an
+🐊|-|ワニ|cocodrilo|an
+🦏|-|サイ|rinoceronte|an
+🦛|-|カバ|hipopótamo|an
+🍚|ご飯|ごはん|arroz cocido|co
+🍙|-|おにぎり|bola de arroz|co
+🍜|-|ラーメン|ramen|co
+🍝|-|スパゲッティ|espaguetis|co
+🍣|寿司|すし|sushi|co
+🍤|-|てんぷら|tempura|co
+🍛|-|カレー|curry|co
+🍲|鍋|なべ|olla|co
+🥟|餃子|ぎょうざ|empanadilla gyoza|co
+🍞|-|パン|pan|co
+🥐|-|クロワッサン|cruasán|co
+🥪|-|サンドイッチ|sándwich|co
+🍔|-|ハンバーガー|hamburguesa|co
+🍟|-|ポテト|patatas fritas|co
+🍕|-|ピザ|pizza|co
+🌭|-|ホットドッグ|perrito caliente|co
+🌮|-|タコス|taco|co
+🥗|-|サラダ|ensalada|co
+🥚|卵|たまご|huevo|co
+🧀|-|チーズ|queso|co
+🥓|-|ベーコン|beicon|co
+🍖|肉|にく|carne|co
+🍗|唐揚げ|からあげ|pollo frito|co
+🥩|-|ステーキ|filete|co
+🍳|目玉焼き|めだまやき|huevo frito|co
+🥞|-|パンケーキ|tortitas|co
+🍰|-|ケーキ|pastel|co
+🍩|-|ドーナツ|dónut|co
+🍪|-|クッキー|galleta|co
+🍫|-|チョコレート|chocolate|co
+🍬|飴|あめ|caramelo|co
+🍦|-|アイスクリーム|helado|co
+🍡|団子|だんご|dango|co
+🍘|煎餅|せんべい|galleta de arroz|co
+🍵|お茶|おちゃ|té|co
+☕|-|コーヒー|café|co
+🥛|牛乳|ぎゅうにゅう|leche|co
+🍺|-|ビール|cerveza|co
+🍷|-|ワイン|vino|co
+🍶|酒|さけ|sake|co
+🧃|-|ジュース|zumo|co
+🍯|蜂蜜|はちみつ|miel|co
+🧂|塩|しお|sal|co
+🍱|弁当|べんとう|fiambrera bento|co
+🍢|-|おでん|oden|co
+🥜|-|ピーナッツ|cacahuete|co
+🍿|-|ポップコーン|palomitas|co
+🍎|林檎|りんご|manzana|fv
+🍊|蜜柑|みかん|mandarina|fv
+🍋|-|レモン|limón|fv
+🍌|-|バナナ|plátano|fv
+🍉|西瓜|すいか|sandía|fv
+🍇|葡萄|ぶどう|uvas|fv
+🍓|苺|いちご|fresa|fv
+🍑|桃|もも|melocotón|fv
+🍒|-|さくらんぼ|cerezas|fv
+🍍|-|パイナップル|piña|fv
+🥭|-|マンゴー|mango|fv
+🍐|梨|なし|pera|fv
+🥝|-|キウイ|kiwi|fv
+🥥|-|ココナッツ|coco|fv
+🍈|-|メロン|melón|fv
+🫐|-|ブルーベリー|arándanos|fv
+🍅|-|トマト|tomate|fv
+🥕|人参|にんじん|zanahoria|fv
+🌽|-|とうもろこし|maíz|fv
+🥔|-|じゃがいも|patata|fv
+🍠|-|さつまいも|boniato|fv
+🧅|玉ねぎ|たまねぎ|cebolla|fv
+🧄|-|にんにく|ajo|fv
+🥦|-|ブロッコリー|brócoli|fv
+🥒|-|きゅうり|pepino|fv
+🍆|茄子|なす|berenjena|fv
+🌶️|唐辛子|とうがらし|chile|fv
+🥬|-|レタス|lechuga|fv
+🍄|-|きのこ|seta|fv
+🫑|-|ピーマン|pimiento|fv
+🥑|-|アボカド|aguacate|fv
+🌰|栗|くり|castaña|fv
+🎃|南瓜|かぼちゃ|calabaza|fv
+📱|-|スマホ|móvil|ob
+💻|-|パソコン|ordenador|ob
+⌚|腕時計|うでどけい|reloj de pulsera|ob
+⏰|目覚まし時計|めざましどけい|despertador|ob
+📷|-|カメラ|cámara|ob
+📺|-|テレビ|televisión|ob
+📻|-|ラジオ|radio|ob
+🎧|-|ヘッドホン|auriculares|ob
+💡|電球|でんきゅう|bombilla|ob
+🔦|懐中電灯|かいちゅうでんとう|linterna|ob
+🔑|鍵|かぎ|llave|ob
+🚪|-|ドア|puerta|ob
+🛏️|-|ベッド|cama|ob
+🪑|椅子|いす|silla|ob
+🛋️|-|ソファ|sofá|ob
+🚿|-|シャワー|ducha|ob
+🛁|お風呂|おふろ|bañera|ob
+🚽|-|トイレ|váter|ob
+🪥|歯ブラシ|はブラシ|cepillo de dientes|ob
+🧼|石鹸|せっけん|jabón|ob
+📚|本|ほん|libro|ob
+✏️|鉛筆|えんぴつ|lápiz|ob
+🖊️|-|ペン|bolígrafo|ob
+📝|-|ノート|cuaderno|ob
+📏|定規|じょうぎ|regla|ob
+✂️|-|はさみ|tijeras|ob
+📎|-|クリップ|clip|ob
+👜|鞄|かばん|bolso|ob
+☂️|傘|かさ|paraguas|ob
+🔨|金槌|かなづち|martillo|ob
+🔧|-|スパナ|llave inglesa|ob
+💰|お金|おかね|dinero|ob
+💳|-|クレジットカード|tarjeta de crédito|ob
+📦|箱|はこ|caja|ob
+🎁|-|プレゼント|regalo|ob
+🎈|風船|ふうせん|globo|ob
+🧸|-|ぬいぐるみ|peluche|ob
+🕯️|-|ろうそく|vela|ob
+🧲|磁石|じしゃく|imán|ob
+🔭|望遠鏡|ぼうえんきょう|telescopio|ob
+🔬|顕微鏡|けんびきょう|microscopio|ob
+💊|薬|くすり|medicina|ob
+🧹|-|ほうき|escoba|ob
+🪣|-|バケツ|cubo|ob
+🧽|-|スポンジ|esponja|ob
+🍴|-|フォーク|tenedor|ob
+🥄|-|スプーン|cuchara|ob
+🔪|包丁|ほうちょう|cuchillo de cocina|ob
+🥢|箸|はし|palillos|ob
+🏺|壺|つぼ|jarrón|ob
+📰|新聞|しんぶん|periódico|ob
+✉️|手紙|てがみ|carta|ob
+📅|-|カレンダー|calendario|ob
+🗺️|地図|ちず|mapa|ob
+🧭|-|コンパス|brújula|ob
+🪟|窓|まど|ventana|ob
+🔔|鐘|かね|campana|ob
+🏠|家|いえ|casa|lu
+🏫|学校|がっこう|escuela|lu
+🏥|病院|びょういん|hospital|lu
+🏦|銀行|ぎんこう|banco|lu
+🏪|-|コンビニ|tienda 24 horas|lu
+🏬|-|デパート|grandes almacenes|lu
+🏨|-|ホテル|hotel|lu
+🏯|城|しろ|castillo|lu
+⛩️|神社|じんじゃ|santuario sintoísta|lu
+🛕|お寺|おてら|templo budista|lu
+⛪|教会|きょうかい|iglesia|lu
+🏭|工場|こうじょう|fábrica|lu
+🏢|会社|かいしゃ|empresa|lu
+🗼|塔|とう|torre|lu
+🌉|橋|はし|puente|lu
+🏖️|-|ビーチ|playa|lu
+🏝️|島|しま|isla|lu
+🎡|観覧車|かんらんしゃ|noria|lu
+🎢|-|ジェットコースター|montaña rusa|lu
+🎪|-|サーカス|circo|lu
+🏟️|-|スタジアム|estadio|lu
+⛲|噴水|ふんすい|fuente|lu
+🏕️|-|キャンプ|camping|lu
+🏜️|砂漠|さばく|desierto|lu
+🏙️|都市|とし|ciudad|lu
+🏡|庭|にわ|jardín|lu
+🚏|-|バスてい|parada de autobús|lu
+💈|床屋|とこや|barbería|lu
+🏤|郵便局|ゆうびんきょく|oficina de correos|lu
+⛽|-|ガソリンスタンド|gasolinera|lu
+🏞️|公園|こうえん|parque|lu
+🚗|車|くるま|coche|tr
+🚕|-|タクシー|taxi|tr
+🚌|-|バス|autobús|tr
+🚓|-|パトカー|coche de policía|tr
+🚑|救急車|きゅうきゅうしゃ|ambulancia|tr
+🚒|消防車|しょうぼうしゃ|camión de bomberos|tr
+🚚|-|トラック|camión|tr
+🚜|-|トラクター|tractor|tr
+🏍️|-|バイク|moto|tr
+🚲|自転車|じてんしゃ|bicicleta|tr
+🛴|-|キックボード|patinete|tr
+🚃|電車|でんしゃ|tren|tr
+🚄|新幹線|しんかんせん|tren bala|tr
+🚇|地下鉄|ちかてつ|metro|tr
+🚉|駅|えき|estación de tren|tr
+✈️|飛行機|ひこうき|avión|tr
+🚁|-|ヘリコプター|helicóptero|tr
+🚀|-|ロケット|cohete|tr
+🚢|船|ふね|barco|tr
+⛵|-|ヨット|velero|tr
+🛶|-|カヌー|canoa|tr
+🚡|-|ロープウェイ|teleférico|tr
+🛹|-|スケートボード|monopatín|tr
+🚦|信号|しんごう|semáforo|tr
+⚓|錨|いかり|ancla|tr
+☀️|太陽|たいよう|sol|na
+🌙|月|つき|luna|na
+⭐|星|ほし|estrella|na
+☁️|雲|くも|nube|na
+🌧️|雨|あめ|lluvia|na
+❄️|雪|ゆき|nieve|na
+⚡|雷|かみなり|trueno|na
+🌈|虹|にじ|arcoíris|na
+🌪️|竜巻|たつまき|tornado|na
+🔥|火|ひ|fuego|na
+💧|水|みず|agua|na
+🌊|波|なみ|ola|na
+🌍|地球|ちきゅう|planeta Tierra|na
+🌋|火山|かざん|volcán|na
+⛰️|山|やま|montaña|na
+🗻|富士山|ふじさん|monte Fuji|na
+🌳|木|き|árbol|na
+🌸|桜|さくら|flor de cerezo|na
+🌹|薔薇|ばら|rosa|na
+🌻|向日葵|ひまわり|girasol|na
+🌷|-|チューリップ|tulipán|na
+🌿|草|くさ|hierba|na
+🍁|紅葉|もみじ|arce|na
+🌴|-|ヤシのき|palmera|na
+🌵|-|サボテン|cactus|na
+🎋|竹|たけ|bambú|na
+🍀|-|クローバー|trébol|na
+🪨|石|いし|piedra|na
+🌅|朝日|あさひ|amanecer|na
+🌌|天の川|あまのがわ|Vía Láctea|na
+⛄|雪だるま|ゆきだるま|muñeco de nieve|na
+🌫️|霧|きり|niebla|na
+🌬️|風|かぜ|viento|na
+🌾|稲|いね|planta de arroz|na
+👁️|目|め|ojo|cu
+👂|耳|みみ|oreja|cu
+👃|鼻|はな|nariz|cu
+👄|口|くち|boca|cu
+👅|舌|した|lengua|cu
+🦷|歯|は|diente|cu
+✋|手|て|mano|cu
+🦶|足|あし|pie|cu
+💪|腕|うで|brazo|cu
+🦴|骨|ほね|hueso|cu
+🧠|脳|のう|cerebro|cu
+❤️|心|こころ|corazón|cu
+👶|-|あかちゃん|bebé|cu
+🧔|髭|ひげ|barba|cu
+💇|髪|かみ|pelo|cu
+🦵|膝|ひざ|rodilla|cu
+👨|男|おとこ|hombre|cu
+👩|女|おんな|mujer|cu
+👦|男の子|おとこのこ|niño|cu
+👧|女の子|おんなのこ|niña|cu
+👴|-|おじいさん|abuelo|cu
+👵|-|おばあさん|abuela|cu
+👮|警察官|けいさつかん|policía|cu
+👨‍⚕️|医者|いしゃ|médico|cu
+👨‍🍳|料理人|りょうりにん|cocinero|cu
+👩‍🏫|先生|せんせい|profesor|cu
+👕|-|Tシャツ|camiseta|ro
+👖|-|ジーンズ|vaqueros|ro
+👗|-|ワンピース|vestido|ro
+👘|着物|きもの|kimono|ro
+👔|-|ネクタイ|corbata|ro
+🧥|-|コート|abrigo|ro
+🧤|手袋|てぶくろ|guantes|ro
+🧣|-|マフラー|bufanda|ro
+🧦|靴下|くつした|calcetines|ro
+👟|靴|くつ|zapatillas|ro
+👠|-|ハイヒール|tacones|ro
+🥾|-|ブーツ|botas|ro
+👒|帽子|ぼうし|sombrero|ro
+🧢|-|キャップ|gorra|ro
+👓|眼鏡|めがね|gafas|ro
+🕶️|-|サングラス|gafas de sol|ro
+💍|指輪|ゆびわ|anillo|ro
+👛|財布|さいふ|monedero|ro
+🎒|-|リュック|mochila|ro
+👙|水着|みずぎ|bañador|ro
+🩴|-|サンダル|sandalias|ro
+👑|王冠|おうかん|corona|ro
+⚽|-|サッカー|fútbol|oc
+🏀|-|バスケットボール|baloncesto|oc
+⚾|野球|やきゅう|béisbol|oc
+🎾|-|テニス|tenis|oc
+🏐|-|バレーボール|voleibol|oc
+🏓|卓球|たっきゅう|ping-pong|oc
+🏸|-|バドミントン|bádminton|oc
+🥊|-|ボクシング|boxeo|oc
+🥋|柔道|じゅうどう|judo|oc
+⛳|-|ゴルフ|golf|oc
+🏊|水泳|すいえい|natación|oc
+🎿|-|スキー|esquí|oc
+⛸️|-|スケート|patinaje|oc
+🎣|釣り|つり|pesca|oc
+🎮|-|ゲーム|videojuego|oc
+🎲|-|サイコロ|dado|oc
+🎯|的|まと|diana|oc
+🧩|-|パズル|puzle|oc
+🎨|絵|え|pintura|oc
+🎭|劇|げき|teatro|oc
+🎬|映画|えいが|película|oc
+🎤|-|カラオケ|karaoke|oc
+🎸|-|ギター|guitarra|oc
+🎹|-|ピアノ|piano|oc
+🥁|太鼓|たいこ|tambor|oc
+🎻|-|バイオリン|violín|oc
+🎺|-|トランペット|trompeta|oc
+🎵|音楽|おんがく|música|oc
+🎄|-|クリスマス|Navidad|oc
+🎆|花火|はなび|fuegos artificiales|oc
+🎐|風鈴|ふうりん|campanilla de viento|oc
+🎏|鯉のぼり|こいのぼり|banderín de carpa|oc
+🎎|-|ひなにんぎょう|muñecas hina|oc
+🎌|旗|はた|bandera|oc
+🏆|-|トロフィー|trofeo|oc
+🎓|卒業|そつぎょう|graduación|oc
+🪁|凧|たこ|cometa|oc
+# PARTE 2
+🐓|-|おんどり|gallo|an
+🐤|-|ひよこ|pollito|an
+🦃|七面鳥|しちめんちょう|pavo|an
+🕊️|鳩|はと|paloma|an
+🦚|孔雀|くじゃく|pavo real|an
+🐗|猪|いのしし|jabalí|an
+🦙|-|ラマ|llama|an
+🦂|蠍|さそり|escorpión|an
+🦗|-|こおろぎ|grillo|an
+🪲|兜虫|かぶとむし|escarabajo|an
+🪰|蝿|はえ|mosca|an
+🦟|蚊|か|mosquito|an
+🪱|蚯蚓|みみず|lombriz|an
+🐡|河豚|ふぐ|pez globo|an
+🦞|-|ロブスター|langosta|an
+🦐|海老|えび|gamba|an
+🦧|-|オランウータン|orangután|an
+🦍|-|ゴリラ|gorila|an
+🐆|-|ヒョウ|leopardo|an
+🦨|-|スカンク|mofeta|an
+🦡|-|アナグマ|tejón|an
+🦫|-|ビーバー|castor|an
+🐩|-|プードル|caniche|an
+🦖|恐竜|きょうりゅう|dinosaurio|an
+🐉|竜|りゅう|dragón|an
+🕸️|蜘蛛の巣|くものす|telaraña|an
+🪺|巣|す|nido|an
+🍥|-|なると|pastel de pescado narutomaki|co
+🍧|かき氷|かきごおり|hielo raspado|co
+🍮|-|プリン|flan|co
+🧁|-|カップケーキ|magdalena|co
+🥧|-|パイ|tarta|co
+🥖|-|フランスパン|baguette|co
+🥨|-|プレッツェル|pretzel|co
+🥯|-|ベーグル|bagel|co
+🧇|-|ワッフル|gofre|co
+🌯|-|ブリトー|burrito|co
+🥘|-|パエリア|paella|co
+🧈|-|バター|mantequilla|co
+🥫|缶詰|かんづめ|conserva|co
+🧋|-|タピオカ|té de burbujas|co
+🍸|-|カクテル|cóctel|co
+🍾|-|シャンパン|champán|co
+🥃|-|ウイスキー|whisky|co
+🫖|急須|きゅうす|tetera|co
+🧊|氷|こおり|hielo|co
+🦪|牡蠣|かき|ostra|co
+🍏|-|あおりんご|manzana verde|fv
+🫒|-|オリーブ|aceituna|fv
+🌱|芽|め|brote|na
+🌼|花|はな|flor|na
+🌺|-|ハイビスカス|hibisco|na
+🍃|葉|は|hoja|na
+💐|花束|はなたば|ramo de flores|na
+🪷|蓮|はす|loto|na
+🌕|満月|まんげつ|luna llena|na
+🌠|流れ星|ながれぼし|estrella fugaz|na
+☄️|彗星|すいせい|cometa celeste|na
+🪐|土星|どせい|Saturno|na
+🌤️|晴れ|はれ|día despejado|na
+⛈️|嵐|あらし|tormenta|na
+🌡️|温度|おんど|temperatura|na
+🏔️|雪山|ゆきやま|montaña nevada|na
+🌐|世界|せかい|mundo|na
+🗾|日本|にほん|Japón|na
+🪸|-|サンゴ|coral|na
+🪵|丸太|まるた|tronco|na
+🐚|貝|かい|concha|na
+🌇|夕日|ゆうひ|atardecer|na
+👨‍🚒|消防士|しょうぼうし|bombero|pr
+👨‍🌾|農家|のうか|agricultor|pr
+👨‍🎨|画家|がか|pintor|pr
+👨‍✈️|-|パイロット|piloto|pr
+👨‍🚀|宇宙飛行士|うちゅうひこうし|astronauta|pr
+👨‍🔬|科学者|かがくしゃ|científico|pr
+👨‍💻|-|プログラマー|programador|pr
+👷|大工|だいく|carpintero|pr
+🧑‍🔧|整備士|せいびし|mecánico|pr
+👨‍💼|会社員|かいしゃいん|oficinista|pr
+🕵️|探偵|たんてい|detective|pr
+💂|衛兵|えいへい|guardia real|pr
+🥷|忍者|にんじゃ|ninja|pr
+🦸|-|ヒーロー|superhéroe|pr
+🧙|魔法使い|まほうつかい|mago|pr
+🧛|吸血鬼|きゅうけつき|vampiro|pr
+🧜|人魚|にんぎょ|sirena|pr
+🧚|妖精|ようせい|hada|pr
+🤴|王子|おうじ|príncipe|pr
+👸|お姫様|おひめさま|princesa|pr
+🧑‍🎤|歌手|かしゅ|cantante|pr
+👨‍⚖️|裁判官|さいばんかん|juez|pr
+👩‍⚕️|看護師|かんごし|enfermera|pr
+🤵|新郎|しんろう|novio|pr
+👰|花嫁|はなよめ|novia|pr
+🧑‍🎓|学生|がくせい|estudiante|pr
+🎅|-|サンタクロース|Papá Noel|pr
+👻|-|おばけ|fantasma|pr
+👽|宇宙人|うちゅうじん|extraterrestre|pr
+👹|鬼|おに|ogro oni|pr
+👺|天狗|てんぐ|tengu|pr
+🤖|-|ロボット|robot|pr
+🧺|籠|かご|cesta|ca
+🧯|消火器|しょうかき|extintor|ca
+🪜|-|はしご|escalera de mano|ca
+🚰|蛇口|じゃぐち|grifo|ca
+🛎️|呼び鈴|よびりん|timbre|ca
+🔌|-|プラグ|enchufe|ca
+🔋|電池|でんち|pila|ca
+🕰️|置き時計|おきどけい|reloj de mesa|ca
+🖼️|額|がく|cuadro|ca
+🪞|鏡|かがみ|espejo|ca
+🧴|-|シャンプー|champú|ca
+🧻|-|トイレットペーパー|papel higiénico|ca
+🪒|剃刀|かみそり|maquinilla de afeitar|ca
+🛒|-|カート|carrito de la compra|ca
+🗑️|-|ごみばこ|papelera|ca
+🧳|-|スーツケース|maleta|ca
+🪴|植木鉢|うえきばち|maceta|ca
+🛌|布団|ふとん|futón|ca
+🏮|提灯|ちょうちん|farolillo|ca
+☎️|電話|でんわ|teléfono|ca
+🥣|茶碗|ちゃわん|cuenco de arroz|ca
+🔒|錠|じょう|candado|ca
+🧱|煉瓦|れんが|ladrillo|ca
+🧰|道具箱|どうぐばこ|caja de herramientas|ca
+🪚|鋸|のこぎり|sierra|ca
+🪛|-|ドライバー|destornillador|ca
+🔩|-|ねじ|tornillo|ca
+⚙️|歯車|はぐるま|engranaje|ca
+⛓️|鎖|くさり|cadena|ca
+🧵|糸|いと|hilo|ca
+🪡|針|はり|aguja|ca
+🧶|毛糸|けいと|lana|ca
+🍼|哺乳瓶|ほにゅうびん|biberón|ca
+📕|教科書|きょうかしょ|libro de texto|es
+📖|辞書|じしょ|diccionario|es
+🔖|-|しおり|marcapáginas|es
+🖍️|-|クレヨン|ceras de colores|es
+🖌️|筆|ふで|pincel|es
+🖋️|万年筆|まんねんひつ|pluma estilográfica|es
+🗂️|-|ファイル|archivador|es
+📊|-|グラフ|gráfico|es
+📐|三角定規|さんかくじょうぎ|escuadra|es
+🧮|-|そろばん|ábaco|es
+🔍|虫眼鏡|むしめがね|lupa|es
+⌨️|-|キーボード|teclado|es
+🖱️|-|マウス|ratón de ordenador|es
+🖨️|-|プリンター|impresora|es
+📠|-|ファックス|fax|es
+📧|-|メール|correo electrónico|es
+📮|-|ポスト|buzón|es
+🕐|時計|とけい|reloj|es
+📔|手帳|てちょう|agenda|es
+📜|巻物|まきもの|pergamino|es
+🔢|数字|すうじ|números|es
+➕|-|たしざん|suma|es
+➖|-|ひきざん|resta|es
+✖️|-|かけざん|multiplicación|es
+➗|-|わりざん|división|es
+❌|-|ばつ|cruz de incorrecto|es
+⭕|-|まる|círculo de correcto|es
+❓|質問|しつもん|pregunta|es
+💬|会話|かいわ|conversación|es
+🧪|試験管|しけんかん|tubo de ensayo|es
+🏅|-|メダル|medalla|es
+🥇|一番|いちばん|primer puesto|es
+💯|満点|まんてん|nota perfecta|es
+🏛️|美術館|びじゅつかん|museo|lu
+🛣️|道|みち|camino|lu
+🗿|-|モアイ|moái|lu
+🕌|-|モスク|mezquita|lu
+🛤️|線路|せんろ|vías del tren|lu
+🏚️|廃墟|はいきょ|ruinas|lu
+🎠|-|メリーゴーランド|tiovivo|lu
+🏧|-|ATM|cajero automático|lu
+🛗|-|エレベーター|ascensor|lu
+♨️|温泉|おんせん|aguas termales|lu
+🌃|夜景|やけい|vista nocturna|lu
+⛺|-|テント|tienda de campaña|lu
+🚂|蒸気機関車|じょうききかんしゃ|locomotora de vapor|tr
+🚝|-|モノレール|monorraíl|tr
+🚋|路面電車|ろめんでんしゃ|tranvía|tr
+🛵|-|スクーター|scooter|tr
+🚤|-|モーターボート|lancha motora|tr
+🛳️|客船|きゃくせん|crucero|tr
+⛴️|-|フェリー|ferri|tr
+🛰️|人工衛星|じんこうえいせい|satélite|tr
+🛸|-|ユーフォー|ovni|tr
+🪂|-|パラシュート|paracaídas|tr
+🚧|工事中|こうじちゅう|obras|tr
+🛑|止まれ|とまれ|stop|tr
+🏎️|-|レーシングカー|coche de carreras|tr
+🤝|握手|あくしゅ|apretón de manos|cu
+👏|拍手|はくしゅ|aplauso|cu
+🙏|-|おいのり|oración|cu
+✌️|-|ピース|signo de paz|cu
+👍|-|いいね|pulgar arriba|cu
+👣|足跡|あしあと|huellas|cu
+😀|笑顔|えがお|sonrisa|cu
+😢|涙|なみだ|lágrimas|cu
+🤒|風邪|かぜ|resfriado|cu
+😷|-|マスク|mascarilla|cu
+🩸|血|ち|sangre|cu
+💋|-|キス|beso|cu
+👪|家族|かぞく|familia|cu
+🧓|老人|ろうじん|anciano|cu
+🩺|聴診器|ちょうしんき|estetoscopio|cu
+💉|注射|ちゅうしゃ|inyección|cu
+🩹|絆創膏|ばんそうこう|tirita|cu
+🩳|-|ショートパンツ|pantalón corto|ro
+🥼|白衣|はくい|bata blanca|ro
+🎩|-|シルクハット|sombrero de copa|ro
+👚|-|ブラウス|blusa|ro
+💄|口紅|くちべに|pintalabios|ro
+💅|-|マニキュア|esmalte de uñas|ro
+👝|-|ポーチ|neceser|ro
+🛍️|-|ショッピングバッグ|bolsa de compras|ro
+🪙|-|コイン|moneda|ob
+💴|円|えん|yen|ob
+💵|-|ドル|dólar|ob
+🎫|切符|きっぷ|billete|ob
+🎟️|-|チケット|entrada|ob
+🏷️|-|ラベル|etiqueta|ob
+📌|画鋲|がびょう|chincheta|ob
+🧷|-|あんぜんピン|imperdible|ob
+🔮|水晶玉|すいしょうだま|bola de cristal|ob
+🧿|お守り|おまもり|amuleto|ob
+🎀|-|リボン|lazo|ob
+🧧|お年玉|おとしだま|sobre de año nuevo|ob
+🗡️|刀|かたな|katana|ob
+🛡️|盾|たて|escudo|ob
+🏹|弓|ゆみ|arco|ob
+💎|宝石|ほうせき|joya|ob
+🎉|-|パーティー|fiesta|oc
+🎂|誕生日|たんじょうび|cumpleaños|oc
+🃏|-|トランプ|cartas|oc
+🀄|-|マージャン|mahjong|oc
+♟️|-|チェス|ajedrez|oc
+🎳|-|ボウリング|bolos|oc
+🛷|-|そり|trineo|oc
+🏂|-|スノーボード|snowboard|oc
+🏄|-|サーフィン|surf|oc
+🚣|-|ボート|remo|oc
+🧗|-|ロッククライミング|escalada|oc
+🚴|-|サイクリング|ciclismo|oc
+🏋️|-|きんトレ|pesas|oc
+🧘|-|ヨガ|yoga|oc
+📸|写真|しゃしん|fotografía|oc
+📹|-|ビデオ|vídeo|oc
+🎙️|-|マイク|micrófono|oc
+🎷|-|サックス|saxofón|oc
+🎍|門松|かどまつ|adorno de año nuevo|oc
+🎑|月見|つきみ|contemplar la luna|oc
+🥂|乾杯|かんぱい|brindis|oc
+</script>
+<script>
+const $=id=>document.getElementById(id);
+const shuf=a=>a.map(x=>[Math.random(),x]).sort((a,b)=>a[0]-b[0]).map(x=>x[1]);
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+/* ── Categorías ── */
+const CT={an:["Animales","#c1272d","🐾"],co:["Comida","#d9822b","🍜"],fv:["Frutas y verduras","#2e7d4f","🍎"],ob:["Objetos","#2a5d8f","🔑"],lu:["Lugares","#7b4fa3","🏯"],tr:["Transporte","#0f8b8d","🚃"],na:["Naturaleza","#4c9a2a","🌸"],cu:["Personas y cuerpo","#b5527a","🧑"],ro:["Ropa","#a0522d","👘"],oc:["Ocio y deporte","#c9970f","🎮"],pr:["Profesiones y fantasía","#5b6abf","👷"],ca:["Casa y hogar","#8a6d3b","🛋️"],es:["Escuela y oficina","#e07a5f","🎒"]};
+const ALL=$("deck").textContent.split("\n").filter(l=>l.trim()&&l[0]!="#").map(l=>{const[e,k,h,m,c]=l.trim().split("|");return{e,k:k=="-"?"":k,h,m,c,id:e+h}}).filter(x=>x.c&&CT[x.c]);
+/* ── Progreso guardado ── */
+let S={xp:0,seen:0,best:{},miss:{},theme:""};
+try{Object.assign(S,JSON.parse(localStorage.getItem("mj")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("mj",JSON.stringify(S))}catch(e){}};
+const theme=()=>{if(S.theme)document.documentElement.dataset.theme=S.theme};theme();
+/* ── Romaji ── */
+const M={};"あa いi うu えe おo かka きki くku けke こko さsa しshi すsu せse そso たta ちchi つtsu てte とto なna にni ぬnu ねne のno はha ひhi ふfu へhe ほho まma みmi むmu めme もmo やya ゆyu よyo らra りri るru れre ろro わwa をo んn がga ぎgi ぐgu げge ごgo ざza じji ずzu ぜze ぞzo だda ぢji づzu でde どdo ばba びbi ぶbu べbe ぼbo ぱpa ぴpi ぷpu ぺpe ぽpo".replace(/(\S)([a-z]+)/g,(_,k,r)=>M[k]=r);
+function ro(s){s=s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96));let o="",d=0;const V={ゃ:"ya",ゅ:"yu",ょ:"yo",ぁ:"a",ぃ:"i",ぅ:"u",ぇ:"e",ぉ:"o"};for(let i=0;i<s.length;i++){const c=s[i];if(c=="っ"){d=1;continue}if(c=="ー"){o+=o.slice(-1);continue}let r=M[c];if(r==null){o+=c;continue}const n=s[i+1];if(n&&V[n]){const v=V[n];r=/^(sh|ch|j)i$/.test(r)&&"ゃゅょ".includes(n)?r.slice(0,-1)+v.slice(1):r.slice(0,-1)+v;i++}if(d){r=r[0]=="c"?"t"+r:r[0]+r;d=0}o+=r}return o}
+const say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="ja-JP";u.rate=.85;speechSynthesis.speak(u)}catch(e){}};
+const SPEECH="speechSynthesis" in window;
+/* ── Ajustes de partida ── */
+const C={mode:"mix",rule:"clasico",esc:"todo",timer:false,hint:true,ro:true,voice:false,cats:Object.keys(CT),pairs:8,ptype:"ie"};
+const isK=c=>/^[ァ-ヶー]+$/.test(c.h);
+const escOk=c=>C.esc=="hira"?!isK(c):C.esc=="kata"?isK(c):C.esc=="kanji"?!!c.k:true;
+const D=c=>C.esc=="kanji"?c.k:C.esc=="todo"?(c.k||c.h):c.h;
+const pool=()=>ALL.filter(c=>C.cats.includes(c.c)&&escOk(c));
+const form=(x,c)=>C.esc=="kanji"?!!x.k:C.esc=="todo"?!!x.k==!!c.k:isK(x)==isK(c);
+function dis(c,key,extra,n=3){const p=ALL.filter(x=>x!==c&&key(x)!=key(c)&&(!extra||extra(x)));const L=D(c).length,srt=a=>extra?a.sort((a,b)=>Math.abs(D(a).length-L)-Math.abs(D(b).length-L)):a;const r=[...srt(shuf(p.filter(x=>x.c==c.c))),...srt(shuf(p.filter(x=>x.c!=c.c)))],o=[],ks=new Set([key(c)]);for(const x of r){if(!ks.has(key(x))){ks.add(key(x));o.push(x);if(o.length==n)break}}return o}
+/* ── Registro de juegos: para añadir uno nuevo, agrega un objeto aquí ── */
+const GAMES=[
+{id:"flash",ico:"🎴",name:"Flashcards",desc:"Adivina el significado, la escritura o el icono. 7 modos, 3 reglas y contrarreloj opcional.",tag:"Quiz · vidas · sprint",run:()=>setup("flash")},
+{id:"memo",ico:"🧩",name:"Parejas",desc:"Voltea cartas y une cada icono con su palabra en el menor número de movimientos.",tag:"Memoria",run:()=>setup("memo")},
+{id:"s1",soon:1,ico:"🎧",name:"Dictado",desc:"Escucha y escribe la palabra.",tag:"Próximamente"},
+{id:"s2",soon:1,ico:"✍️",name:"Trazos",desc:"Aprende el orden de los trazos.",tag:"Próximamente"}];
+const MODES=[["mix","🎲 Mixto"],["ico2es","🖼️ Icono → Español"],["ico2jp","🖼️ Icono → Japonés"],["es2ico","Español → 🖼️ Icono"],["jp2ico","Japonés → 🖼️ Icono"],["jp2es","Japonés → Español"],["ear2ico","🔊 Oído → Icono"]];
+const MIX=["ico2es","ico2jp","es2ico","jp2ico","jp2es"];
+const RULES=[["clasico","🎯 Clásico","15 rondas: suma el mayor puntaje posible."],["super","❤️ Supervivencia","Tienes 3 vidas. Aguanta tantas tarjetas como puedas."],["sprint","⚡ Sprint","60 segundos en total. Cada fallo resta 3 s."]];
+const ESCS=[["todo","Todo"],["hira","ひらがな"],["kata","カタカナ"],["kanji","漢字"]];
+let G=null,tm=null;const clr=()=>{clearInterval(tm);tm=null;G=null};
+const hearts=n=>"❤️".repeat(n)+"🖤".repeat(3-n);
+const chip=(k,v,l,on)=>`<button class="f ${on?"on":""}" data-a="chip" data-k="${k}" data-v="${v}">${l}</button>`;
+const tog=(k,l)=>`<button class="f ${C[k]?"on":""}" data-a="tg" data-k="${k}">${l}</button>`;
+function stats(){$("st").innerHTML=`<span class="pill">⭐ ${S.xp} XP</span><span class="pill">🃏 ${ALL.length} tarjetas</span><span class="pill">🎯 ${S.seen} jugadas</span>`}
+/* ── Inicio ── */
+function home(){clr();stats();$("app").innerHTML=`<div class="stats cats">${Object.keys(CT).map(k=>`<span class="pill" style="border-color:${CT[k][1]}">${CT[k][2]} ${CT[k][0]} <b>${ALL.filter(x=>x.c==k).length}</b></span>`).join("")}</div><h2 class="sec">ELIGE UN JUEGO</h2><div class="games">${GAMES.map(g=>`<button class="g" ${g.soon?"disabled":`data-a="game" data-v="${g.id}"`} style="--cc:${g.soon?"var(--mut)":g.id=="memo"?"#2a5d8f":"var(--red)"}" ><span class="gi">${g.ico}</span><b>${g.name}</b><small>${g.desc}</small><i class="tag">${g.tag}</i></button>`).join("")}</div>`}
+/* ── Ajustes ── */
+function setup(g){clr();C.g=g;const n=pool().length,need=g=="memo"?C.pairs:8;let h=`<div class="panel"><div class="em" style="--cc:var(--red)">${g=="memo"?"🧩":"🎴"}</div><h2>${g=="memo"?"Parejas":"Flashcards"}</h2>`;
+if(g=="flash")h+=`<p class="lb">MODO</p><div class="row">${MODES.map(m=>chip("mode",m[0],m[1],C.mode==m[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${RULES.map(m=>chip("rule",m[0],m[1],C.rule==m[0])).join("")}</div><div class="note">${RULES.find(r=>r[0]==C.rule)[2]}</div>`;
+else h+=`<p class="lb">PAREJAS</p><div class="row">${[6,8,10].map(v=>chip("pairs",v,v,C.pairs==v)).join("")}</div><p class="lb">UNIR</p><div class="row">${[["ie","Icono ↔ Español"],["ij","Icono ↔ Japonés"],["mj","Español ↔ Japonés"]].map(v=>chip("ptype",v[0],v[1],C.ptype==v[0])).join("")}</div>`;
+h+=`<p class="lb">ESCRITURA</p><div class="row">${ESCS.map(m=>chip("esc",m[0],m[1],C.esc==m[0])).join("")}</div><p class="lb">CATEGORÍAS</p><div class="row cats">${Object.keys(CT).map(k=>`<button class="f ${C.cats.includes(k)?"on":""}" style="--cc:${CT[k][1]}" data-a="cat" data-v="${k}">${CT[k][2]} ${CT[k][0]}</button>`).join("")}<button class="f" data-a="allc">Todas</button></div><p class="lb">EXTRAS</p><div class="row">${g=="flash"?tog("timer","⏱️ Contrarreloj (10 s)")+tog("hint","🖼️ Icono en lectura")+tog("voice","🔊 Voz automática"):""}${tog("ro","Aa Romaji")}</div>
+<div class="note">🃏 ${n} tarjetas disponibles${n<need?" · elige más categorías o escrituras":""}</div><div class="acts"><button class="act" data-a="start" ${n<need?"disabled":""}>¡Jugar! 🚀</button><button class="f" data-a="home">← Inicio</button></div></div>`;$("app").innerHTML=h}
+/* ── Flashcards ── */
+function mk(c,mode){const d=D(c),r=C.ro?`<div class="cnt">${ro(c.h)}</div>`:"",col=CT[c.c][1],ico=`<div class="em big" style="--cc:${col}">${c.e}</div>`,jp=`<div class="jbig jp">${d}</div>${r}`;
+const T=(l,f)=>l.map(x=>({v:x.id,h:f(x)})),I=l=>l.map(x=>({v:x.id,h:x.e,i:1})),sh=a=>shuf(a);
+const fw=x=>form(x,c);
+switch(mode){
+case"ico2es":return{p:ico+`<div class="cnt">¿Qué es esto?</div>`,o:sh(T([c,...dis(c,x=>x.m)],x=>x.m))};
+case"ico2jp":return{p:ico+`<div class="cnt">¿Cómo se escribe en japonés?</div>`,o:sh(T([c,...dis(c,x=>D(x),fw)],x=>`<span class="jp">${D(x)}</span>${C.ro?`<small>${ro(x.h)}</small>`:""}`))};
+case"es2ico":return{p:`<div class="pr">${c.m}</div><div class="cnt">¿Cuál es el icono?</div>`,o:sh(I([c,...dis(c,x=>x.e)]))};
+case"jp2ico":return{p:jp+`<div class="cnt">¿Qué icono es?</div>`,o:sh(I([c,...dis(c,x=>x.e)]))};
+case"jp2es":return{p:(C.hint?ico:"")+jp+`<div class="cnt">¿Qué significa?</div>`,o:sh(T([c,...dis(c,x=>x.m)],x=>x.m))};
+default:return{p:SPEECH?`<button class="sp big" data-a="say" data-v="${c.h}">🔊</button><div class="cnt">¿Qué has oído?</div>`:jp+`<div class="cnt">(sin voz en este navegador) ¿Qué icono es?</div>`,o:sh(I([c,...dis(c,x=>x.e)])),ear:1}}}
+function pull(p){if(!G.q.length)G.q=shuf([...p,...p.filter(c=>S.miss[c.id])]);let c=G.q.pop();if(c.id==G.last&&G.q.length){const d=G.q.pop();G.q.push(c);c=d}G.last=c.id;return c}
+function startFlash(){const p=pool();G={p,q:[],n:0,total:Math.min(15,p.length),lives:3,score:0,st:0,ms:0,ok:0,miss:[],left:60,busy:true};nextQ();tm=setInterval(tick,100)}
+function nextQ(){if(!G)return;const c=pull(G.p),m=C.mode=="mix"?rnd(MIX):C.mode,q=mk(c,m);G.c=c;G.mode=m;G.t0=Date.now();G.busy=false;G.tl=C.timer&&C.rule!="sprint"?10000:0;
+const info=C.rule=="clasico"?`${G.n+1} / ${G.total}`:C.rule=="super"?hearts(G.lives):`⏳ <span id="sl">${Math.ceil(G.left)}</span> s`;
+$("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div><div class="tb"><i id="bar"></i></div>${q.p}<div class="og ${q.o[0].i?"ic":""}">${q.o.map(o=>`<button class="o ${o.i?"i":"jp"}" data-a="ans" data-v="${o.v}">${o.h}</button>`).join("")}</div><div class="msg" id="msg"></div><div class="acts"><button class="act" id="nx" data-a="nx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;
+if(q.ear||C.voice&&m!="es2ico"&&m!="ico2es"&&m!="ico2jp")say(c.h)}
+function tick(){if(!G||!G.c)return;const b=$("bar");if(C.rule=="sprint"){G.left-=.1;const s=$("sl");if(s)s.textContent=Math.max(0,Math.ceil(G.left));if(b){b.style.width=Math.max(0,G.left/60*100)+"%";b.className=G.left<10?"lo":""}if(G.left<=0)return end()}else if(G.tl&&!G.busy){const e=Date.now()-G.t0;if(b){b.style.width=Math.max(0,100-e/G.tl*100)+"%";b.className=e>G.tl*.7?"lo":""}if(e>=G.tl)ans(null)}}
+function ans(v){if(!G||G.busy)return;G.busy=true;const c=G.c,ok=v==c.id,el=Date.now()-G.t0;
+document.querySelectorAll(".o").forEach(b=>{b.disabled=true;if(b.dataset.v==c.id)b.classList.add("ok");else if(b.dataset.v==v)b.classList.add("bad")});
+G.n++;if(ok){G.ok++;G.st++;G.ms=Math.max(G.ms,G.st);G.score+=10+Math.min(G.st,5)*2+(G.tl?Math.round(5*(1-el/G.tl)):0);if(S.miss[c.id]&&!--S.miss[c.id])delete S.miss[c.id]}
+else{G.st=0;G.miss.push(c);S.miss[c.id]=(S.miss[c.id]||0)+1;if(C.rule=="super")G.lives--;if(C.rule=="sprint")G.left-=3}
+const rv=`${c.e} <span class="jp">${D(c)}</span> <small>(${ro(c.h)})</small> = ${c.m} <button class="sp" data-a="say" data-v="${c.h}">🔊</button>`;
+$("msg").innerHTML=ok?`✔ ¡Correcto! <small>${rv}</small>`:`${v==null?"⏰ ¡Tiempo!":"✖"} <small>${rv}</small>`;
+const over=C.rule=="clasico"?G.n>=G.total:C.rule=="super"?G.lives<=0:G.left<=0;
+if(over)return setTimeout(end,ok?900:1800);
+if(ok||C.rule=="sprint")setTimeout(nextQ,ok?750:1400);else{$("nx").hidden=false}}
+function rank(r){return r>=.9?["🏆","¡Maestro!"]:r>=.7?["👏","¡Muy bien!"]:r>=.4?["💪","Vas por buen camino"]:["🌱","¡A practicar!"]}
+function end(){if(!G)return;clearInterval(tm);const acc=G.n?Math.round(G.ok/G.n*100):0,key=C.rule+(C.timer&&C.rule!="sprint"?"+t":""),nb=G.score>(S.best[key]||0),rk=rank(acc/100);if(nb)S.best[key]=G.score;S.xp+=G.score;S.seen++;save();
+$("app").innerHTML=`<div class="panel"><div class="em big" style="--cc:var(--red)">${rk[0]}</div><h2>${rk[1]}</h2><p>Puntaje <b>${G.score}</b> · Aciertos ${G.ok}/${G.n} (${acc}%) · Racha máx. 🔥${G.ms}</p><p class="cnt">${nb?"🎉 ¡Nuevo récord!":"Récord: "+S.best[key]} · +${G.score} XP</p>${G.miss.length?`<p class="lb">PARA REPASAR</p><div class="ml">${[...new Map(G.miss.map(c=>[c.id,c])).values()].map(c=>`<div>${c.e} <b class="jp">${D(c)}</b> <small>(${ro(c.h)})</small> — ${c.m}</div>`).join("")}</div>`:""}<div class="acts"><button class="act" data-a="start">Jugar otra vez</button><button class="f" data-a="set">⚙️ Ajustes</button><button class="f" data-a="home">Inicio</button></div></div>`;G=null}
+/* ── Parejas ── */
+const fmt=ms=>{const s=Math.floor(ms/1000);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")};
+function startMemo(){const p=shuf(pool()).slice(0,C.pairs),[a,b]={ie:["e","m"],ij:["e","j"],mj:["m","j"]}[C.ptype];
+const f=(c,s)=>({pid:c.id,h:s=="e"?`<span class="mce">${c.e}</span>`:s=="m"?`<span>${c.m}</span>`:`<span class="mcj jp">${D(c)}</span>${C.ro?`<small>${ro(c.h)}</small>`:""}`});
+G={cells:shuf(p.flatMap(c=>[f(c,a),f(c,b)])),open:[],done:0,moves:0,t0:Date.now(),lock:false,total:p.length};
+const cols=C.pairs==10?5:4;$("app").innerHTML=`<div class="panel"><div class="hud"><span>🔁 <span id="mv">0</span></span><span>⏱️ <span id="mt">0:00</span></span><span>✔ <span id="md">0</span>/${p.length}</span></div><div class="mg" style="grid-template-columns:repeat(${cols},1fr)">${G.cells.map((x,i)=>`<div class="mc" data-a="flip" data-v="${i}"><div class="in"><div class="s mf">遊</div><div class="s mb jp">${x.h}</div></div></div>`).join("")}</div><div class="acts"><button class="f" data-a="home">✕ Salir</button></div></div>`;
+tm=setInterval(()=>{const e=$("mt");if(e&&G)e.textContent=fmt(Date.now()-G.t0)},500)}
+function flip(i){if(!G||G.lock)return;const el=document.querySelector(`.mc[data-v="${i}"]`);if(el.classList.contains("fl"))return;el.classList.add("fl");G.open.push(i);if(G.open.length<2)return;G.moves++;$("mv").textContent=G.moves;const[x,y]=G.open,ex=document.querySelector(`.mc[data-v="${x}"]`);G.open=[];
+if(G.cells[x].pid==G.cells[y].pid){G.done++;$("md").textContent=G.done;setTimeout(()=>{ex.classList.add("ok");el.classList.add("ok")},450);if(G.done==G.total)setTimeout(endMemo,1100)}
+else{G.lock=true;setTimeout(()=>{ex.classList.remove("fl");el.classList.remove("fl");if(G)G.lock=false},950)}}
+function endMemo(){if(!G)return;clearInterval(tm);const t=Date.now()-G.t0,key="memo"+C.pairs,b=S.best[key],nb=!b||G.moves<b,xp=Math.max(10,G.total*8-G.moves*2+20),st=G.moves<=G.total*1.5?3:G.moves<=G.total*2.2?2:1;if(nb)S.best[key]=G.moves;S.xp+=xp;S.seen++;save();
+$("app").innerHTML=`<div class="panel"><div class="em big" style="--cc:var(--red)">${"⭐".repeat(st)}</div><h2>¡Completado!</h2><p>${G.moves} movimientos · ${fmt(t)}</p><p class="cnt">${nb?"🎉 ¡Nuevo récord!":"Mejor: "+S.best[key]+" movimientos"} · +${xp} XP</p><div class="acts"><button class="act" data-a="start">Otra vez</button><button class="f" data-a="set">⚙️ Ajustes</button><button class="f" data-a="home">Inicio</button></div></div>`;G=null}
+/* ── Eventos ── */
+document.addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,v=t.dataset.v,k=t.dataset.k;
+if(a=="game")GAMES.find(g=>g.id==v).run();
+else if(a=="chip"){C[k]=isNaN(v)?v:+v;setup(C.g)}
+else if(a=="tg"){C[k]=!C[k];setup(C.g)}
+else if(a=="cat"){const i=C.cats.indexOf(v);if(i<0)C.cats.push(v);else if(C.cats.length>1)C.cats.splice(i,1);setup(C.g)}
+else if(a=="allc"){C.cats=Object.keys(CT);setup(C.g)}
+else if(a=="start")C.g=="memo"?(clr(),startMemo()):(clr(),startFlash());
+else if(a=="set")setup(C.g);
+else if(a=="home"){home()}
+else if(a=="ans")ans(v);
+else if(a=="nx")nextQ();
+else if(a=="say")say(v);
+else if(a=="flip")flip(+v)});
+$("sun").onclick=()=>{const dk=document.documentElement.dataset.theme?document.documentElement.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;S.theme=dk?"light":"dark";theme();save()};
+home();
+</script></body></html>
