@@ -52,7 +52,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .sp{border:0;background:transparent;font-size:1.2rem;line-height:1}
 .sp.big{font-size:3rem;width:110px;height:110px;border-radius:50%;background:color-mix(in srgb,var(--blue) 15%,var(--card));box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--blue) 40%,transparent)}
 .note{color:var(--mut);font-size:.85rem;min-height:20px;margin:8px 0}
-.cats .f{--cc:var(--red);border-color:var(--cc);color:var(--cc);font-size:.85rem;padding:5px 11px}.cats .f.on{background:var(--cc);color:#fff}
+.cats .f{--cc:var(--red);border-color:var(--cc);color:var(--cc);font-size:.85rem;padding:5px 11px}.f.ic{font-size:1.2rem;line-height:1;padding:5px 9px}.cats .f.on{background:var(--cc);color:#fff}
 .ml{text-align:left;max-height:190px;overflow:auto;margin:10px 0;border-top:1px solid var(--line)}
 .ml div{padding:5px 4px;border-bottom:1px solid var(--line);font-size:.95rem}
 .mg{display:grid;gap:8px;margin:10px 0}
@@ -917,38 +917,38 @@ button{font:inherit;color:inherit;cursor:pointer}
 💥|爆発|ばくはつ|explosión|si
 🔄|回る|まわる|girar|si
 </script>
-<!-- ═══ BANCO DE FRASES · nivel|gramática|español|japonés (kanji:lectura)|bloques trampa ═══ -->
+<!-- ═══ BANCO DE FRASES · nivel|gramática|español|japonés|trampas|registro|español en bloques libres|español alternativo|japonés alternativo ═══ -->
 <script type="text/plain" id="sents">
-# nivel|gramática|español|japonés (bloques; kanji:lectura)|bloques trampa
+# nivel|gramática|español|japonés (/ separa bloques de orden libre; kanji:lectura)|trampas|registro c/n/cn|español en bloques libres|español alternativo ; …|japonés alternativo ; …
 1|Presentación con です|Yo soy estudiante.|私:わたし は 学生:がくせい です|が を だ
 1|Presentación con です|Ella es profesora.|彼女:かのじょ は 先生:せんせい です|彼:かれ だ ます
-1|Pregunta con か|¿Eres japonés?|あなた は 日本人:にほんじん です か|だ の を
+1|Pregunta con か|¿Eres japonés?|あなた は 日本人:にほんじん です か|だ の を|||¿Es usted japonés?;¿Tú eres japonés?
 1|Demostrativos これ/それ/あれ|Eso es un libro.|それ は 本:ほん です|これ あれ が
 1|Demostrativos これ/それ/あれ|Aquello es mi coche.|あれ は 私:わたし の 車:くるま です|これ に が
 1|Negación じゃありません|Esto no es agua.|これ は 水:みず じゃ ありません|です を だ
-1|Existencia con います|Hay un gato en la casa.|家:いえ に 猫:ねこ が います|あります を で
-1|Existencia con あります|Hay un libro sobre la mesa.|机:つくえ の 上:うえ に 本:ほん が あります|います で を
-1|Verbo en ます|Yo como arroz.|私:わたし は ご飯:ごはん を 食べ:たべ ます|が に ました
-1|Verbo en ます|Bebo agua todas las mañanas.|毎朝:まいあさ 水:みず を 飲み:のみ ます|が ました に
-1|Pasado ました|Ayer vi una película.|昨日:きのう 映画:えいが を 見:み ました|ます に ません
+1|Existencia con います|Hay un gato en la casa.|家:いえ に / 猫:ねこ が / います|あります を で||Hay un gato / en la casa
+1|Existencia con あります|Hay un libro sobre la mesa.|机:つくえ の 上:うえ に / 本:ほん が / あります|います で を||Hay un libro / sobre la mesa
+1|Verbo en ます|Yo como arroz.|私:わたし は / ご飯:ごはん を / 食べ:たべ ます|が に ました
+1|Verbo en ます|Bebo agua todas las mañanas.|毎朝:まいあさ / 水:みず を / 飲み:のみ ます|が ました に||Bebo agua / todas las mañanas
+1|Pasado ました|Ayer vi una película.|昨日:きのう / 映画:えいが を / 見:み ました|ます に ません
 1|Negativo ません|No voy a la escuela.|学校:がっこう へ 行き:いき ません|に ます ました
 1|Pasado negativo ませんでした|Ayer no estudié.|昨日:きのう 勉強:べんきょう し ませんでした|ました ません です
 1|Partícula で (lugar de acción)|Estudio en la biblioteca.|図書館:としょかん で 勉強:べんきょう します|に を しました
-1|Partícula へ (dirección)|Voy a Tokio en tren.|電車:でんしゃ で 東京:とうきょう へ 行きます:いきます|に を が
+1|Partícula へ (dirección)|Voy a Tokio en tren.|電車:でんしゃ で / 東京:とうきょう へ / 行きます:いきます|に を が||Voy a Tokio / en tren
 1|Adjetivo い|Este libro es interesante.|この 本:ほん は 面白い:おもしろい です|が 面白く:おもしろく ない
 1|Adjetivo い negativo (くない)|El té no está caliente.|お茶:おちゃ は 熱く:あつく ありません|熱い:あつい です ない
 1|Adjetivo な|Esta ciudad es tranquila.|この 町:まち は 静か:しずか です|静かな:しずかな だ に
 1|Adjetivo い en pasado (かった)|La película fue divertida.|映画:えいが は 楽しかった:たのしかった です|楽しい:たのしい でした ない
 1|Posesivo con の|Este es el bolígrafo de mi amigo.|これ は 友達:ともだち の ペン です|が に を
-1|Hora con に|Me levanto a las siete.|七時:しちじ に 起き:おき ます|で を ました
+1|Hora con に|Me levanto a las siete.|七時:しちじ に 起き:おき ます|で を ました||Me levanto / a las siete
 1|Contadores (つ)|Compré dos manzanas.|りんご を 二つ:ふたつ 買い:かい ました|ます が に
-1|Gustos con 好き|Me gusta el café.|私:わたし は コーヒー が 好き:すき です|を 嫌い:きらい に
+1|Gustos con 好き|Me gusta el café.|私:わたし は / コーヒー が / 好き:すき です|を 嫌い:きらい に
 1|Gustos con 好き|No me gusta el pescado.|魚:さかな は 好き:すき じゃ ありません|が 嫌い:きらい です
 1|Querer (〜たい)|Quiero comer sushi.|寿司:すし を 食べ:たべ たい です|が たくない ます
 1|Invitación 〜ませんか|¿Tomamos un café?|コーヒー を 飲み:のみ ませんか|ましょう ます が
 1|Propuesta 〜ましょう|Vamos a comer juntos.|一緒:いっしょ に 食べ:たべ ましょう|ませんか ます が
-1|Petición 〜てください|Por favor, espere un momento.|少々:しょうしょう 待って:まって ください|待ち:まち ます ない
-1|Petición 〜てください|Por favor, escriba su nombre.|名前:なまえ を 書いて:かいて ください|書き:かき 書く:かく が
+1|Petición 〜てください|Por favor, espere un momento.|少々:しょうしょう 待って:まって ください|待ち:まち ます ない||Por favor / espere un momento|Espera un momento, por favor.
+1|Petición 〜てください|Por favor, escriba su nombre.|名前:なまえ を 書いて:かいて ください|書き:かき 書く:かく が||Por favor / escriba su nombre|Escribe tu nombre, por favor.
 1|Pronombres interrogativos|¿Qué es esto?|これ は 何:なん です か|誰:だれ どこ が
 1|Pronombres interrogativos|¿Dónde está el baño?|トイレ は どこ です か|何:なん いつ に
 1|Pronombres interrogativos|¿Quién es ese hombre?|あの 人:ひと は 誰:だれ です か|何:なん どこ の
@@ -956,60 +956,60 @@ button{font:inherit;color:inherit;cursor:pointer}
 1|Pronombres personales|Nosotros somos amigos.|私達:わたしたち は 友達:ともだち です|彼ら:かれら が だ
 1|Pronombres personales|Él es mi hermano mayor.|彼:かれ は 私:わたし の 兄:あに です|姉:あね 弟:おとうと が
 1|Adjetivo い|Hoy hace calor.|今日:きょう は 暑い:あつい です|寒い:さむい でした ない
-1|Existencia con personas|Tengo dos hermanos.|私:わたし に は 兄弟:きょうだい が 二人:ふたり います|あります で を
-1|Pedir con ください|Una hamburguesa y patatas fritas, por favor.|ハンバーガー と ポテト を ください|が に ます
-1|Ubicación con 近く|Hay un hotel cerca de la estación.|駅:えき の 近く:ちかく に ホテル が あります|います を で
+1|Existencia con personas|Tengo dos hermanos.|私:わたし に は / 兄弟:きょうだい が 二人:ふたり います|あります で を
+1|Pedir con ください|Una hamburguesa y patatas fritas, por favor.|ハンバーガー と ポテト を ください|が に ます||Una hamburguesa y patatas fritas / por favor
+1|Ubicación con 近く|Hay un hotel cerca de la estación.|駅:えき の 近く:ちかく に / ホテル が / あります|います を で||Hay un hotel / cerca de la estación
 1|Adjetivo い (color)|El cielo es azul.|空:そら は 青い:あおい です|青:あお が だ
 1|Adjetivo い (tamaño)|Mi casa es pequeña.|私:わたし の 家:いえ は 小さい:ちいさい です|大きい:おおきい が ない
-1|Pronombres interrogativos|¿Cuándo es tu cumpleaños?|あなた の 誕生日:たんじょうび は いつ です か|どこ 何:なん が
-1|Preguntar el motivo|¿Por qué estudias japonés?|どうして 日本語:にほんご を 勉強:べんきょう して います か|どこ いつ ました
+1|Pronombres interrogativos|¿Cuándo es tu cumpleaños?|あなた の 誕生日:たんじょうび は いつ です か|どこ 何:なん が|||¿Cuándo es su cumpleaños?
+1|Preguntar el motivo|¿Por qué estudias japonés?|どうして / 日本語:にほんご を / 勉強:べんきょう して います か|どこ いつ ました|||¿Por qué estudia usted japonés?;¿Por qué estudias tú japonés?
 1|Adjetivo い (sabor)|El ramen de esta tienda está rico.|この 店:みせ の ラーメン は 美味しい:おいしい です|が 美味しく:おいしく ない
-1|Contador de personas|Hay tres niños en el parque.|公園:こうえん に 子供:こども が 三人:さんにん います|あります 三つ:みっつ を
+1|Contador de personas|Hay tres niños en el parque.|公園:こうえん に / 子供:こども が 三人:さんにん います|あります 三つ:みっつ を||Hay tres niños / en el parque
 2|Progresivo 〜ている|Estoy leyendo un libro.|本:ほん を 読んで:よんで います|読み:よみ ます あります
-2|Estado 〜ている|Mi padre trabaja en un banco.|父:ちち は 銀行:ぎんこう で 働いて:はたらいて います|働き:はたらき に が
-2|Permiso 〜てもいい|¿Puedo abrir la ventana?|窓:まど を 開けて:あけて も いい です か|ください が だめ
-2|Prohibición 〜てはいけない|No se puede fumar aquí.|ここ で たばこ を 吸って:すって は いけません|も ください いい
-2|Obligación 〜なければならない|Tengo que estudiar mañana.|明日:あした 勉強:べんきょう しなければ なりません|しなくても いけません しても
+2|Estado 〜ている|Mi padre trabaja en un banco.|父:ちち は / 銀行:ぎんこう で / 働いて:はたらいて います|働き:はたらき に が
+2|Permiso 〜てもいい|¿Puedo abrir la ventana?|窓:まど を / 開けて:あけて も いい です か|ください が だめ
+2|Prohibición 〜てはいけない|No se puede fumar aquí.|ここ で / たばこ を / 吸って:すって は いけません|も ください いい
+2|Obligación 〜なければならない|Tengo que estudiar mañana.|明日:あした 勉強:べんきょう しなければ なりません|しなくても いけません しても||Tengo que estudiar / mañana
 2|Sin obligación 〜なくてもいい|No hace falta que vengas.|来なくて:こなくて も いい です|は だめ ない
 2|Poder con 〜ことができる|Puedo hablar japonés.|日本語:にほんご を 話す:はなす こと が できます|話し:はなし の に
 2|Forma potencial|Puedo comer pescado crudo.|刺身:さしみ が 食べられ:たべられ ます|を ません 食べ:たべ
-2|Experiencia 〜たことがある|He estado en Kioto una vez.|京都:きょうと に 一度:いちど 行った:いった こと が あります|行く:いく ない いきます
-2|Consejo 〜たほうがいい|Deberías descansar.|休んだ:やすんだ ほう が いい です|休む:やすむ に を
-2|Intención つもり|Voy a viajar a Japón el próximo año.|来年:らいねん 日本:にほん へ 旅行:りょこう する つもり です|に した が
-2|Causa con から|Como tengo fiebre, hoy no voy a la escuela.|熱:ねつ が ある から 今日:きょう は 学校:がっこう を 休みます:やすみます|ので のに が
-2|Causa con ので|Como llovía, me quedé en casa.|雨:あめ だった ので 家:いえ に いました|から のに です
+2|Experiencia 〜たことがある|He estado en Kioto una vez.|京都:きょうと に / 一度:いちど / 行った:いった こと が あります|行く:いく ない いきます
+2|Consejo 〜たほうがいい|Deberías descansar.|休んだ:やすんだ ほう が いい です|休む:やすむ に を|||Debes descansar.;Tendrías que descansar.
+2|Intención つもり|Voy a viajar a Japón el próximo año.|来年:らいねん / 日本:にほん へ / 旅行:りょこう する つもり です|に した が||Voy a viajar a Japón / el próximo año
+2|Causa con から|Como tengo fiebre, hoy no voy a la escuela.|熱:ねつ が ある から / 今日:きょう は 学校:がっこう を 休みます:やすみます|ので のに が||Como tengo fiebre / hoy no voy a la escuela||今日:きょう は 熱:ねつ が ある から 学校:がっこう を 休みます:やすみます
+2|Causa con ので|Como llovía, me quedé en casa.|雨:あめ だった ので 家:いえ に いました|から のに です||Como llovía / me quedé en casa
 2|Contraste con けど|Es caro pero está delicioso.|高い:たかい けど 美味しい:おいしい です|から でも ので
 2|Simultáneo ながら|Estudio escuchando música.|音楽:おんがく を 聞き:きき ながら 勉強:べんきょう します|聞いて:きいて ので たら
-2|Condicional たら|Si llueve, no voy.|雨:あめ が 降ったら:ふったら 行きません:いきません|降れば:ふれば 降る:ふる なら
-2|Condicional と|Si pulsas este botón, se abre la puerta.|この ボタン を 押す:おす と ドア が 開きます:あきます|押せば:おせば たら を
-2|Condicional ば|Si estudias, aprobarás.|勉強:べんきょう すれば 合格:ごうかく できます|したら すると ので
-2|Comparación より|Hoy hace más calor que ayer.|今日:きょう は 昨日:きのう より 暑い:あつい です|ほど が の
-2|Comparación のほうが|El tren es más rápido que el autobús.|電車:でんしゃ の ほう が バス より 速い:はやい です|は が ほど
-2|Superlativo 一番|¿Cuál es la montaña más alta de Japón?|日本:にほん で 一番:いちばん 高い:たかい 山:やま は どれ です か|何:なん どこ より
-2|Comparación ほど〜ない|Hoy no hace tanto frío como ayer.|今日:きょう は 昨日:きのう ほど 寒く:さむく ありません|より 寒い:さむい ない
+2|Condicional たら|Si llueve, no voy.|雨:あめ が 降ったら:ふったら 行きません:いきません|降れば:ふれば 降る:ふる なら||Si llueve / no voy
+2|Condicional と|Si pulsas este botón, se abre la puerta.|この ボタン を 押す:おす と / ドア が 開きます:あきます|押せば:おせば たら を||Si pulsas este botón / se abre la puerta|Si aprietas este botón, se abre la puerta.;Si presionas este botón, se abre la puerta.
+2|Condicional ば|Si estudias, aprobarás.|勉強:べんきょう すれば 合格:ごうかく できます|したら すると ので||Si estudias / aprobarás
+2|Comparación より|Hoy hace más calor que ayer.|今日:きょう は / 昨日:きのう より / 暑い:あつい です|ほど が の
+2|Comparación のほうが|El tren es más rápido que el autobús.|電車:でんしゃ の ほう が / バス より / 速い:はやい です|は が ほど
+2|Superlativo 一番|¿Cuál es la montaña más alta de Japón?|日本:にほん で 一番:いちばん 高い:たかい 山:やま は / どれ です か|何:なん どこ より
+2|Comparación ほど〜ない|Hoy no hace tanto frío como ayer.|今日:きょう は / 昨日:きのう ほど / 寒く:さむく ありません|より 寒い:さむい ない
 2|Adjetivo い en forma て|Esta habitación es grande y luminosa.|この 部屋:へや は 大きくて:おおきくて 明るい:あかるい です|大きい:おおきい で が
 2|Adjetivo な modificando|Es una ciudad famosa y tranquila.|有名:ゆうめい で 静か:しずか な 町:まち です|に の だ
 2|Verbo modificando sustantivo|Este es el libro que compré ayer.|これ は 昨日:きのう 買った:かった 本:ほん です|買う:かう 買います:かいます が
 2|Oración de relativo|La persona que vive aquí es mi tío.|ここ に 住んでいる:すんでいる 人:ひと は 私:わたし の おじ です|住む:すむ が を
-2|Dar 〜あげる|Le di un regalo a mi amiga.|友達:ともだち に プレゼント を あげました|もらいました くれました が
-2|Recibir 〜もらう|Recibí un regalo de mi madre.|母:はは に プレゼント を もらいました|あげました くれました から
-2|Recibir 〜くれる|Mi amigo me dio un libro.|友達:ともだち が 本:ほん を くれました|あげました もらいました に
-2|Partícula と (compañía)|Fui al cine con mi amigo.|友達:ともだち と 映画館:えいがかん へ 行きました:いきました|に で を
+2|Dar 〜あげる|Le di un regalo a mi amiga.|友達:ともだち に / プレゼント を / あげました|もらいました くれました が|||A mi amiga le di un regalo.;Di un regalo a mi amiga.;Le di a mi amiga un regalo.
+2|Recibir 〜もらう|Recibí un regalo de mi madre.|母:はは に / プレゼント を / もらいました|あげました くれました から||Recibí un regalo / de mi madre
+2|Recibir 〜くれる|Mi amigo me dio un libro.|友達:ともだち が / 本:ほん を / くれました|あげました もらいました に
+2|Partícula と (compañía)|Fui al cine con mi amigo.|友達:ともだち と / 映画館:えいがかん へ / 行きました:いきました|に で を
 2|Partícula で (instrumento)|Como con palillos.|箸:はし で 食べます:たべます|を に が
-2|Partículas から / まで|Trabajo de nueve a cinco.|九時:くじ から 五時:ごじ まで 働きます:はたらきます|に で へ
+2|Partículas から / まで|Trabajo de nueve a cinco.|九時:くじ から / 五時:ごじ まで / 働きます:はたらきます|に で へ
 2|しか 〜ない|Solo tengo mil yenes.|千円:せんえん しか ありません|だけ も です
 2|Partícula も|Yo también soy estudiante.|私:わたし も 学生:がくせい です|は が の
-2|Indefinidos 誰も / 誰か|No hay nadie en la sala.|部屋:へや に は 誰:だれ も いません|誰か:だれか が を
-2|Forma volitiva 〜よう|Vamos a la playa mañana.|明日:あした 海:うみ へ 行こう:いこう|行き:いき ましょう 行く:いく
-2|Cortesía お願いします|Un café, por favor.|コーヒー を お願い:おねがい します|ください に です
-2|Adverbios de frecuencia|A veces voy al gimnasio.|時々:ときどき ジム に 行きます:いきます|毎日:まいにち を よく
-2|Adverbio あまり + negativo|Casi nunca bebo alcohol.|あまり お酒:おさけ を 飲みません:のみません|よく とても ました
-2|Forma plana negativa 〜ない|No como carne.|肉:にく を 食べない:たべない|食べます:たべます 食べた:たべた ません
-2|Forma plana pasada 〜た|Ayer fui al supermercado.|昨日:きのう スーパー に 行った:いった|行く:いく 行かない:いかない 行きました:いきました
-2|Ofrecimiento 〜ましょうか|¿Le ayudo?|手伝い:てつだい ましょう か|ます ませんか を
-2|Cuando 〜とき|Cuando era niño, vivía en Osaka.|子供:こども の とき 大阪:おおさか に 住んでいました:すんでいました|ころ から で
-2|Antes de 〜まえに|Me lavo las manos antes de comer.|食べる:たべる 前:まえ に 手:て を 洗います:あらいます|後:あと で が
-2|Después de 〜てから|Después de cenar, veo la tele.|ご飯:ごはん を 食べて:たべて から テレビ を 見ます:みます|ので ながら たら
+2|Indefinidos 誰も / 誰か|No hay nadie en la sala.|部屋:へや に は / 誰:だれ も いません|誰か:だれか が を
+2|Forma volitiva 〜よう|Vamos a la playa mañana.|明日:あした / 海:うみ へ / 行こう:いこう|行き:いき ましょう 行く:いく|cn|||明日:あした / 海:うみ へ / 行きましょう:いきましょう
+2|Cortesía お願いします|Un café, por favor.|コーヒー を お願い:おねがい します|ください に です||Un café / por favor
+2|Adverbios de frecuencia|A veces voy al gimnasio.|時々:ときどき / ジム に / 行きます:いきます|毎日:まいにち を よく||A veces / voy al gimnasio
+2|Adverbio あまり + negativo|Casi nunca bebo alcohol.|あまり / お酒:おさけ を / 飲みません:のみません|よく とても ました||Casi nunca / bebo alcohol
+2|Forma plana negativa 〜ない|No como carne.|肉:にく を 食べない:たべない|食べます:たべます 食べた:たべた ません|cn|||肉:にく を 食べません:たべません
+2|Forma plana pasada 〜た|Ayer fui al supermercado.|昨日:きのう / スーパー に / 行った:いった|行く:いく 行かない:いかない 行きました:いきました|cn|||昨日:きのう / スーパー に / 行きました:いきました
+2|Ofrecimiento 〜ましょうか|¿Le ayudo?|手伝い:てつだい ましょう か|ます ませんか を|||¿Te ayudo?;¿Lo ayudo?;¿Puedo ayudarle?
+2|Cuando 〜とき|Cuando era niño, vivía en Osaka.|子供:こども の とき / 大阪:おおさか に / 住んでいました:すんでいました|ころ から で||Cuando era niño / vivía en Osaka
+2|Antes de 〜まえに|Me lavo las manos antes de comer.|食べる:たべる 前:まえ に 手:て を 洗います:あらいます|後:あと で が||Me lavo las manos / antes de comer
+2|Después de 〜てから|Después de cenar, veo la tele.|ご飯:ごはん を 食べて:たべて から / テレビ を 見ます:みます|ので ながら たら||Después de cenar / veo la tele
 2|Facilidad 〜やすい|Este bolígrafo es fácil de escribir.|この ペン は 書き:かき やすい です|にくい ます ない
 2|Apariencia 〜そう|Parece que va a llover.|雨:あめ が 降り:ふり そう です|よう ない らしい
 2|Rumor 〜そうだ|Dicen que mañana nevará.|明日:あした は 雪:ゆき が 降る:ふる そう です|ふり ない が
@@ -1021,21 +1021,21 @@ button{font:inherit;color:inherit;cursor:pointer}
 2|Sustantivo + です|Mi afición es leer.|私:わたし の 趣味:しゅみ は 読書:どくしょ です|が を の
 2|Cambio de estado なる|Quiero convertirme en médico.|医者:いしゃ に なり たい です|で する たくない
 2|Cambio de estado くなる|Se ha hecho de noche.|暗く:くらく なりました|暗い:くらい する なる
-2|Finalidad 〜ために|Estudio para aprobar el examen.|試験:しけん に 合格:ごうかく する ため に 勉強:べんきょう します|よう の を
-2|Habilidad 上手|Ella canta muy bien.|彼女:かのじょ は 歌:うた が とても 上手:じょうず です|下手:へた に を
-2|Adverbio con 〜く|Por favor, hable rápido.|速く:はやく 話して:はなして ください|速い:はやい に ます
+2|Finalidad 〜ために|Estudio para aprobar el examen.|試験:しけん に 合格:ごうかく する ため に 勉強:べんきょう します|よう の を||Estudio / para aprobar el examen
+2|Habilidad 上手|Ella canta muy bien.|彼女:かのじょ は / 歌:うた が とても 上手:じょうず です|下手:へた に を
+2|Adverbio con 〜く|Por favor, hable rápido.|速く:はやく 話して:はなして ください|速い:はやい に ます||Por favor / hable rápido|Habla rápido, por favor.
 3|Pasiva 〜られる|Mi profesor me regañó.|先生:せんせい に 叱られ:しかられ ました|叱り:しかり ます が
-3|Pasiva con daño|Me robaron la bicicleta.|私:わたし は 自転車:じてんしゃ を 盗まれ:ぬすまれ ました|盗み:ぬすみ が に
-3|Causativa 〜させる|La profesora hizo leer un libro a los alumnos.|先生:せんせい は 学生:がくせい に 本:ほん を 読ませ:よませ ました|読ま:よま が 読まれ:よまれ
-3|Causativa 〜させる|Mi madre me hizo comer verduras.|母:はは は 私:わたし に 野菜:やさい を 食べさせ:たべさせ ました|食べられ:たべられ が で
-3|Honorífico いらっしゃる|¿Va usted a Tokio?|先生:せんせい は 東京:とうきょう へ いらっしゃいます か|行きます:いきます いたします おっしゃいます
-3|Honorífico お〜になる|El presidente leyó el periódico.|社長:しゃちょう は 新聞:しんぶん を お読み:およみ に なりました|いたしました お読みし:およみし ます
+3|Pasiva con daño|Me robaron la bicicleta.|私:わたし は / 自転車:じてんしゃ を / 盗まれ:ぬすまれ ました|盗み:ぬすみ が に
+3|Causativa 〜させる|La profesora hizo leer un libro a los alumnos.|先生:せんせい は / 学生:がくせい に / 本:ほん を / 読ませ:よませ ました|読ま:よま が 読まれ:よまれ
+3|Causativa 〜させる|Mi madre me hizo comer verduras.|母:はは は / 私:わたし に / 野菜:やさい を / 食べさせ:たべさせ ました|食べられ:たべられ が で
+3|Honorífico いらっしゃる|¿Va usted a Tokio?|先生:せんせい は / 東京:とうきょう へ / いらっしゃいます か|行きます:いきます いたします おっしゃいます
+3|Honorífico お〜になる|El presidente leyó el periódico.|社長:しゃちょう は / 新聞:しんぶん を / お読み:およみ に なりました|いたしました お読みし:およみし ます
 3|Humilde お〜する|Yo llevaré su equipaje.|お 荷物:にもつ を お持ち:おもち します|になります ください いたします
 3|Humilde 申します|Me llamo Tanaka.|田中:たなか と 申します:もうします|言います:いいます です おっしゃいます
 3|Cortesía ございます|Este es el menú.|こちら は メニュー で ございます|です が ありません
-3|Concesión のに|A pesar de que estudié, suspendí.|勉強:べんきょう した のに 落ちました:おちました|から ので けど
-3|Concesión ても|Aunque llueva, iré.|雨:あめ が 降って:ふって も 行きます:いきます|降ったら:ふったら ので から
-3|Concesión ても (adjetivo)|Aunque sea caro, lo compraré.|高く:たかく て も 買います:かいます|のに から ば
+3|Concesión のに|A pesar de que estudié, suspendí.|勉強:べんきょう した のに 落ちました:おちました|から ので けど||A pesar de que estudié / suspendí
+3|Concesión ても|Aunque llueva, iré.|雨:あめ が 降って:ふって も / 行きます:いきます|降ったら:ふったら ので から||Aunque llueva / iré
+3|Concesión ても (adjetivo)|Aunque sea caro, lo compraré.|高く:たかく て も 買います:かいます|のに から ば||Aunque sea caro / lo compraré
 3|Obligación ないといけない|Tengo que irme ya.|もう 帰ら:かえら ないと いけません|なくて いいです ない
 3|Intención 〜ようと思う|Estoy pensando en correr.|走ろう:はしろう と 思っています:おもっています|走る:はしる と 言っています:いっています
 3|Estado resultante 〜てある|La puerta ha sido dejada abierta.|ドア が 開けて:あけて あります|開いて:あいて います ない
@@ -1043,33 +1043,128 @@ button{font:inherit;color:inherit;cursor:pointer}
 3|Intento 〜てみる|Probé a comer natto.|納豆:なっとう を 食べて:たべて みました|食べ:たべ ました ない
 3|Preparación 〜ておく|Reservaré el restaurante con antelación.|レストラン を 予約:よやく して おきます|しています して ありません
 3|Pesar 〜てしまう|Se me perdió la cartera.|財布:さいふ を なくして しまいました|なくした ありました みました
-3|Acabar de 〜たばかり|Acabo de llegar.|今:いま 着いた:ついた ばかり です|着く:つく ところ から
-3|A punto de 〜ところ|Estoy a punto de salir.|今:いま 出る:でる ところ です|出た:でた ばかり ない
-3|Certeza はず|Debería estar en casa ahora.|彼:かれ は 今:いま 家:いえ に いる はず です|かも でしょう ない
+3|Acabar de 〜たばかり|Acabo de llegar.|今:いま / 着いた:ついた ばかり です|着く:つく ところ から
+3|A punto de 〜ところ|Estoy a punto de salir.|今:いま / 出る:でる ところ です|出た:でた ばかり ない
+3|Certeza はず|Debería estar en casa ahora.|彼:かれ は / 今:いま / 家:いえ に / いる はず です|かも でしょう ない
 3|Apariencia ようだ|Parece que él está enfermo.|彼:かれ は 病気:びょうき の ようです|そうです な らしい
 3|Rumor らしい|Dicen que el restaurante nuevo es bueno.|新しい:あたらしい 店:みせ は おいしい らしい です|そう よう ない
-3|Preferencia|Prefiero el té al café.|コーヒー より お茶:おちゃ の ほう が 好き:すき です|ほど は を
-3|Sin hacer 〜ないで|Fui a la escuela sin desayunar.|朝ご飯:あさごはん を 食べない:たべない で 学校:がっこう へ 行きました:いきました|食べなくて:たべなくて ので ず
-3|Prohibición 〜ないでください|Por favor, no corra.|走らない:はしらない で ください|走って:はしって ます に
-3|Orden suave 〜なさい|Acuéstate ya.|早く:はやく 寝:ね なさい|ください ます ない
-3|Prohibición con な|¡No toques eso!|それ に 触る:さわる な|触って:さわって ない で
-3|Existencia con たくさん|Hay mucha gente en el parque.|公園:こうえん に は たくさん の 人:ひと が います|あります を で
-3|Contador de tazas|Tres tés, por favor.|お茶:おちゃ を 三杯:さんばい ください|三つ:みっつ ます が
+3|Preferencia|Prefiero el té al café.|コーヒー より / お茶:おちゃ の ほう が / 好き:すき です|ほど は を
+3|Sin hacer 〜ないで|Fui a la escuela sin desayunar.|朝ご飯:あさごはん を 食べない:たべない で / 学校:がっこう へ / 行きました:いきました|食べなくて:たべなくて ので ず||Fui a la escuela / sin desayunar
+3|Prohibición 〜ないでください|Por favor, no corra.|走らない:はしらない で ください|走って:はしって ます に||Por favor / no corra|No corras, por favor.
+3|Orden suave 〜なさい|Acuéstate ya.|早く:はやく 寝:ね なさい|ください ます ない||Acuéstate / ya|Ve a dormir ya.;Vete a dormir ya.
+3|Prohibición con な|¡No toques eso!|それ に 触る:さわる な|触って:さわって ない で|||¡No toque eso!
+3|Existencia con たくさん|Hay mucha gente en el parque.|公園:こうえん に は / たくさん の 人:ひと が います|あります を で
+3|Contador de tazas|Tres tés, por favor.|お茶:おちゃ を 三杯:さんばい ください|三つ:みっつ ます が||Tres tés / por favor
 3|Cantidad aproximada ぐらい|Tardé unas dos horas.|二時間:にじかん ぐらい かかりました|ごろ だけ ます
-3|Hora aproximada ごろ|Suelo volver a casa hacia las ocho.|八時:はちじ ごろ 家:いえ に 帰ります:かえります|ぐらい ずつ に
-3|Distribución ずつ|Memorizo cinco palabras cada día.|毎日:まいにち 五つ:いつつ ずつ 単語:たんご を 覚えます:おぼえます|だけ しか ごろ
+3|Hora aproximada ごろ|Suelo volver a casa hacia las ocho.|八時:はちじ ごろ / 家:いえ に / 帰ります:かえります|ぐらい ずつ に
+3|Distribución ずつ|Memorizo cinco palabras cada día.|毎日:まいにち / 五つ:いつつ ずつ / 単語:たんご を / 覚えます:おぼえます|だけ しか ごろ
 3|Pregunta incrustada 〜か|No sé dónde vive.|彼:かれ が どこ に 住んで:すんで いる か 分かり:わかり ません|ます を は
-3|Agradecimiento おかげで|Gracias a ti, aprobé.|あなた の おかげ で 合格:ごうかく できました|せい で から
-3|Culpa せいで|Por culpa de la lluvia, el tren llegó tarde.|雨:あめ の せい で 電車:でんしゃ が 遅れました:おくれました|おかげ から ので
-3|Agradecer con てくれて|Gracias por esperarme.|待って:まって いて くれて ありがとう ございます|ください くれました ました
+3|Agradecimiento おかげで|Gracias a ti, aprobé.|あなた の おかげ で 合格:ごうかく できました|せい で から||Gracias a ti / aprobé
+3|Culpa せいで|Por culpa de la lluvia, el tren llegó tarde.|雨:あめ の せい で / 電車:でんしゃ が / 遅れました:おくれました|おかげ から ので||Por culpa de la lluvia / el tren llegó tarde
+3|Agradecer con てくれて|Gracias por esperarme.|待って:まって いて くれて ありがとう ございます|ください くれました ました|||Gracias por esperar.;Gracias por haberme esperado.
 3|Según によって|Lo decidiré según el tiempo.|天気:てんき に よって 決めます:きめます|で から を
-3|Expresión con 離れない|No puedo sacármela de la cabeza.|彼女:かのじょ の こと が 頭:あたま から 離れません:はなれません|ます ない を
-3|Condicional irreal ばよかった|Si hubiera tenido dinero, habría comprado una casa.|お金:おかね が あれば 家:いえ を 買えた:かえた のに|あったら から ので
+3|Expresión con 離れない|No puedo sacármela de la cabeza.|彼女:かのじょ の こと が / 頭:あたま から / 離れません:はなれません|ます ない を
+3|Condicional irreal ばよかった|Si hubiera tenido dinero, habría comprado una casa.|お金:おかね が あれば / 家:いえ を 買えた:かえた のに|あったら から ので||Si hubiera tenido dinero / habría comprado una casa
 3|Casi + そうになる|Casi me caigo.|転び:ころび そう に なりました|転んで:ころんで ない ます
 3|Cortesía させていただく|Permítame presentarme.|自己紹介:じこしょうかい を させて いただきます|して くださいます おります
 3|Decisión ことにする|He decidido dejar de fumar.|たばこ を やめる こと に しました|なりました が を
 3|Decisión ajena ことになる|Se ha decidido que me mudo a Osaka.|大阪:おおさか へ 引っ越す:ひっこす こと に なりました|しました が を
-3|Petición cortés いただけませんか|¿Podría decirme cómo llegar a la estación?|駅:えき へ の 行き方:いきかた を 教えて:おしえて いただけません か|ください ますか なります
+3|Petición cortés いただけませんか|¿Podría decirme cómo llegar a la estación?|駅:えき へ の 行き方:いきかた を / 教えて:おしえて いただけません か|ください ますか なります
+1|Presentación con 名前|Mi nombre es Ana.|私:わたし の 名前:なまえ は アナ です|が を だ|||Me llamo Ana.|名前:なまえ は アナ です;私:わたし は アナ です
+1|Saludo de presentación|Encantado de conocerte.|はじめまして どうぞ よろしく お願い:おねがい します|ありがとう です ください|c||Mucho gusto.;Un placer conocerte;Encantada de conocerte.;Encantado de conocerle.
+1|Saludo de la mañana|Buenos días, ¿cómo está usted?|おはよう ございます お元気:おげんき です か|こんにちは だ ます|c|Buenos días / ¿cómo está usted?|Buenos días, ¿cómo estás?
+1|Preguntar la hora (何時)|¿Qué hora es?|今:いま 何時:なんじ です か|いつ 何:なん どこ|c||¿Qué hora tienes?
+1|Día de la semana|Hoy es lunes.|今日:きょう は 月曜日:げつようび です|火曜日:かようび が に
+1|Fecha con 月|Mi cumpleaños es en mayo.|私:わたし の 誕生日:たんじょうび は 五月:ごがつ です|五日:いつか が に
+1|Residencia con 住んでいます|Vivo en Santiago.|私:わたし は サンティアゴ に 住んで:すんで います|で を 住み:すみ|c
+1|Idiomas|Hablo español.|私:わたし は スペイン語:スペインご を 話します:はなします|が に 話して:はなして|c
+1|Colores y gustos|Mi color favorito es el azul.|私:わたし の 好き:すき な 色:いろ は 青:あお です|赤:あか が を|||Mi color preferido es el azul.
+1|Estado físico (お腹が空く)|Tengo hambre.|お腹:おなか が 空きました:すきました|を に 空いて:すいて|c||Estoy hambriento.;Me ha dado hambre.
+1|Estado físico (喉が渇く)|Tengo sed.|喉:のど が 渇きました:かわきました|を 乾き:かわき が|c||Estoy sediento.
+1|Estado físico con とても|Hoy estoy muy cansado.|今日:きょう は / とても / 疲れました:つかれました|です 疲れた:つかれた ない|c|Hoy / estoy muy cansado|Hoy estoy muy cansada.|今日:きょう は / とても / 疲れた:つかれた
+1|Ubicación con 隣|El hospital está al lado de la escuela.|病院:びょういん は / 学校:がっこう の 隣:となり に / あります|前:まえ 後ろ:うしろ います|c
+1|Ubicación con 前|Hay un banco delante de la estación.|駅:えき の 前:まえ に / 銀行:ぎんこう が / あります|後ろ:うしろ います を|c|Hay un banco / delante de la estación
+1|Ubicación con 下|El gato está debajo de la silla.|猫:ねこ は / 椅子:いす の 下:した に / います|上:うえ あります が|c|El gato está / debajo de la silla
+1|Pedir con ください|Deme esto, por favor.|これ を ください|が は に|c|Por favor / deme esto|Me llevo esto.;Quiero esto.;Dame esto, por favor.
+1|Cortesía de agradecimiento|Muchas gracias por todo.|いろいろ ありがとう ございました|ございます です が|c|Muchas gracias / por todo|Gracias por todo.
+1|No entender|No entiendo japonés.|日本語:にほんご が 分かりません:わかりません|を 分かります:わかります は|c||No comprendo japonés.
+1|Cantidad de personas|¿Cuántas personas hay?|何人:なんにん います か|何:なん いくつ あります|c
+2|〜てくる (cambio que empieza)|Ha empezado a llover.|雨:あめ が 降って:ふって きました|降り:ふり いきました ます|c||Se ha puesto a llover.
+2|〜ていく (continuará)|A partir de ahora estudiaré más.|これから / もっと / 勉強:べんきょう して いきます|して きます ました|c|A partir de ahora / estudiaré más|Desde ahora estudiaré más.
+2|〜てあげる|Le enseñé el camino a mi amigo.|友達:ともだち に / 道:みち を / 教えて:おしえて あげました|くれました もらいました が|c||A mi amigo le enseñé el camino.;Le mostré el camino a mi amigo.
+2|〜てもらう|Mi amigo me ayudó.|友達:ともだち に / 手伝って:てつだって もらいました|あげました くれました が|c||Un amigo me ayudó.;Mi amigo me echó una mano.
+2|〜てくれる|Mi madre me preparó el almuerzo.|母:はは が / 昼ご飯:ひるごはん を / 作って:つくって くれました|あげました もらいました は|c|Mi madre / me preparó el almuerzo|Mi madre me hizo el almuerzo.
+2|〜ようにしている|Intento comer verduras todos los días.|毎日:まいにち / 野菜:やさい を / 食べる:たべる ように して います|ために ました ない|c|Intento comer verduras / todos los días|Procuro comer verduras todos los días.
+2|〜ことがある (a veces)|A veces olvido el paraguas.|時々:ときどき / 傘:かさ を / 忘れる:わすれる こと が あります|よく ない ます|c|A veces / olvido el paraguas|Olvido el paraguas a veces.
+2|〜すぎる|Comí demasiado.|食べ:たべ すぎ ました|過ぎ:すぎ ます たい|c||Comí de más.;He comido demasiado.
+2|〜たり〜たり|Los fines de semana veo películas y limpio la casa.|週末:しゅうまつ は 映画:えいが を 見たり:みたり 掃除:そうじ したり します|見て:みて したくない を|c|Los fines de semana / veo películas y limpio la casa|Veo películas y limpio la casa los fines de semana.
+2|Enumerar con 〜し|Es barato y además está rico.|安い:やすい し 美味しい:おいしい です|から けど ので
+2|〜みたい|Parece un sueño.|夢:ゆめ みたい です|よう そう ない|||Es como un sueño.
+2|Partícula final ね|Hace buen tiempo, ¿verdad?|いい 天気:てんき です ね|よ か が|c||Qué buen tiempo hace, ¿verdad?
+2|Partícula final よ|¡Está muy rico!|とても 美味しい:おいしい です よ|ね か が|c||¡Está muy delicioso!;¡Está buenísimo!
+2|Condicional なら|Si vas a Tokio, visita Asakusa.|東京:とうきょう に 行く:いく なら / 浅草:あさくさ へ / 行って:いって ください|たら と ば|c|Si vas a Tokio / visita Asakusa|Visita Asakusa si vas a Tokio.
+2|〜ばかり|Solo come dulces.|甘い:あまい もの ばかり 食べて:たべて います|だけ しか ない|c||Solo come cosas dulces.;No hace más que comer dulces.
+2|Presentar con という|Vino un hombre llamado Tanaka.|田中:たなか と いう 人:ひと が 来ました:きました|言う:いう の を|c||Vino una persona llamada Tanaka.
+2|Forma plana だろう|Probablemente mañana lloverá.|明日:あした は 雨:あめ が 降る:ふる だろう|でしょう です ない|cn|Probablemente / mañana / lloverá||明日:あした は 雨:あめ が 降る:ふる でしょう
+2|Comparación con 背|Mi hermano menor es más alto que yo.|弟:おとうと は / 私:わたし より / 背:せ が 高い:たかい です|低い:ひくい ほど が|||Mi hermano pequeño es más alto que yo.
+2|Contador de hojas|Dos hojas de papel, por favor.|紙:かみ を / 二枚:にまい / ください|二本:にほん 二つ:ふたつ ます|c|Dos hojas de papel / por favor|Deme dos hojas de papel.
+2|Contador de vasos|Un vaso de agua, por favor.|水:みず を / 一杯:いっぱい / ください|一本:いっぽん 一つ:ひとつ ます|c|Un vaso de agua / por favor|Deme un vaso de agua.
+2|Contador de libros|Compré tres libros.|本:ほん を / 三冊:さんさつ / 買いました:かいました|三枚:さんまい 三つ:みっつ ます|c
+2|Hora de llegada con に|Llegué a las ocho de la mañana.|朝:あさ 八時:はちじ に / 着きました:つきました|夜:よる で ます|c
+2|Fecha futura|El próximo lunes tengo un examen.|来週:らいしゅう の 月曜日:げつようび に / 試験:しけん が / あります|先週:せんしゅう います を|c|El próximo lunes / tengo un examen|Tengo un examen el próximo lunes.
+2|Tiempo atmosférico|Hoy está nublado.|今日:きょう は 曇り:くもり です|雨:あめ が だ
+2|Rutina con を|Me ducho por la noche.|夜:よる / シャワー を / 浴びます:あびます|朝:あさ で を|c|Me ducho / por la noche|Por la noche me ducho.
+2|Rutina con の後で|Me cepillo los dientes después de comer.|ご飯:ごはん の 後:あと で / 歯:は を / 磨きます:みがきます|前:まえ を が|c|Después de comer / me cepillo los dientes
+2|Transporte con 乗る|Tomo el tren de las siete.|七時:しちじ の 電車:でんしゃ に 乗ります:のります|で を 降ります:おります|c||Cojo el tren de las siete.
+2|Transporte con 降りる|Me bajo en la próxima estación.|次:つぎ の 駅:えき で 降ります:おります|に を 乗ります:のります|c|Me bajo / en la próxima estación|En la próxima estación me bajo.;Me apeo en la próxima estación.
+2|Transporte con 乗り換える|Cambio de tren en Shinjuku.|新宿:しんじゅく で 乗り換えます:のりかえます|に を 乗ります:のります|c|Cambio de tren / en Shinjuku|En Shinjuku cambio de tren.;Hago trasbordo en Shinjuku.
+2|Compras con もっと|¿Tiene algo más barato?|もっと 安い:やすい の は ありません か|高い:たかい いません を|c||¿Hay algo más barato?;¿Tiene uno más barato?
+2|Pagar con で|¿Puedo pagar con tarjeta?|カード で / 払って:はらって も いい です か|を に が|c||¿Se puede pagar con tarjeta?;¿Puedo pagar con la tarjeta?
+2|Invitación con よかったら|Si quieres, vamos juntos.|よかったら / 一緒:いっしょ に / 行き:いき ましょう|ませんか ます ので|c|Si quieres / vamos juntos|Vamos juntos si quieres.;Si te parece bien, vamos juntos.
+2|Opinión con と思う|Creo que es difícil.|難しい:むずかしい と 思います:おもいます|言います:いいます が の|cn||Pienso que es difícil.;Me parece difícil.;Creo que es complicado.|難しい:むずかしい と 思う:おもう
+2|Experiencia negativa|Nunca he comido sushi.|寿司:すし を 食べた:たべた こと が ありません|食べる:たべる います ない|c|Nunca he comido sushi.|No he comido sushi nunca.;Jamás he comido sushi.
+2|Permiso con 座る|¿Puedo sentarme aquí?|ここ に 座って:すわって も いい です か|ください が だめ|c||¿Me puedo sentar aquí?
+2|Capacidad con 泳げる|¿Sabes nadar?|泳げ:およげ ます か|泳ぎ:およぎ ません が|c||¿Puedes nadar?;¿Sabe nadar?;¿Sabe usted nadar?
+2|Deseo con ほしい|Quiero un coche nuevo.|新しい:あたらしい 車:くるま が ほしい です|を たい ない|||Deseo un coche nuevo.
+2|Preferencia con どちら|¿Cuál te gusta más, el perro o el gato?|犬:いぬ と 猫:ねこ と どちら が 好き:すき です か|を は が|c||¿Qué te gusta más, el perro o el gato?;¿Cuál le gusta más, el perro o el gato?
+2|Frecuencia con 週に|Voy a la biblioteca una vez a la semana.|週:しゅう に 一回:いっかい / 図書館:としょかん へ / 行きます:いきます|毎日:まいにち を で|c|Voy a la biblioteca / una vez a la semana|Una vez a la semana voy a la biblioteca.
+2|Gradación con だんだん|Cada vez hace más calor.|だんだん 暑く:あつく なって います|寒く:さむく なります ない|c|Cada vez / hace más calor|Hace cada vez más calor.
+2|Proponer con にする|Paguemos a medias.|割り勘:わりかん に しましょう|を で ます|c||Pagamos a medias.;Vamos a pagar a medias.
+2|Ubicación con 間|Hay una farmacia entre el banco y la estación.|銀行:ぎんこう と 駅:えき の 間:あいだ に 薬局:やっきょく が あります|隣:となり います を|c|Hay una farmacia / entre el banco y la estación|Entre el banco y la estación hay una farmacia.
+2|Plano 〜ある|Mañana tengo un examen.|明日:あした / 試験:しけん が / ある|ます です が|n||Tengo un examen mañana.|明日:あした / 試験:しけん が / あります:あります
+2|Plano 〜ない|Hoy no voy a la escuela.|今日:きょう は / 学校:がっこう へ / 行かない:いかない|行きません:いきません ます ない|n||No voy a la escuela hoy.|今日:きょう は / 学校:がっこう へ / 行きません:いきません
+2|Plano 〜た|Ayer me encontré con Ana.|昨日:きのう / アナ に / 会った:あった|会います:あいます ました ない|n||Ayer vi a Ana.|昨日:きのう / アナ に / 会いました:あいました
+3|Honorífico 召し上がる|¿Qué desea tomar?|何:なに を / 召し上がります:めしあがります か|飲みます:のみます 食べます:たべます いただきます|c||¿Qué va a tomar?;¿Qué desea comer?;¿Qué le gustaría tomar?
+3|Cortesía con どうぞ|Por favor, pase por aquí.|こちら へ どうぞ お入り:おはいり ください|に で を|c|Por favor / pase por aquí|Por aquí, por favor.;Pase por aquí.
+3|Cortesía de disculpa|Perdone las molestias.|ご迷惑:ごめいわく を おかけ して すみません|に が ありません|c||Disculpe las molestias.;Siento las molestias.;Lamento las molestias.
+3|Cortesía de gratitud|Gracias por su apoyo de siempre.|いつも お世話:おせわ に なって おります|です います いたします|c||Gracias por su ayuda de siempre.
+3|Cortesía de presentación|Mucho gusto en conocerle.|どうぞ よろしく お願い:おねがい いたします|します ください です|c||Encantado de conocerle.;Un placer conocerle.
+3|Humilde いただく|Me tomaré el café.|コーヒー を いただきます|飲みます:のみます が ください|c||Tomaré el café.
+3|Pasiva (molestia)|Me pisaron el pie en el tren.|電車:でんしゃ で / 足:あし を / 踏まれ:ふまれ ました|踏み:ふみ ます が|c|Me pisaron el pie / en el tren|En el tren me pisaron el pie.
+3|Pasiva impersonal|Esta novela la lee mucha gente.|この 小説:しょうせつ は / 多く:おおく の 人:ひと に / 読まれて:よまれて います|読んで:よんで ます が|c||Mucha gente lee esta novela.;Esta novela es leída por mucha gente.
+3|Pasiva con 売る|En esta tienda se vende pan.|この 店:みせ で は パン が 売られて:うられて います|売って:うって ます を|c|En esta tienda / se vende pan|Esta tienda vende pan.;En esta tienda venden pan.
+3|Causativa-pasiva|Me hicieron esperar una hora.|一時間:いちじかん 待たされ:またされ ました|待たせ:またせ 待た:また ない|c||Tuve que esperar una hora.;Me obligaron a esperar una hora.
+3|Condicional contrafactual|Si lo hubiera sabido, no habría venido.|知って:しって いれば 来:こ なかった のに|知ら:しら ない たら|c|Si lo hubiera sabido / no habría venido|No habría venido si lo hubiera sabido.
+3|Proporción 〜ば〜ほど|Cuanto más estudio, más difícil se vuelve.|勉強:べんきょう すれば する ほど 難しく:むずかしく なります|易しく:やさしく ない ので|c|Cuanto más estudio / más difícil se vuelve
+3|Regla ことになっている|Aquí no está permitido fumar.|ここ で は たばこ を 吸わない:すわない こと に なって います|吸って:すって いけません が|c||No se puede fumar aquí.;Está prohibido fumar aquí.;Aquí está prohibido fumar.
+3|Matiz わけではない|No es que no quiera comer.|食べ:たべ たくない わけ で は ありません|ない です が|c
+3|Deducción に違いない|Seguro que él está en casa.|彼:かれ は / 家:いえ に / いる に 違いありません:ちがいありません|でしょう かも はず|c||Seguro que está en casa.
+3|Resignación ざるを得ない|No tengo más remedio que ir.|行か:いか ざる を 得ません:えません|行き:いき ない しか|c||No me queda más remedio que ir.
+3|Fuente con によると|Según el pronóstico, mañana lloverá.|天気予報:てんきよほう に よると / 明日:あした は / 雨:あめ です|によって が ので|c|Según el pronóstico / mañana / lloverá
+3|Rol con として|Trabajo como profesor.|先生:せんせい と して 働いて:はたらいて います|に で を|c||Trabajo de profesor.
+3|Tema con について|Hablamos sobre el futuro.|将来:しょうらい に ついて 話しました:はなしました|に よって で|c|Hablamos / sobre el futuro|Hablamos del futuro.;Conversamos sobre el futuro.
+3|Petición 〜てもらえませんか|¿Podría ayudarme?|手伝って:てつだって もらえません か|もらいます ください ます|c||¿Me podría ayudar?;¿Puede ayudarme?;¿Me ayudaría?
+3|Arrepentimiento 〜ばよかった|Ojalá hubiera estudiado más.|もっと 勉強:べんきょう すれば よかった です|したら して ので|||Debería haber estudiado más.;Ojalá hubiese estudiado más.;Tendría que haber estudiado más.
+3|Sugerencia 〜たらどう|¿Y si descansas un poco?|少し:すこし 休んだら:やすんだら どう です か|休む:やすむ ない いい|c
+3|Solo opción しかない|No hay más remedio que esperar.|待つ:まつ しか ありません|だけ ない です|c||No queda otra que esperar.;Solo queda esperar.;No nos queda más remedio que esperar.
+3|No poder permitirse わけにはいかない|No puedo faltar.|休む:やすむ わけ に は いきません|いきます が ない|c||No me puedo permitir faltar.
+3|Casi ocurre ところだった|Casi llego tarde.|遅れる:おくれる ところ でした|ばかり です ない|c||Por poco llego tarde.;Estuve a punto de llegar tarde.;Casi llegué tarde.
+3|Sin hacer con 〜ずに|Salí sin llevar paraguas.|傘:かさ を 持たず:もたず に / 出かけました:でかけました|持って:もって ない で|c|Salí / sin llevar paraguas|Salí sin paraguas.;Salí de casa sin paraguas.
+3|Tendencia 〜がち|Suelo olvidarlo.|忘れ:わすれ がち です|やすい たい ない|||Tiendo a olvidarlo.;Lo olvido con frecuencia.
+3|Propósito 〜ように|Abrígate para no resfriarte.|風邪:かぜ を ひかない ように 暖かく:あたたかく して ください|ために ひく ない|c||Abrígate bien para no resfriarte.;Abríguese para no resfriarse.
+3|Consejo negativo|Es mejor no ir.|行かない:いかない ほう が いい です|行った:いった ほど が|||Más vale no ir.;Sería mejor no ir.
+3|Deseo ajeno 〜たがる|Mi hijo quiere un perro.|息子:むすこ は / 犬:いぬ を / 飼い:かい たがって います|飼って:かって たい ない|c|Mi hijo / quiere un perro|Mi hijo quiere tener un perro.
+3|Preguntar significado|¿Qué significa esta palabra?|この 言葉:ことば は / どういう 意味:いみ です か|何:なん を が|c||¿Qué quiere decir esta palabra?;¿Cuál es el significado de esta palabra?
 </script>
 <script>
 const $=id=>document.getElementById(id);
@@ -1118,7 +1213,7 @@ function home(){clr();stats();$("app").innerHTML=`<div class="stats"><button cla
 function setup(g){clr();C.g=g;if(g=="frase")return setupFr();const n=pool().length,need=g=="memo"?C.pairs:8;let h=`<div class="panel"><div class="em" style="--cc:var(--red)">${g=="memo"?"🧩":"🎴"}</div><h2>${g=="memo"?"Parejas":"Flashcards"}</h2>`;
 if(g=="flash")h+=`<p class="lb">MODO</p><div class="row">${MODES.map(m=>chip("mode",m[0],m[1],C.mode==m[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${RULES.map(m=>chip("rule",m[0],m[1],C.rule==m[0])).join("")}</div><div class="note">${RULES.find(r=>r[0]==C.rule)[2]}</div>`;
 else h+=`<p class="lb">PAREJAS</p><div class="row">${[6,8,10].map(v=>chip("pairs",v,v,C.pairs==v)).join("")}</div><p class="lb">UNIR</p><div class="row">${[["ie","Icono ↔ Español"],["ij","Icono ↔ Japonés"],["mj","Español ↔ Japonés"]].map(v=>chip("ptype",v[0],v[1],C.ptype==v[0])).join("")}</div>`;
-h+=`<p class="lb">ESCRITURA</p><div class="row">${ESCS.map(m=>chip("esc",m[0],m[1],C.esc==m[0])).join("")}</div><p class="lb">CATEGORÍAS</p><div class="row cats">${Object.keys(CT).map(k=>`<button class="f ${C.cats.includes(k)?"on":""}" style="--cc:${CT[k][1]}" data-a="cat" data-v="${k}">${CT[k][2]} ${CT[k][0]}</button>`).join("")}<button class="f" data-a="allc">Todas</button></div><p class="lb">EXTRAS</p><div class="row">${g=="flash"?tog("timer","⏱️ Contrarreloj (10 s)")+tog("hint","🖼️ Icono en lectura")+tog("voice","🔊 Voz automática"):""}${tog("ro","Aa Romaji")}</div>
+h+=`<p class="lb">ESCRITURA</p><div class="row">${ESCS.map(m=>chip("esc",m[0],m[1],C.esc==m[0])).join("")}</div><p class="lb">CATEGORÍAS</p><div class="row cats"><button class="f ${C.cats.length==Object.keys(CT).length?"on":""}" data-a="allc">Todas</button><button class="f sm" data-a="tcs" title="Elegir categorías" aria-label="Elegir categorías">${C.csel?"▴":"▾"}</button></div>${C.csel?`<div class="row cats">${Object.keys(CT).map(k=>`<button class="f ic ${C.cats.includes(k)?"on":""}" style="--cc:${CT[k][1]}" data-a="cat" data-v="${k}" title="${CT[k][0]}" aria-label="${CT[k][0]}">${CT[k][2]}</button>`).join("")}</div>`:""}<p class="lb">EXTRAS</p><div class="row">${g=="flash"?tog("timer","⏱️ Contrarreloj (10 s)")+tog("hint","🖼️ Icono en lectura")+tog("voice","🔊 Voz automática"):""}${tog("ro","Aa Romaji")}</div>
 <div class="note">🃏 ${n} tarjetas disponibles${n<need?" · elige más categorías o escrituras":""}</div><div class="acts"><button class="act" data-a="start" ${n<need?"disabled":""}>¡Jugar! 🚀</button><button class="f" data-a="home">← Inicio</button></div></div>`;$("app").innerHTML=h}
 /* ── Flashcards ── */
 function mk(c,mode){const d=D(c),r=C.ro?`<div class="cnt">${ro(c.h)}</div>`:"",col=CT[c.c][1],ico=`<div class="em big" style="--cc:${col}">${c.e}</div>`,jp=`<div class="jbig jp">${d}</div>${r}`;
@@ -1163,7 +1258,25 @@ else{G.lock=true;setTimeout(()=>{ex.classList.remove("fl");el.classList.remove("
 function endMemo(){if(!G)return;clearInterval(tm);const t=Date.now()-G.t0,key="memo"+C.pairs,b=S.best[key],nb=!b||G.moves<b,xp=Math.max(10,G.total*8-G.moves*2+20),st=G.moves<=G.total*1.5?3:G.moves<=G.total*2.2?2:1;if(nb)S.best[key]=G.moves;S.xp+=xp;S.seen++;save();
 $("app").innerHTML=`<div class="panel"><div class="em big" style="--cc:var(--red)">${"⭐".repeat(st)}</div><h2>¡Completado!</h2><p>${G.moves} movimientos · ${fmt(t)}</p><p class="cnt">${nb?"🎉 ¡Nuevo récord!":"Mejor: "+S.best[key]+" movimientos"} · +${xp} XP</p><div class="acts"><button class="act" data-a="start">Otra vez</button><button class="f" data-a="set">⚙️ Ajustes</button><button class="f" data-a="home">Inicio</button></div></div>`;G=null}
 /* ── Oraciones con bloques ── */
-const SENT=$("sents").textContent.split("\n").filter(l=>l.trim()&&l[0]!="#").map(l=>{const[lv,tag,es,jp,ds]=l.trim().split("|");const P=s=>(s||"").split(" ").filter(Boolean).map(x=>{const[t,r]=x.split(":");return{t,r:r||""}});return{lv:+lv,tag,es,jp:P(jp),ds:P(ds),sp:es.replace(/[¿?¡!.,;:]/g,"").split(/\s+/).filter(Boolean)}});
+const P=s=>(s||"").split(" ").filter(Boolean).map(x=>{const[t,r]=x.split(":");return{t,r:r||""}});
+const PERM=a=>a.length<2?[a]:a.flatMap((x,i)=>PERM([...a.slice(0,i),...a.slice(i+1)]).map(p=>[x,...p]));
+const expJ=s=>{const ch=s.split("/").map(P).filter(c=>c.length),l=ch.pop()||[];return PERM(ch).map(p=>[...p.flat(),...l])};
+const plain=v=>{const n=v.length,l=n&&v[n-1].t,p=n>1&&v[n-2].t;if(l!="です"||!p||p=="か"||p=="ない")return null;const w=v.slice(0,-1);return/(い|かった)$/.test(p)&&!/(嫌い|綺麗|きれい|大好き)$/.test(p)?w:[...w,{t:"だ",r:""}]};
+const words=s=>s.replace(/[¿?¡!.,;:]/g,"").split(/\s+/).filter(Boolean);
+const PRON=new Set(["yo","tú","él","ella","nosotros","nosotras","ellos","ellas","usted","ustedes"]),TIMEW=new Set(["ayer","hoy","mañana","ahora"]),PROPER=/^(Tokio|Kioto|Osaka|Japón|Tanaka|Ana|Santiago|Asakusa|Shinjuku)$/;
+const POL=/(ます|ません|ました|です|でした|ください|ございます|ましょう|ありません|いけません|なりません|いたします|おります)$/;
+const NOMOVE=new Set(["que","cuando","si","como","porque","aunque","mientras"]);
+const PREP=new Set(["de","desde","hasta","para","por","a","que","como","antes","después","el","la","en","con"]);
+const tmove=v=>{const f=v[0].toLowerCase(),l=v[v.length-1].toLowerCase(),pl=v.length>1?v[v.length-2].toLowerCase():"";if(v.length<3||v.filter(w=>TIMEW.has(w.toLowerCase())).length!=1||v.some(w=>NOMOVE.has(w.toLowerCase())))return[];return TIMEW.has(f)?[[...v.slice(1),v[0]]]:TIMEW.has(l)&&!PREP.has(pl)?[[v[v.length-1],...v.slice(0,-1)]]:[]};
+const uniq=vs=>{const m=new Map();vs.forEach(v=>{const k=v.map(b=>b.t).join("\u0001");if(!m.has(k))m.set(k,v)});return[...m.values()]};
+const SENT=$("sents").textContent.split("\n").filter(l=>l.trim()&&l[0]!="#").map(l=>{const[lv,tag,es,jp,ds,reg0,esv,esa,jpa]=l.trim().split("|"),sp=s=>(s||"").split(";").map(x=>x.trim()).filter(Boolean);
+let J=expJ(jp),reg=reg0;const jfree=J.length>1,alts=[];
+if(!reg){const pl=J.map(plain).filter(Boolean);if(pl.length){J=[...J,...pl];reg="cn";alts.push(pl[0])}else reg=J[0].some(b=>POL.test(b.t))?"c":"n"}
+sp(jpa).forEach(a=>{const e=expJ(a);J.push(...e);alts.push(e[0])});
+let E=[words(es)];if(esv)E.push(...PERM(esv.split("/").map(words).filter(a=>a.length)).map(p=>p.flat()));sp(esa).forEach(a=>E.push(words(a)));
+E=[...E,...E.flatMap(tmove)];E=[...E,...E.filter(v=>v.length>2&&PRON.has(v[0].toLowerCase())).map(v=>v.slice(1))];
+const T=w=>({t:PROPER.test(w)?w:w.toLowerCase(),r:""});
+return{lv:+lv,tag,es,reg,jp:J[0],J:uniq(J),sp:words(es),ES:uniq(E.map(v=>v.map(T))),ds:P(ds),alts:alts.map(v=>v.map(b=>b.t).join("")+"。"),ealts:sp(esa),jfree,efree:!!esv}});
 const PR={"は":"wa","では":"dewa","には":"niwa","とは":"towa","へ":"e"};
 const rb=b=>PR[b.t]||ro(b.r||b.t);
 const PART=["は","が","を","に","で","へ","と","も","の","か"];
@@ -1171,41 +1284,45 @@ const SPS=[["el","la","los","las","un","una"],["a","en","de","con","por","para",
 const cap1=(w,c)=>c?w[0].toUpperCase()+w.slice(1):w;
 const EX="como comes come comí comió comeré bebo bebes bebí bebió veo ves vio vi voy vas va fui fue iré irá estudio estudias estudié estudiaba estudiaré trabajo trabajas trabajó trabaja leo lees leí lee leyó escribo escribí escribe hablo hablas habló hablé habla salgo salí salió llego llegué llegó llegaba compro compré compró compra vivo vive viví vivía quiero quieres quería puedo puede pude podría tengo tiene tuve tenía hago hace hice haré digo dijo dice sé sabe supe conozco conoce pienso piensa creo cree abro abre abrí abrió cierro cierra duermo duerme dormí despierto levanto levantó acuesto camino caminó corro corrió corre cocino cocina cocinó canto cantó canta juego juega jugó espero esperé espera pido pidió pide uso usó usa busco busqué busca encuentro encontré gusta gustó gustan casa casas libro libros mesa mesas tren trenes coche coches amigo amiga amigos amigas hermano hermana padre madre tío tía grande pequeño pequeña bonito bonita caro cara barato barata tranquilo tranquila famoso famosa nuevo nueva viejo vieja rápido rápida lento lenta tarde temprano siempre nunca ahora luego después antes cerca lejos aquí allí".split(" ");
 const VOC=[...new Set([...SENT.flatMap(s=>s.sp.filter(w=>w==w.toLowerCase())),...EX])].filter(w=>w.length>2);
-function spDis(s,n){const ex=new Set(s.sp.map(w=>w.toLowerCase())),out=[],add=w=>{if(w&&!ex.has(w.toLowerCase())&&!out.includes(w))out.push(w)};
+function spDis(s,n){const ex=new Set(s.ES.flat().map(b=>b.t.toLowerCase())),out=[],add=w=>{if(w&&!ex.has(w.toLowerCase())&&!out.includes(w))out.push(w)};
 for(const w of shuf(s.sp)){if(out.length>=n)break;const l=w.toLowerCase(),c=w[0]!=l[0],set=SPS.find(x=>x.includes(l));
 if(set){add(cap1(rnd(set.filter(x=>x!=l)),c));continue}
 const pf=VOC.filter(v=>!ex.has(v)&&v.slice(0,3)==l.slice(0,3)),sf=VOC.filter(v=>!ex.has(v)&&l.length>3&&v.length>3&&v.slice(-2)==l.slice(-2)),p=pf.length?pf:sf;if(p.length)add(cap1(rnd(p),c))}
 for(const w of shuf(VOC)){if(out.length>=n)break;add(w)}
 return out.slice(0,n)}
 const jpFull=s=>s.jp.map(b=>b.t).join("")+"。";
-function mkS(s,dir){const n=C.traps?2+(Math.random()<.5?1:0):0;let ex,bl;
-if(dir=="es2jp"){ex=s.jp.map(b=>b.t);const d=shuf(s.ds).slice(0,n),have=new Set(ex);for(const p of shuf(PART)){if(d.length>=n)break;if(!have.has(p)&&!d.some(x=>x.t==p))d.push({t:p,r:""})}bl=[...s.jp,...d]}
-else{ex=s.sp;bl=[...s.sp,...(n?spDis(s,n):[])].map(t=>({t,r:""}))}
-bl=shuf(bl).map((b,i)=>({...b,id:i}));return{s,dir,ex,bl,pl:[]}}
+function mkPool(vs){const mx=new Map();vs.forEach(v=>{const c=new Map();v.forEach(b=>{if(!c.has(b.t))c.set(b.t,{n:0,b});c.get(b.t).n++});c.forEach((o,k)=>{const x=mx.get(k);mx.set(k,{n:Math.max(o.n,x?x.n:0),b:x&&x.b.r?x.b:o.b})})});const out=[];mx.forEach(o=>{for(let i=0;i<o.n;i++)out.push({...o.b})});return out}
+function mkS(s,dir){const n=C.traps?2+(Math.random()<.5?1:0):0,vs=dir=="es2jp"?s.J:s.ES;let bl=mkPool(vs);const have=new Set(bl.map(b=>b.t));
+if(dir=="es2jp"){const d=shuf(s.ds.filter(b=>!have.has(b.t))).slice(0,n);for(const p of shuf(PART)){if(d.length>=n)break;if(!have.has(p)&&!d.some(x=>x.t==p))d.push({t:p,r:""})}bl=[...bl,...d]}
+else if(n)bl=[...bl,...spDis(s,n).map(t=>({t,r:""}))];
+bl=shuf(bl).map((b,i)=>({...b,id:i}));return{s,dir,vs,acc:new Set(vs.map(v=>v.map(b=>b.t).join("\u0001"))),bl,pl:[]}}
 function pickS(){if(!G.rem.length)G.rem=shuf(G.p);let i=G.rem.findIndex(s=>!G.lt.includes(s.tag));if(i<0)i=0;const s=G.rem.splice(i,1)[0];G.lt=[...G.lt,s.tag].slice(-3);return s}
 function startFr(){const p=SENT.filter(s=>!C.lvl||s.lv==C.lvl);G={fr:1,rem:[],p,n:0,total:C.frule=="clasico"?Math.min(10,p.length):999,lives:3,score:0,st:0,ms:0,ok:0,miss:[],lt:[],busy:true};nextS();tm=setInterval(tick,100)}
 function nextS(){if(!G)return;const s=pickS(),dir=C.dir=="mix"?rnd(["es2jp","jp2es"]):C.dir;G.q=mkS(s,dir);G.c=s;G.att=0;G.hints=0;G.mark=[];G.busy=false;G.tout=0;G.over=0;G.t0=Date.now();G.tl=C.ftimer?60000:0;
 const info=C.frule=="clasico"?`${G.n+1} / ${G.total}`:hearts(G.lives),lv=["🌱 Básico","🌿 Intermedio","🌳 Avanzado"][s.lv-1],
 prm=dir=="es2jp"?`<div class="lb">TRADUCE AL JAPONÉS</div><div class="pr">${s.es}</div>`:`<div class="lb">TRADUCE AL ESPAÑOL</div><div class="jbig jp sm">${jpFull(s)}</div>${C.ro?`<div class="cnt">${s.jp.map(rb).join(" ")}</div>`:""}`;
-$("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div><div class="tb"><i id="bar"></i></div><span class="tag">${lv}</span>${prm}<div class="tray" id="tray"></div><div class="bank" id="bank"></div><div class="msg" id="msg"></div><div class="acts" id="fa"><button class="act" id="ck" data-a="chk">Comprobar ✓</button><button class="f" data-a="hint">💡 Pista</button><button class="f" data-a="rs">↺ Reiniciar</button></div><div class="acts"><button class="act alt" id="fn" data-a="fnx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;paint()}
+$("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div><div class="tb"><i id="bar"></i></div><span class="tag">${lv}</span>${dir=="es2jp"?` <span class="tag">${REG[s.reg]}</span>`:""}${prm}<div class="tray" id="tray"></div><div class="bank" id="bank"></div><div class="msg" id="msg"></div><div class="acts" id="fa"><button class="act" id="ck" data-a="chk">Comprobar ✓</button><button class="f" data-a="hint">💡 Pista</button><button class="f" data-a="rs">↺ Reiniciar</button></div><div class="acts"><button class="act alt" id="fn" data-a="fnx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;paint()}
 const qb=(id)=>G.q.bl.find(b=>b.id==id);
 function paint(){const q=G.q,jp=q.dir=="es2jp",bk=(b,a,v,x="")=>`<button class="bk ${jp?"jp":""} ${x}" data-a="${a}" data-v="${v}" ${x=="used"?"disabled":""}>${b.t}${jp&&C.ro?`<small>${rb(b)}</small>`:""}</button>`;
 $("tray").innerHTML=q.pl.map((id,i)=>bk(qb(id),"bt",i,G.mark[i]||"")).join("");
 $("bank").innerHTML=q.bl.map(b=>bk(b,"bp",b.id,q.pl.includes(b.id)?"used":"")).join("");
 const ck=$("ck");if(ck)ck.disabled=!q.pl.length||G.busy}
 function ftick(){if(!G.tl||G.busy)return;const e=Date.now()-G.t0,b=$("bar");if(b){b.style.width=Math.max(0,100-e/G.tl*100)+"%";b.className=e>G.tl*.7?"lo":""}if(e>=G.tl){G.tout=1;G.att=2;finS(false)}}
-function hintFr(){if(G.busy)return;const q=G.q;let i=0;while(i<q.pl.length&&qb(q.pl[i]).t==q.ex[i])i++;q.pl=q.pl.slice(0,i);if(i<q.ex.length){const b=q.bl.find(b=>b.t==q.ex[i]&&!q.pl.includes(b.id));if(b){q.pl.push(b.id);G.hints++}}G.mark=[];paint()}
-function chkFr(){if(!G||G.busy||!G.q.pl.length)return;const q=G.q,t=q.pl.map(id=>qb(id).t);if(t.join("\u0001")==q.ex.join("\u0001"))return finS(true);G.att++;if(G.att>=2)return finS(false);G.mark=t.map((x,i)=>x==q.ex[i]?"":"bad");paint();$("msg").innerHTML=G.mark.includes("bad")?`🤔 Casi… los bloques en rojo no están en su sitio. <small>(un intento más)</small>`:`🤔 Aún faltan bloques. <small>(un intento más)</small>`}
-function finS(ok){G.busy=true;const s=G.c,q=G.q;G.n++;let pts=0;
+function bestV(q,by){const t=q.pl.map(id=>qb(id).t);let bv=q.vs[0],bp=-1,bm=-1,bk=-1;for(const v of q.vs){let p=0;while(p<t.length&&p<v.length&&v[p].t==t[p])p++;let m=0;t.forEach((x,i)=>{if(v[i]&&v[i].t==x)m++});const k=by=="p"?p*1000+m:m*1000+p;if(k>bk){bk=k;bv=v;bp=p}}return{t,v:bv,p:bp}}
+function hintFr(){if(G.busy)return;const q=G.q,{v,p}=bestV(q,"p");q.pl=q.pl.slice(0,p);if(p<v.length){const b=q.bl.find(b=>b.t==v[p].t&&!q.pl.includes(b.id));if(b){q.pl.push(b.id);G.hints++}}G.mark=[];paint()}
+function chkFr(){if(!G||G.busy||!G.q.pl.length)return;const q=G.q,t=q.pl.map(id=>qb(id).t);if(q.acc.has(t.join("\u0001")))return finS(true);G.att++;if(G.att>=2)return finS(false);const{v}=bestV(q,"m");G.mark=t.map((x,i)=>v[i]&&v[i].t==x?"":"bad");paint();$("msg").innerHTML=G.mark.includes("bad")?`🤔 Casi… los bloques en rojo no están en su sitio. <small>(un intento más)</small>`:`🤔 Aún faltan bloques. <small>(un intento más)</small>`}
+const REG={c:"🎩 Estilo cortés (です・ます)",n:"👕 Estilo llano (forma de diccionario)",cn:"🎩👕 Vale cortés o llano"};
+function finS(ok){G.busy=true;const s=G.c,q=G.q,es=q.dir=="es2jp";G.n++;let pts=0;
 if(ok){G.ok++;G.st++;G.ms=Math.max(G.ms,G.st);pts=Math.max(5,Math.round((15+5*s.lv+Math.min(G.st,5)*2)*(G.att?.5:1))-G.hints*4);G.score+=pts}else{G.st=0;G.miss.push(s);if(C.frule=="super")G.lives--}
-G.mark=q.pl.map((id,i)=>ok||qb(id).t==q.ex[i]?"ok":"bad");paint();
+const{v}=bestV(q,"m");G.mark=q.pl.map((id,i)=>ok||(v[i]&&v[i].t==qb(id).t)?"ok":"bad");paint();
+const al=es?s.alts:s.ealts,fr=es?s.jfree:s.efree,ex=[];if(al.length)ex.push("↔ También vale: "+al.slice(0,2).map(a=>`<span class="${es?"jp":""}">${a}</span>`).join(" · "));if(fr)ex.push("↔ El orden de los complementos puede variar");
 const rv=`${s.es}<br><span class="jp">${jpFull(s)}</span> <button class="sp" data-a="say" data-v="${s.jp.map(b=>b.r||b.t).join("")}">🔊</button>${C.ro?`<br>${s.jp.map(rb).join(" ")}`:""}`;
-$("msg").innerHTML=`${ok?`✔ ¡Perfecto! +${pts}`:G.tout?"⏰ ¡Tiempo!":"✖ Esta era la solución"}<br><small>${rv}<br>📘 ${s.tag}</small>`;
+$("msg").innerHTML=`${ok?`✔ ¡Perfecto! +${pts}`:G.tout?"⏰ ¡Tiempo!":"✖ Esta era la solución"}<br><small>${rv}${ex.length?"<br>"+ex.join("<br>"):""}<br>${REG[s.reg]} · 📘 ${s.tag}</small>`;
 $("fa").hidden=true;G.over=C.frule=="clasico"?G.n>=G.total:G.lives<=0;const f=$("fn");f.textContent=G.over?"Ver resultado ➜":"Siguiente ➜";f.hidden=false}
 function endFr(){if(!G)return;clearInterval(tm);const acc=G.n?Math.round(G.ok/G.n*100):0,key="fr"+C.frule,nb=G.score>(S.best[key]||0),rk=rank(acc/100);if(nb)S.best[key]=G.score;S.xp+=G.score;S.seen++;save();
 $("app").innerHTML=`<div class="panel"><div class="em big" style="--cc:var(--red)">${rk[0]}</div><h2>${rk[1]}</h2><p>Puntaje <b>${G.score}</b> · Frases ${G.ok}/${G.n} (${acc}%) · Racha máx. 🔥${G.ms}</p><p class="cnt">${nb?"🎉 ¡Nuevo récord!":"Récord: "+S.best[key]} · +${G.score} XP</p>${G.miss.length?`<p class="lb">PARA REPASAR</p><div class="ml">${G.miss.map(s=>`<div>${s.es}<br><b class="jp">${jpFull(s)}</b> <small>📘 ${s.tag}</small></div>`).join("")}</div>`:""}<div class="acts"><button class="act" data-a="start">Jugar otra vez</button><button class="f" data-a="set">⚙️ Ajustes</button><button class="f" data-a="home">Inicio</button></div></div>`;G=null}
 function setupFr(){const L=[[0,"Todos"],[1,"🌱 Básico"],[2,"🌿 Intermedio"],[3,"🌳 Avanzado"]],n=SENT.filter(s=>!C.lvl||s.lv==C.lvl).length;
-$("app").innerHTML=`<div class="panel"><div class="em" style="--cc:#2a5d8f">🧱</div><h2>Oraciones</h2><p class="cnt">Construye la frase con bloques de ひらがな, カタカナ y 漢字.</p><p class="lb">DIRECCIÓN</p><div class="row">${[["mix","🎲 Mixta"],["es2jp","Español → 日本語"],["jp2es","日本語 → Español"]].map(v=>chip("dir",v[0],v[1],C.dir==v[0])).join("")}</div><p class="lb">NIVEL</p><div class="row">${L.map(v=>chip("lvl",v[0],v[1],C.lvl==v[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${[["clasico","🎯 10 frases"],["super","❤️ Supervivencia (3 vidas)"]].map(v=>chip("frule",v[0],v[1],C.frule==v[0])).join("")}</div><p class="lb">EXTRAS</p><div class="row">${tog("ro","Aa Romaji")}${tog("traps","🪤 Bloques trampa")}${tog("ftimer","⏱️ Contrarreloj (60 s)")}</div><div class="note">📚 ${n} frases, cada una con un punto de gramática</div><div class="acts"><button class="act" data-a="start">¡Construir! 🧱</button><button class="f" data-a="home">← Inicio</button></div></div>`}
+$("app").innerHTML=`<div class="panel"><div class="em" style="--cc:#2a5d8f">🧱</div><h2>Oraciones</h2><p class="cnt">Construye la frase con bloques de ひらがな, カタカナ y 漢字.</p><p class="lb">DIRECCIÓN</p><div class="row">${[["mix","🎲 Mixta"],["es2jp","Español → 日本語"],["jp2es","日本語 → Español"]].map(v=>chip("dir",v[0],v[1],C.dir==v[0])).join("")}</div><p class="lb">NIVEL</p><div class="row">${L.map(v=>chip("lvl",v[0],v[1],C.lvl==v[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${[["clasico","🎯 10 frases"],["super","❤️ Supervivencia (3 vidas)"]].map(v=>chip("frule",v[0],v[1],C.frule==v[0])).join("")}</div><p class="lb">EXTRAS</p><div class="row">${tog("ro","Aa Romaji")}${tog("traps","🪤 Bloques trampa")}${tog("ftimer","⏱️ Contrarreloj (60 s)")}</div><div class="note">📚 ${n} frases · se aceptan todas las variantes válidas</div><div class="acts"><button class="act" data-a="start">¡Construir! 🧱</button><button class="f" data-a="home">← Inicio</button></div></div>`}
 /* ── Eventos ── */
 document.addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,v=t.dataset.v,k=t.dataset.k;
 if(a=="game")GAMES.find(g=>g.id==v).run();
@@ -1213,6 +1330,7 @@ else if(a=="chip"){C[k]=isNaN(v)?v:+v;setup(C.g)}
 else if(a=="tg"){C[k]=!C[k];setup(C.g)}
 else if(a=="cat"){const i=C.cats.indexOf(v);if(i<0)C.cats.push(v);else if(C.cats.length>1)C.cats.splice(i,1);setup(C.g)}
 else if(a=="allc"){C.cats=Object.keys(CT);setup(C.g)}
+else if(a=="tcs"){C.csel=!C.csel;setup(C.g)}
 else if(a=="start"){clr();C.g=="memo"?startMemo():C.g=="frase"?startFr():startFlash()}
 else if(a=="bp"){if(G&&!G.busy){G.q.pl.push(+v);G.mark=[];paint()}}
 else if(a=="bt"){if(G&&!G.busy){G.q.pl.splice(+v,1);G.mark=[];paint()}}
