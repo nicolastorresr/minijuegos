@@ -78,7 +78,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .msg .jp{font-size:1.2rem}
 .ki{display:block;line-height:1.15;text-align:center;word-break:break-all;padding:0 6px;font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;font-weight:500;color:var(--ink)}
 .o.i .ki{white-space:normal}
-.di{width:100%;padding:12px;margin:10px 0 4px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit;font-size:1.2rem;text-align:center}
+.di{width:100%;padding:12px;margin:10px 0 4px;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit;font-size:1.2rem;text-align:center;resize:none;overflow:hidden;display:block;line-height:1.35}
 .di:focus{outline:none;border-color:var(--red)}.di:disabled{opacity:.7}
 .pad{position:relative;width:min(300px,88vw);aspect-ratio:1/1;margin:10px auto;border:1.5px solid var(--line);border-radius:10px;background:linear-gradient(var(--line),var(--line)) center/1px 100% no-repeat,linear-gradient(var(--line),var(--line)) center/100% 1px no-repeat,var(--bg)}
 .pad svg,.pad canvas{position:absolute;inset:0;width:100%;height:100%}.pad canvas{touch-action:none}.pad #ref{width:0;height:0}
@@ -1352,6 +1352,142 @@ button{font:inherit;color:inherit;cursor:pointer}
 3|Consejo negativo|Es mejor no ir.|行かない:いかない ほう が いい です|行った:いった ほど が|||Más vale no ir.;Sería mejor no ir.
 3|Deseo ajeno 〜たがる|Mi hijo quiere un perro.|息子:むすこ は / 犬:いぬ を / 飼い:かい たがって います|飼って:かって たい ない|c|Mi hijo / quiere un perro|Mi hijo quiere tener un perro.
 3|Preguntar significado|¿Qué significa esta palabra?|この 言葉:ことば は / どういう 意味:いみ です か|何:なん を が|c||¿Qué quiere decir esta palabra?;¿Cuál es el significado de esta palabra?
+1|Metro: qué línea|¿Qué línea va a Shibuya?|渋谷:しぶや へ 行く:いく の は 何:なん 線:せん です か|どこ いつ に|c||¿Qué línea va hasta Shibuya?;¿Cuál es la línea que va a Shibuya?
+1|Metro: comprar billete|¿Dónde puedo comprar un billete?|切符:きっぷ は どこ で 買えます:かえます か|どこ に を|c||¿Dónde se compra el billete?;¿Dónde puedo comprar un boleto?;¿Dónde se puede comprar el billete?
+2|Metro: horario|¿A qué hora sale el próximo tren?|次:つぎ の 電車:でんしゃ は 何時:なんじ に 出ます:でます か|いつ どこ に|c||¿A qué hora sale el siguiente tren?;¿Cuándo sale el próximo tren?
+1|Metro: destino del tren|¿Va este tren a Ueno?|この 電車:でんしゃ は 上野:うえの に 行きます:いきます か|で を へ|c||¿Este tren va a Ueno?;¿Este tren para en Ueno?
+2|Metro: andén|¿De qué andén sale?|何:なん 番線:ばんせん から 出ます:でます か|どこ いつ へ|c||¿Desde qué andén sale?;¿Por qué andén sale?
+2|Metro: asiento libre|Perdone, ¿está libre este asiento?|すみません この 席:せき は 空いて:あいて います か|ありません が を|c||Disculpe, ¿está libre este asiento?;¿Está libre este asiento?;Perdón, ¿está libre este asiento?
+3|Metro: pasarse de parada|Me pasé de estación.|乗り過ごして:のりすごして しまいました|おりました ました ありました|c||Me he pasado de estación.;Me pasé de parada.;Me he pasado de parada.
+2|Metro: tren lleno|El tren va lleno.|電車:でんしゃ は 混んで:こんで います|空いて:すいて ます が|c||El tren está lleno.;El tren va abarrotado.
+3|Metro: transbordo|Tengo que hacer transbordo en Tokio.|東京:とうきょう で 乗り換えなければ:のりかえなければ なりません|乗り換えて:のりかえて いけません も|c||Tengo que cambiar de tren en Tokio.;Debo hacer transbordo en Tokio.;Debo cambiar de tren en Tokio.
+2|Metro: último tren|Perdí el último tren.|終電:しゅうでん に 乗り遅れました:のりおくれました|間:ま に ました|c||He perdido el último tren.;Se me escapó el último tren.
+1|Metro: precio|¿Cuánto cuesta hasta Kioto?|京都:きょうと まで いくら です か|何:なん どこ に|c||¿Cuánto cuesta ir a Kioto?;¿Cuánto es hasta Kioto?
+2|Metro: recargar tarjeta|Quiero recargar la tarjeta, por favor.|カード に チャージ を お願い:おねがい します|ください が で|c||Recargar la tarjeta, por favor.;Quisiera recargar la tarjeta.
+1|Restaurante: mesa|Una mesa para dos, por favor.|二人:ふたり の 席:せき を お願い:おねがい します|ください を が|c||Una mesa para dos personas, por favor.;Mesa para dos, por favor.
+1|Restaurante: pedir el menú|El menú, por favor.|メニュー を お願い:おねがい します|ください が に|c||¿Me trae el menú, por favor?;Tráigame el menú, por favor.;¿Podría traerme el menú?
+1|Restaurante: pedir|Quisiera pedir, por favor.|注文:ちゅうもん を お願い:おねがい します|ください が に|c||Quiero pedir, por favor.;Quisiéramos pedir, por favor.;Queremos pedir, por favor.
+1|Restaurante: elegir con にする|Tomaré el menú del día.|私:わたし は 日替わり:ひがわり 定食:ていしょく に します|を が です|c||Voy a tomar el menú del día.;Yo tomaré el menú del día.;Pediré el menú del día.
+2|Restaurante: recomendación|¿Qué me recomienda?|おすすめ は 何:なん です か|どこ いつ が|c||¿Qué recomienda?;¿Qué nos recomienda?;¿Cuál es su recomendación?;¿Qué me aconseja?
+2|Restaurante: sin ingrediente|Sin cebolla, por favor.|玉ねぎ:たまねぎ 抜き:ぬき で お願い:おねがい します|入り:いり を が|c||Sin cebolla, por favor.;Quiero sin cebolla, por favor.
+1|Restaurante: otra bebida|Otra cerveza, por favor.|ビール を もう 一杯:いっぱい お願い:おねがい します|ください が に|c||Una cerveza más, por favor.;Otra cerveza más, por favor.
+1|Restaurante: la cuenta|La cuenta, por favor.|お会計:おかいけい を お願い:おねがい します|ください が を|c||¿Me trae la cuenta, por favor?;Quisiera pagar, por favor.;¿Me cobra, por favor?;¿Me trae la cuenta?
+1|Frase hecha: gracias por la comida|Gracias por la comida.|ごちそう さま でした|です ます が|c||Gracias por la comida, estaba delicioso.;Estaba todo delicioso;Muchas gracias por la comida.
+1|Frase hecha: antes de comer|Buen provecho.|いただき ます|ました です が|c||Que aproveche.;Voy a comer.;A comer.;Gracias por la comida.
+2|Restaurante: pagar por separado|¿Se puede pagar por separado?|別々:べつべつ に 払えます:はらえます か|で を いい|c||¿Podemos pagar por separado?;¿Puedo pagar por separado?;¿Se puede pagar cada uno lo suyo?
+2|Restaurante: alergia|Soy alérgico al huevo.|卵:たまご アレルギー が あります|です を が|c||Tengo alergia al huevo.;Soy alérgica al huevo.;Soy alérgico a los huevos.;Soy alérgica a los huevos.
+1|Restaurante: menú en inglés|¿Tiene menú en inglés?|英語:えいご の メニュー は ありません か|あります います を|c||¿Hay menú en inglés?;¿Tienen un menú en inglés?;¿Tienen menú en inglés?
+2|Konbini: bolsa|¿Necesita una bolsa?|袋:ふくろ は いります か|ください が を|c||¿Quiere bolsa?;¿Desea una bolsa?;¿Quiere una bolsa?;¿Le hace falta una bolsa?
+2|Konbini: calentar|¿Se lo caliento?|温め:あたため ます か|ましょう ません が|c||¿Lo caliento?;¿Quiere que se lo caliente?;¿Se lo calentamos?
+2|Konbini: sin bolsa|No hace falta bolsa, gracias.|袋:ふくろ は 大丈夫:だいじょうぶ です|いります が を|c||Sin bolsa, gracias.;No necesito bolsa.;No necesito bolsa, gracias.
+1|Konbini: microondas|¿Dónde está el microondas?|電子:でんし レンジ は どこ です か|何:なん いつ が|c||¿Dónde está el horno microondas?;¿Dónde hay un microondas?
+1|Konbini: pagar con tarjeta|Con tarjeta, por favor.|カード で お願い:おねがい します|が を ください|c||Quiero pagar con tarjeta.;Pagaré con tarjeta.;Voy a pagar con tarjeta.
+1|Konbini: pedir dos cosas|Un onigiri y un té, por favor.|おにぎり と お茶:おちゃ を お願い:おねがい します|ください が に|c||Un onigiri y un té, por favor.;Quiero un onigiri y un té, por favor.
+2|Konbini: total|¿Cuánto es en total?|全部:ぜんぶ で いくら です か|何:なん どこ に|c||¿Cuánto es todo?;¿Cuánto cuesta todo junto?;¿Cuánto es todo en total?;¿Cuánto es en total, por favor?
+2|Konbini: baño|¿Puedo usar el baño?|トイレ を 借りて:かりて も いい です か|ください が だめ|c||¿Me deja usar el baño?;¿Puedo usar el servicio?;¿Puedo utilizar el baño?;¿Me deja usar el servicio?
+2|Compras: probarse ropa|¿Puedo probármelo?|試着:しちゃく して も いい です か|ください が だめ|c||¿Me lo puedo probar?;¿Puedo probarme esto?;¿Puedo probarlo?;¿Puedo probármela?
+2|Compras: talla|¿Tiene una talla más grande?|もっと 大きい:おおきい サイズ は ありません か|小さい:ちいさい あります いません|c||¿Hay una talla más grande?;¿Tiene una talla mayor?;¿Tienen una talla más grande?
+1|Compras: precio|Es un poco caro.|ちょっと 高い:たかい です|安い:やすい が か|||Es algo caro.;Es un poquito caro.;Resulta un poco caro.
+2|Compras: descuento|¿Me puede hacer un descuento?|安く:やすく なりません か|高く:たかく ます が|c||¿Hacen descuento?;¿Se puede rebajar?;¿Puede rebajar el precio?;¿Me hace un descuento?;¿Me puede rebajar el precio?
+2|Compras: regalo|Es para regalo.|プレゼント 用:よう です|に を が|||Es para un regalo.;Es un regalo.;Es para regalar.
+2|Compras: solo mirar|Solo estoy mirando.|見て:みて いる だけ です|しか ます が|c||Solo miro.;Solo estoy echando un vistazo.;Solo estoy viendo.;Estoy solo mirando.
+2|Hotel: reserva|Tengo una reserva a nombre de Ana.|アナ の 名前:なまえ で 予約:よやく して います|を が に|c||Reservé a nombre de Ana.;He reservado a nombre de Ana.;Hay una reserva a nombre de Ana.
+1|Hotel: check-out|¿A qué hora es el check-out?|チェックアウト は 何時:なんじ です か|いつ どこ が|c||¿A qué hora es la salida?;¿A qué hora hay que dejar la habitación?;¿A qué hora es el checkout?
+3|Hotel: guardar equipaje|¿Podría guardar mi equipaje?|荷物:にもつ を 預かって:あずかって もらえません か|ください ます を|c||¿Puede guardarme el equipaje?;¿Pueden guardar mi equipaje?;¿Me pueden guardar el equipaje?;¿Me puede guardar el equipaje?
+2|Hotel: wifi|El wifi no funciona.|ワイファイ が つながりません|つながります です を|c||No funciona el wifi.;El wifi no se conecta.;No se conecta el wifi.
+1|Hotel: aire acondicionado|¿Hay aire acondicionado en la habitación?|部屋:へや に エアコン は あります か|います が を|c||¿Tiene aire acondicionado la habitación?;¿La habitación tiene aire acondicionado?;¿Hay aire acondicionado en el cuarto?
+3|Hotel: cambiar de habitación|¿Podrían cambiarme de habitación?|部屋:へや を 変えて:かえて もらえません か|ください ます が|c||¿Me pueden cambiar de habitación?;Quisiera cambiar de habitación.;¿Puede cambiarme de habitación?;¿Me puede cambiar de habitación?
+1|Calle: comisaría|Perdone, ¿dónde está el puesto de policía?|すみません 交番:こうばん は どこ です か|警察:けいさつ が を|c||Disculpe, ¿dónde está la comisaría?;Disculpe, ¿dónde está el puesto de policía?;Perdone, ¿dónde está la comisaría?;¿Dónde está la comisaría?;¿Dónde está el puesto de policía?
+2|Calle: indicaciones|Siga recto y gire a la derecha.|まっすぐ 行って:いって 右:みぎ に 曲がって:まがって ください|左:ひだり ます を|c||Vaya recto y gire a la derecha.;Siga derecho y gire a la derecha.;Siga todo recto y gire a la derecha.;Siga recto y doble a la derecha.;Vaya derecho y doble a la derecha.
+2|Calle: distancia a pie|Está a unos cinco minutos andando.|歩いて:あるいて 五分:ごふん ぐらい です|ごろ だけ が|c||Está a unos cinco minutos a pie.;Está a cinco minutos andando aproximadamente.;Está como a cinco minutos a pie.
+2|Calle: estar perdido|Estoy perdido.|道:みち に 迷いました:まよいました|が を 迷います:まよいます|c||Me he perdido.;Me perdí.;Estoy perdida.;Me he perdido.;Estoy desorientado.;Estoy desorientada.
+1|Salud: dolor|Me duele la cabeza.|頭:あたま が 痛い:いたい です|痛く:いたく を が|||Tengo dolor de cabeza.;Me duele mucho la cabeza.
+1|Salud: fiebre|Tengo fiebre.|熱:ねつ が あります|います を が|c||Estoy con fiebre.;Tengo temperatura.
+2|Salud: náuseas|Tengo náuseas.|吐き気:はきけ が します|あります を が|c||Tengo ganas de vomitar.;Siento náuseas.;Tengo ganas de devolver.
+2|Salud: farmacia|¿Hay alguna farmacia cerca de aquí?|この 近く:ちかく に 薬局:やっきょく は あります か|います が を|c||¿Hay una farmacia por aquí cerca?;¿Hay alguna farmacia cerca?;¿Hay una farmacia cerca de aquí?;¿Hay alguna farmacia por aquí?;¿Hay una farmacia cerca?
+1|Frase hecha: que te mejores|Que te mejores.|お 大事:だいじ に|です は を|c||Que se mejore.;Cuídate.;Cuídese.;Ponte bien.;Mejórate.;Que se mejore pronto.
+1|Trabajo: gracias por el esfuerzo|Gracias por tu trabajo.|お疲れ様:おつかれさま です|でした ます が|c||Gracias por su trabajo.;Buen trabajo.;Gracias por el esfuerzo.;Buen trabajo hoy.;Buen trabajo, gracias.
+2|Trabajo: irse antes|Perdón, me retiro ya.|お先に:おさきに 失礼:しつれい します|いたします です を|c||Disculpen, me voy primero.;Me retiro primero.;Con permiso, me voy primero.;Me voy antes, disculpen.;Perdón, me voy antes.
+1|Trabajo: contar con alguien|Cuento con usted.|よろしく お願い:おねがい します|ください です が|c||Cuento contigo.;Cuento con ustedes.;Quedo a su disposición.;Gracias de antemano.
+1|Trabajo: reunión|Tengo una reunión a las tres.|三時:さんじ から 会議:かいぎ が あります|に を います|c||A las tres tengo una reunión.;Tengo reunión a las tres.;Tengo una reunión desde las tres.
+3|Trabajo: correo|Le enviaré un correo.|メール を お送り:おおくり します|送ります:おくります ください が|c||Le mandaré un correo.;Le enviaré un email.;Le voy a enviar un correo.;Le enviaré un correo electrónico.;Le mandaré un email.;Le enviaré un mensaje.
+2|Trabajo: disculpa por el retraso|Perdón por llegar tarde.|遅れて:おくれて すみません|ありません ました が|c||Disculpe el retraso.;Lo siento por llegar tarde.;Disculpa por llegar tarde.;Perdone el retraso.;Perdón por el retraso.
+2|Trabajo: horas extra|Hoy toca hacer horas extra.|今日:きょう は 残業:ざんぎょう です|が を だ|||Hoy hay que hacer horas extra.;Hoy hay horas extra.;Hoy tengo horas extra.;Hoy hago horas extra.
+2|Amigos: pedir el número|¿Me das tu número de teléfono?|電話:でんわ 番号:ばんごう を 教えて:おしえて ください|もらえません が ます|c||¿Me das tu número?;Dame tu número de teléfono.;¿Me pasas tu teléfono?;¿Me dices tu número de teléfono?;¿Me das su número de teléfono?
+2|Amigos: llamar luego|Te llamo más tarde.|後:あと で 電話:でんわ します|を が ました|||Te llamaré más tarde.;Luego te llamo.;Más tarde te llamo.;Te llamo luego.;Te llamaré luego.
+2|Móvil: sin batería|Me quedé sin batería.|電池:でんち が 切れました:きれました|なくなり が を|c||Se me acabó la batería.;Me he quedado sin batería.;Se acabó la batería.
+1|Móvil: contraseña|¿Cuál es la contraseña del wifi?|ワイファイ の パスワード は 何:なん です か|どこ いつ が|c||¿Cuál es la clave del wifi?;¿Cuál es el código del wifi?;¿Cuál es la contraseña de la wifi?;¿Cuál es la clave de la wifi?
+2|Amigos: quedar|Quedemos mañana a las diez.|明日:あした 十時:じゅうじ に 会いましょう:あいましょう|会います:あいます ませんか が|c||Quedamos mañana a las diez.;Nos vemos mañana a las diez.;Veámonos mañana a las diez.;Vamos a vernos mañana a las diez.
+2|Charla: el calor|Qué calor hace hoy, ¿verdad?|今日:きょう は 本当:ほんとう に 暑い:あつい です ね|暑く:あつく が よ|c||Hoy hace mucho calor, ¿verdad?;Qué calor hace hoy, ¿no?;Hoy hace un calor enorme, ¿verdad?
+1|Frase hecha: cuánto tiempo|Cuánto tiempo sin verte.|お久しぶり:おひさしぶり です ね|でした が よ|c||¡Cuánto tiempo!;Cuánto tiempo sin vernos.;Hace mucho que no nos vemos.;Cuánto tiempo sin verle.
+2|Charla: cómo te va|¿Cómo te va últimamente?|最近:さいきん どう です か|何:なに いつ が|c||¿Cómo has estado últimamente?;¿Cómo estás últimamente?;¿Qué tal últimamente?;¿Cómo le va últimamente?
+2|Charla: alegría de verte|Me alegro de verte.|会えて:あえて 嬉しい:うれしい です|会った:あった が を|||Me alegra verte.;Estoy feliz de verte.;Me alegra verle.;Qué alegría verte.;Me alegro de verle.;Me alegro de verlos.
+2|Slang: muy rico|Este ramen está buenísimo.|この ラーメン めっちゃ うまい|おいしい です すごく|n||Este ramen está riquísimo.;Este ramen está muy bueno.;Este ramen está genial.;Qué rico está este ramen.|この ラーメン すごく 美味しい:おいしい です
+2|Slang: en serio|¿En serio?|マジ で|が に は|cn||¿De verdad?;¿De veras?;¿Va en serio?;¿En serio?|本当:ほんとう です か;ほんと に
+2|Slang: agotado|Estoy hecho polvo.|ヘトヘト だ|です が を|cn||Estoy agotado.;Estoy muerto de cansancio.;Estoy destrozado.;Estoy hecha polvo.;Estoy agotada.;Estoy reventado.|ヘトヘト です
+2|Slang: guay|Es muy guay.|めっちゃ かっこいい|すごく です が|n||Es genial.;Está genial.;Qué guay.;Qué chulo.;Es muy chulo.|めっちゃ かっこいい です
+2|Slang: pereza|Qué pereza.|面倒:めんどう くさい|です が ない|n||Me da pereza.;Qué lata.;Qué fastidio.;Qué rollo.;Es un rollo.;Me da flojera.
+2|Slang: susto|¡Qué susto!|びっくり した|です が ます|cn||Qué susto me he llevado.;Me has asustado.;Me llevé un susto.;¡Qué sorpresa!|びっくり しました
+2|Slang: hambre|Me muero de hambre.|お腹:おなか ぺこぺこ だ|です が を|cn||Tengo un hambre canina.;Estoy muerto de hambre.;Estoy famélico.;Estoy muerta de hambre.|お腹:おなか ぺこぺこ です
+2|Slang: envidia|Qué envidia.|いい なあ|です が ね|n||Qué suerte.;Qué bien.;Me das envidia.;Qué envidia me das.;Tengo envidia.
+2|Slang: no puedo más|Ya no puedo más.|もう 無理:むり|だめ です が|cn||No puedo más.;Ya no aguanto más.;No aguanto más.;Es demasiado.|もう 無理:むり です
+2|Slang: me da igual|Me da igual.|どっち でも いい|です が は|cn||Me es igual.;Me da lo mismo.;Cualquiera de los dos.;Lo que sea.|どちら でも いい です
+2|Slang: qué gracioso|Eso es muy gracioso.|それ は ウケる ね|が で よ|n||Eso me da risa.;Eso me hace mucha gracia.;Qué gracioso es eso.;Eso es graciosísimo.
+2|Slang: ropa hortera|Esta ropa es hortera.|この 服:ふく は ダサい|です が よ|cn||Esta ropa es cutre.;Esta ropa es anticuada.;Esta ropa es de mal gusto.;Esta ropa es poco moderna.|この 服:ふく は ダサい です
+2|Slang: insoportable|Ese tío es insoportable.|あの 人:ひと は うざい|です が よ|cn||Ese tipo es insoportable.;Esa persona es insoportable.;Ese tío es un pesado.;Esa persona es pesada.;Ese tipo es un pesado.|あの 人:ひと は うざい です
+2|Slang: sueño|Me muero de sueño.|めっちゃ 眠い:ねむい|すごく です を|cn||Tengo muchísimo sueño.;Estoy muerto de sueño.;Me caigo de sueño.;Estoy muerta de sueño.|めっちゃ 眠い:ねむい です
+2|Slang: bien hecho|¡Bien hecho!|よく やった ね|です ます が|cn||¡Buen trabajo!;¡Muy bien!;¡Lo hiciste muy bien!;Bien hecho.|よく やりました ね
+2|Slang: ánimo|¡Ánimo!|頑張って:がんばって ね|ください が よ|cn||¡Mucho ánimo!;¡Tú puedes!;¡Ánimo, tú puedes!;¡Suerte!;¡Fuerza!|頑張って:がんばって ください
+3|Proverbio: el error|Hasta el mono se cae del árbol.|猿:さる も 木:き から 落ちる:おちる|が に 落ちた:おちた|n||Hasta los monos se caen de los árboles.;Hasta el mejor se equivoca.;Nadie es perfecto.;Hasta el más experto se equivoca.
+3|Proverbio: perseverar|Siete caídas, ocho levantadas.|七転び:ななころび 八起き:やおき|三転び:さんころび 九起き:ここのおき が|n||Se cae siete veces y se levanta ocho.;Caer siete veces y levantarse ocho.;Nunca te rindas.
+3|Proverbio: prisa|Si tienes prisa, da un rodeo.|急がば:いそがば 回れ:まわれ|急げ:いそげ 走れ:はしれ が|n||Vísteme despacio que tengo prisa.;Si tienes prisa, ve despacio.;Más vale ir despacio.;Con prisa, da un rodeo.
+3|Proverbio: paciencia|Tres años sobre una piedra.|石:いし の 上:うえ に も 三年:さんねん|二年:にねん 三日:みっか が|n||La perseverancia da frutos.;Con paciencia se logra.;Hay que perseverar.;Paciencia y perseverancia.
+3|Proverbio: dos pájaros|Matar dos pájaros de un tiro.|一石:いっせき 二鳥:にちょう|三鳥:さんちょう 二石:にせき が|n||Dos pájaros de un tiro.;Matar dos pájaros con una piedra.;Un tiro, dos pájaros.
+3|Proverbio: lo práctico|Más vale dango que flores.|花:はな より 団子:だんご|が も を|n||Mejor la comida que las flores.;Prefiero comer que mirar flores.;Más vale lo práctico que lo bonito.;Las flores no se comen.
+3|Proverbio: moverse|El perro que anda se topa con un palo.|犬:いぬ も 歩けば:あるけば 棒:ぼう に 当たる:あたる|が を 歩いて:あるいて|n||Quien mucho camina algo encuentra.;Moviéndose se encuentra la suerte.;El que se mueve encuentra suerte.;Si caminas encuentras algo.
+3|Proverbio: gustos|Cada persona es un mundo.|十人:じゅうにん 十色:といろ|百人:ひゃくにん 一色:ひといろ が|n||Diez personas, diez colores.;Cada cabeza es un mundo.;Cada uno es diferente.;Para gustos, los colores.;Cada persona es diferente.
+3|Proverbio: telepatía|Entenderse sin palabras.|以心:いしん 伝心:でんしん|以口:いこう が を|n||Comunicarse de corazón a corazón.;Comunicación de corazón a corazón.;Entenderse de corazón a corazón.
+3|Proverbio: hacerlo|Es más fácil de lo que parece.|案ずる:あんずる より 産む:うむ が 易し:やすし|を に 難し:むずかし|n||Más vale hacerlo que preocuparse.;Preocuparse es peor que hacerlo.;Nunca es tan difícil como parece.;Es más fácil hacerlo que preocuparse.
+3|Proverbio: reír|A quien ríe, la fortuna llega.|笑う:わらう 門:かど に は 福:ふく 来る:きたる|が を 去る:さる|n||La felicidad llega a quien ríe.;La risa trae buena suerte.;A la casa donde se ríe llega la felicidad.
+3|Proverbio: constancia|La constancia es poder.|継続:けいぞく は 力:ちから なり|が を です|n||La perseverancia es fuerza.;La constancia es fuerza.;La constancia es la clave.;Persistir es poder.
+3|Proverbio: fracaso|El fracaso es la base del éxito.|失敗:しっぱい は 成功:せいこう の もと|が を です|n||Del error se aprende.;Los errores llevan al éxito.;El fracaso es la madre del éxito.;De los errores nace el éxito.
+3|Proverbio: práctica|Antes que aprender, acostúmbrate.|習う:ならう より 慣れよ:なれよ|が を に|n||La práctica hace al maestro.;Más vale practicar que estudiar.;Practicar es mejor que aprender.
+3|Proverbio: ver para creer|Ver una vez vale más que oír cien.|百聞:ひゃくぶん は 一見:いっけん に 如かず:しかず|が を 千聞:せんぶん|n||Más vale ver una vez que oír cien veces.;Una imagen vale más que mil palabras.;Ver es creer.;Más vale ver que oír cien veces.
+3|Proverbio: aprovechar|Golpea el hierro mientras está caliente.|鉄:てつ は 熱い:あつい うち に 打て:うて|が を 冷たい:つめたい|n||Hay que batir el hierro mientras está caliente.;Al hierro caliente, batir de repente.;Aprovecha el momento.;Hay que aprovechar la oportunidad.
+3|Proverbio: lo cercano|Bajo el faro está oscuro.|灯台:とうだい 下:もと 暗し:くらし|が を 明るし:あかるし|n||Lo más cercano es lo que menos se ve.;Está bajo nuestras narices.;Lo obvio pasa desapercibido.;Debajo de la lámpara es oscuro.
+3|Proverbio: la boca|La boca es el origen de las desgracias.|口:くち は 災い:わざわい の 元:もと|が を 福:ふく|n||Por la boca muere el pez.;Hablar de más trae problemas.;Lo que se dice puede traer problemas.;Más vale callar que hablar de más.
+3|Proverbio: poco a poco|Hasta el polvo, si se acumula, se hace montaña.|塵:ちり も 積もれば:つもれば 山:やま と なる|が に ならない|n||Grano a grano se hace el montón.;Poco a poco se llega lejos.;Los pequeños esfuerzos suman.;De grano en grano se llena el granero.
+3|Proverbio: de tal palo|Hijo de rana, rana.|蛙:かえる の 子:こ は 蛙:かえる|が を 鳥:とり|n||De tal palo, tal astilla.;Hijo de rana es rana.;De tal padre, tal hijo.;Los hijos se parecen a sus padres.
+3|Proverbio: dos liebres|Quien persigue dos liebres no atrapa ninguna.|二兎:にと を 追う:おう 者:もの は 一兎:いっと も 得ず:えず|が に 三兎:さんと|n||Quien mucho abarca poco aprieta.;El que persigue dos conejos no consigue ninguno.;Quien corre tras dos liebres no atrapa ninguna.
+3|Proverbio: acostumbrarse|Donde se vive, se vuelve capital.|住めば:すめば 都:みやこ|が を 村:むら|n||Cualquier lugar es bueno cuando te acostumbras.;Todo lugar es bueno si vives en él.;Uno se acostumbra a vivir en cualquier sitio.
+3|Proverbio: costumbres|Donde fueres, haz lo que vieres.|郷:ごう に 入って:はいって は 郷:ごう に 従え:したがえ|が を 出て:でて|n||En Roma, como los romanos.;Allá donde fueres, haz lo que vieres.;Adáptate a las costumbres del lugar.
+3|Proverbio: héroe anónimo|El que sostiene bajo el porche.|縁の下:えんのした の 力持ち:ちからもち|が を 上:うえ|n||El héroe anónimo.;Quien trabaja en la sombra.;El que trabaja entre bastidores.;El que sostiene todo en silencio.
+3|Proverbio: sordo|Rezarle a la oreja de un caballo.|馬:うま の 耳:みみ に 念仏:ねんぶつ|が を 犬:いぬ|n||Predicar en el desierto.;Hablarle a una pared.;Es como hablarle a una pared.;Echar margaritas a los cerdos.
+3|Proverbio: principiante|No olvides el espíritu del principiante.|初心:しょしん 忘るべからず:わするべからず|が を 思う:おもう|n||No olvides tus inicios.;Nunca pierdas el espíritu de principiante.;Recuerda tu primera intención.
+3|Proverbio: las prisas|Con prisa se estropean las cosas.|急いては:せいては 事:こと を 仕損じる:しそんじる|が に 仕上げる:しあげる|n||Las prisas no son buenas.;Con prisas no se hace nada bien.;Las cosas con prisa salen mal.;La prisa es mala consejera.
+3|Proverbio: prevenir|Quien se prepara no tiene preocupaciones.|備え:そなえ あれば 憂い:うれい なし|が を 無し:なし|n||Más vale prevenir que curar.;Estar preparado evita preocupaciones.;Hombre prevenido vale por dos.
+3|Proverbio: perder|Perder es ganar.|負ける:まける が 勝ち:かち|を に 勝つ:かつ|n||A veces perder es ganar.;Ceder es vencer.;Perder también es ganar.;Quien cede, gana.
+3|Proverbio: medicina amarga|La buena medicina es amarga.|良薬:りょうやく は 口:くち に 苦し:にがし|が を 甘し:あまし|n||La buena medicina sabe amarga.;Lo bueno a veces cuesta.;La verdad duele.;Lo que es bueno puede ser amargo.
+3|Proverbio: final feliz|Si el final es bueno, todo es bueno.|終わり:おわり よければ すべて よし|が を 悪ければ:わるければ|n||Bien está lo que bien acaba.;Todo está bien si termina bien.;Todo bien si acaba bien.;Si acaba bien, todo está bien.
+3|Proverbio: el tiempo|El tiempo es oro.|時:とき は 金:かね なり|が を です|n||El tiempo es dinero.;El tiempo vale oro.;El tiempo es valioso.
+3|Proverbio: ignorancia|Lo que no se sabe es Buda.|知らぬ:しらぬ が 仏:ほとけ|を に 神:かみ|n||Ojos que no ven, corazón que no siente.;Es mejor no saber.;A veces es mejor no saberlo.;Lo que no sabes no te hace daño.;La ignorancia es felicidad.
+2|Frase hecha: volver a casa|Ya llegué, ¿qué hay de cena hoy?|ただいま 今日:きょう の 晩ご飯:ばんごはん は 何:なん です か|いつ どこ が|c||Ya estoy en casa, ¿qué hay para cenar hoy?;Estoy de vuelta, ¿qué hay de cena hoy?;Ya volví, ¿qué hay de cena hoy?;Ya llegué, ¿qué hay para cenar hoy?
+1|Frase hecha: al salir|Me voy.|行って:いって きます|います ました ください|c||Hasta luego.;Ya me voy.;Me voy ya.;Nos vemos luego.
+1|Frase hecha: despedir a quien sale|Que te vaya bien.|行って:いって らっしゃい|きます ください です|c||Que vaya bien.;Hasta luego.;Que te vaya bonito.;Cuídate.
+1|Frase hecha: bienvenido a casa|Bienvenido a casa.|おかえり なさい|ただいま です が|c||Bienvenida a casa.;Ya has vuelto.;Bienvenido de vuelta.;Bienvenida de vuelta.;Qué bueno que volviste.
+1|Frase hecha: en la tienda|Bienvenido.|いらっしゃい ませ|ます です が|c||Bienvenida.;Bienvenidos.;Adelante.;Pase, por favor.
+1|Frase hecha: gracias por venir|Muchas gracias por venir.|ありがとう ございました|ます です が|c||Gracias por su visita.;Muchas gracias por su visita.;Gracias por venir.;Muchas gracias.
+1|Frase hecha: de nada|De nada.|どう いたし まして|ありがとう ございます が|c||No hay de qué.;No hay problema.;Con mucho gusto.
+2|Frase hecha: disculpa|Lo siento muchísimo.|本当:ほんとう に 申し訳:もうしわけ ありません|すみません です が|c||Lo siento mucho.;Perdóneme.;Le pido mil disculpas.;Mil perdones.;Disculpe, de verdad.
+1|Frase hecha: al entrar|Con permiso.|失礼:しつれい します|いたします です を|c||Permiso.;Disculpe.;Buenas, con permiso.
+2|Charla: primera vez|Es la primera vez que vengo a Japón.|日本:にほん に 来る:くる の は 初めて:はじめて です|が を だ|||Es mi primera vez en Japón.;Es la primera vez que visito Japón.;Esta es mi primera vez en Japón.;Vengo a Japón por primera vez.
+1|Charla: Japón|Me encanta Japón.|日本:にほん が 大好き:だいすき です|を に が|||Me gusta mucho Japón.;Adoro Japón.;Amo Japón.;Japón me encanta.
+2|Charla: nivel de japonés|No hablo muy bien japonés.|日本語:にほんご は あまり 上手:じょうず じゃ ありません|下手:へた です が|c||No hablo bien japonés.;No soy bueno hablando japonés.;No hablo japonés muy bien.;Mi japonés no es muy bueno.
+2|Charla: repetir|Repítalo, por favor.|もう 一度:いちど 言って:いって ください|もらえません ます が|c||¿Puede repetirlo?;Dígalo otra vez, por favor.;Otra vez, por favor.;¿Puede decirlo otra vez, por favor?;Repítelo, por favor.;Dilo otra vez, por favor.
+2|Charla: cómo se dice|¿Cómo se dice gracias en japonés?|日本語:にほんご で ありがとう は 何:なん と 言います:いいます か|どう いつ が|c||¿Cómo se dice «gracias» en japonés?;¿Cómo se dice gracias en japonés?
+2|Frase hecha: despedirse|Ya me tengo que ir.|そろそろ 失礼:しつれい します|いたします ました を|c||Ya me voy.;Tengo que irme ya.;Ya me retiro.;Me tengo que ir.
+2|Frase hecha: al servir|Que lo disfrute.|ごゆっくり どうぞ|ください です を|c||Que lo disfruten.;Tómese su tiempo.;Disfrute con calma.;Relájese.;Siéntase como en casa.
+2|Frase hecha: no importa|No se preocupe.|気:き に しないで ください|して ない を|c||No te preocupes.;No importa.;No pasa nada.;No se preocupe por eso.;No te preocupes por eso.;Tranquilo.
 </script>
 <script>
 const $=id=>document.getElementById(id);
@@ -1453,7 +1589,7 @@ const P=s=>(s||"").split(" ").filter(Boolean).map(x=>{const[t,r]=x.split(":");re
 const PERM=a=>a.length<2?[a]:a.flatMap((x,i)=>PERM([...a.slice(0,i),...a.slice(i+1)]).map(p=>[x,...p]));
 const expJ=s=>{const ch=s.split("/").map(P).filter(c=>c.length),l=ch.pop()||[];return PERM(ch).map(p=>[...p.flat(),...l])};
 const plain=v=>{const n=v.length,l=n&&v[n-1].t,p=n>1&&v[n-2].t;if(l!="です"||!p||p=="か"||p=="ない")return null;const w=v.slice(0,-1);return/(い|かった)$/.test(p)&&!/(嫌い|綺麗|きれい|大好き)$/.test(p)?w:[...w,{t:"だ",r:""}]};
-const words=s=>s.replace(/[¿?¡!.,;:]/g,"").split(/\s+/).filter(Boolean);
+const words=s=>s.replace(/[¿?¡!.,;:«»"“”‘’()…—–]/g,"").split(/\s+/).filter(Boolean);
 const PRON=new Set(["yo","tú","él","ella","nosotros","nosotras","ellos","ellas","usted","ustedes"]),TIMEW=new Set(["ayer","hoy","mañana","ahora"]),PROPER=/^(Tokio|Kioto|Osaka|Japón|Tanaka|Ana|Santiago|Asakusa|Shinjuku)$/;
 const POL=/(ます|ません|ました|です|でした|ください|ございます|ましょう|ありません|いけません|なりません|いたします|おります)$/;
 const NOMOVE=new Set(["que","cuando","si","como","porque","aunque","mientras"]);
@@ -1464,8 +1600,8 @@ const SENT=$("sents").textContent.split("\n").filter(l=>l.trim()&&l[0]!="#").map
 let J=expJ(jp),reg=reg0;const jfree=J.length>1,alts=[];
 if(!reg){const pl=J.map(plain).filter(Boolean);if(pl.length){J=[...J,...pl];reg="cn";alts.push(pl[0])}else reg=J[0].some(b=>POL.test(b.t))?"c":"n"}
 sp(jpa).forEach(a=>{const e=expJ(a);J.push(...e);alts.push(e[0])});
-let E=[words(es)];if(esv)E.push(...PERM(esv.split("/").map(words).filter(a=>a.length)).map(p=>p.flat()));sp(esa).forEach(a=>E.push(words(a)));
-E=[...E,...E.flatMap(tmove)];E=[...E,...E.filter(v=>v.length>2&&PRON.has(v[0].toLowerCase())).map(v=>v.slice(1))];
+let E=[words(es)];if(esv)E.push(...PERM(esv.split("/").map(words).filter(a=>a.length)).map(p=>p.flat()));
+E=[...E,...(/[,¿]/.test(es)?[]:E.flatMap(tmove))];sp(esa).forEach(a=>E.push(words(a)));E=[...E,...E.filter(v=>v.length>2&&PRON.has(v[0].toLowerCase())).map(v=>v.slice(1))];
 const T=w=>({t:PROPER.test(w)?w:w.toLowerCase(),r:""});
 return{lv:+lv,tag,es,reg,jp:J[0],J:uniq(J),sp:words(es),ES:uniq(E.map(v=>v.map(T))),ds:P(ds),alts:alts.map(v=>v.map(b=>b.t).join("")+"。"),ealts:sp(esa),jfree,efree:!!esv}});
 const PR={"は":"wa","では":"dewa","には":"niwa","とは":"towa","へ":"e"};
@@ -1518,21 +1654,30 @@ $("app").innerHTML=`<div class="panel"><div class="em" style="--cc:#2a5d8f">🧱
 const VOX={ja:"ja-JP",es:"es-ES"};
 function hasVoice(l){try{const v=speechSynthesis.getVoices();return!v.length||v.some(x=>x.lang.toLowerCase().startsWith(l))}catch(e){return false}}
 function sayL(t,l,slow){try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t),v=speechSynthesis.getVoices().filter(x=>x.lang.toLowerCase().startsWith(l));u.lang=VOX[l];const p=v.find(x=>x.lang.toLowerCase()==VOX[l].toLowerCase())||v[0];if(p)u.voice=p;u.rate=slow?.6:.9;speechSynthesis.speak(u)}catch(e){}}
-const ns=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
-const sa=s=>s.replace(/^(el|la|los|las|un|una)\s+/,"");
-const nk=s=>s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96)).replace(/[\s。、，．,.!?！？「」・]/g,"");
-const nr=s=>s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]/g,"").replace(/wo/g,"o").replace(/shi/g,"si").replace(/chi/g,"ti").replace(/tsu/g,"tu").replace(/ji/g,"zi").replace(/sh([aou])/g,"sy$1").replace(/ch([aou])/g,"ty$1").replace(/j([aou])/g,"zy$1").replace(/fu/g,"hu").replace(/ou|aa|ii|uu|ee|oo/g,m=>m[0]).replace(/nn/g,"n");
+const NUMW="cero un dos tres cuatro cinco seis siete ocho nueve diez once doce trece catorce quince dieciseis diecisiete dieciocho diecinueve veinte".split(" ");
+const GN=new Map();
+"amiga:amigo hermana:hermano abuela:abuelo tia:tio prima:primo novia:novio nina:nino chica:chico muchacha:muchacho senora:senor japonesa:japones espanola:espanol profesora:profesor doctora:doctor cocinera:cocinero camarera:camarero enfermera:enfermero medica:medico vecina:vecino companera:companero bailarina:bailarin escritora:escritor abogada:abogado jefa:jefe duena:dueno vendedora:vendedor dependienta:dependiente gata:gato perra:perro hija:hijo nieta:nieto sobrina:sobrino cansada:cansado contenta:contento hambrienta:hambriento sedienta:sediento enferma:enfermo sola:solo nueva:nuevo vieja:viejo alta:alto baja:bajo guapa:guapo lista:listo buena:bueno mala:malo cara:caro barata:barato rica:rico bonita:bonito pequena:pequeno blanca:blanco negra:negro roja:rojo amarilla:amarillo ocupada:ocupado preocupada:preocupado enfadada:enfadado enojada:enojado nerviosa:nervioso tranquila:tranquilo famosa:famoso deliciosa:delicioso divertida:divertido aburrida:aburrido cerrada:cerrado abierta:abierto sorprendida:sorprendido asustada:asustado avergonzada:avergonzado emocionada:emocionado agradecida:agradecido perdida:perdido mareada:mareado resfriada:resfriado dormida:dormido despierta:despierto llena:lleno vacia:vacio segura:seguro curiosa:curioso simpatica:simpatico timida:timido seria:serio rapida:rapido lenta:lento ligera:ligero pesada:pesado limpia:limpio sucia:sucio mojada:mojado seca:seco fria:frio salada:salado fresca:fresco madura:maduro cruda:crudo cocida:cocido frita:frito tostada:tostado congelada:congelado hermosa:hermoso fea:feo loca:loco rubia:rubio morena:moreno gorda:gordo delgada:delgado viva:vivo muerta:muerto casada:casado soltera:soltero estresada:estresado agotada:agotado destrozada:destrozado reventada:reventado hecha:hecho famelica:famelico molesta:molesto incomoda:incomodo comoda:comodo interesada:interesado encantada:encantado preparada:preparado terminada:terminado esta:este esa:ese aquella:aquel la:el las:los una:un unas:unos uno:un".split(" ").forEach(p=>{const[f,m]=p.split(":");GN.set(f,m);if(!/^(la|las|una|unas|uno|esta|esa|aquella)$/.test(f))GN.set(f+"s",/[aeiou]$/.test(m)?m+"s":m+"es")});
+GN.set("estas","estos");GN.set("esas","esos");
+const ns0=s=>s.normalize("NFKC").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+const ns=s=>ns0(s).replace(/\b\d+\b/g,m=>NUMW[+m]||m).split(" ").filter(Boolean).map(w=>GN.get(w)||w).join(" ");
+const sa=s=>s.replace(/^(el|los|un|unos)\s+/,"");
+const nk=s=>s.normalize("NFKC").replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-96)).replace(/[^\p{L}\p{N}]/gu,"");
+const nr=s=>s.normalize("NFKC").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z]/g,"").replace(/wo/g,"o").replace(/shi/g,"si").replace(/chi/g,"ti").replace(/tsu/g,"tu").replace(/ji/g,"zi").replace(/jy/g,"zy").replace(/sh([aou])/g,"sy$1").replace(/ch([aou])/g,"ty$1").replace(/j([aou])/g,"zy$1").replace(/fu/g,"hu").replace(/ou|aa|ii|uu|ee|oo/g,m=>m[0]).replace(/nn/g,"n");
+function romC(v){let c=[""];v.forEach(b=>{const fs=[...new Set([rb(b),ro(b.r||b.t)])];if(fs.length>1&&c.length*fs.length<=64)c=c.flatMap(x=>fs.map(f=>x+f));else c=c.map(x=>x+fs[0])});return[...new Set(c.map(nr))]}
+function matchJ(u,T){const memo=new Map(),rec=(i,p)=>{if(i==T.length)return p==u.length;const k=i*4096+p;if(memo.has(k))return memo.get(k);let r=false;for(const f of T[i])if(f&&u.startsWith(f,p)&&rec(i+1,p+f.length)){r=true;break}memo.set(k,r);return r};return rec(0,0)}
 const PFX=/^(prefectura|región|region|isla|islas|zona|monte|lago|castillo|río|rio|santuario|mar|océano|oceano|presa|dunas|acuario|jardín|jardin|camino|estación|estacion|palacio|torre|cúpula|cupula|gran buda)\s+(de\s+(la\s+|los\s+|las\s+)?)?/i;
 function mkD(){const lang=C.dal=="both"?rnd(["ja","es"]):C.dal,ans=C.dtask=="copy"?lang:lang=="ja"?"es":"ja";if(!G.q.length)G.q=shuf(G.p.slice());let x=G.q.pop();if(x===G.last&&G.q.length){const y=G.q.pop();G.q.push(x);x=y}G.last=x;
-const w=C.dcont=="w",it={x,w,lang,ans,es:new Set(),ja:new Set(),rm:new Set()};
-if(w){it.say=lang=="ja"?x.h:x.m;[x.m,x.m.replace(PFX,"")].forEach(m=>it.es.add(sa(ns(m))));[x.k,x.h,x.ki?x.e:""].filter(Boolean).forEach(f=>it.ja.add(nk(f)));it.rm.add(nr(ro(x.h)))}
-else{it.say=lang=="ja"?x.jp.map(b=>b.r||b.t).join(""):x.es;x.ES.forEach(v=>it.es.add(sa(ns(v.map(b=>b.t).join(" ")))));x.J.forEach(v=>{it.ja.add(nk(v.map(b=>b.t).join("")));it.ja.add(nk(v.map(b=>b.r||b.t).join("")));it.rm.add(nr(v.map(rb).join("")));it.rm.add(nr(v.map(b=>ro(b.r||b.t)).join("")))})}
+const w=C.dcont=="w",it={x,w,lang,ans,es:new Set(),esN:new Set(),jv:[],rm:new Set()},addE=t=>{const n=sa(ns(t));if(n){it.es.add(n);it.esN.add(ns0(t).replace(/ /g,""))}};
+if(w){it.say=lang=="ja"?x.h:x.m;[x.m,x.m.replace(PFX,"")].forEach(addE);it.jv.push([[...new Set([x.k,x.h,x.ki?x.e:""].filter(Boolean).map(nk))]]);it.rm.add(nr(ro(x.h)))}
+else{it.say=lang=="ja"?x.jp.map(b=>b.r||b.t).join(""):x.es;x.ES.forEach(v=>addE(v.map(b=>b.t).join(" ")));x.J.forEach(v=>{it.jv.push(v.map(b=>[...new Set([nk(b.t),nk(b.r||b.t)])]));romC(v).forEach(r=>it.rm.add(r))})}
 return it}
-function okD(inp,it){const raw=inp.trim();if(!raw)return false;if(it.ans=="es")return it.es.has(sa(ns(raw)));return/[\u3040-\u30ff\u4e00-\u9fff]/.test(raw)?it.ja.has(nk(raw)):it.rm.has(nr(raw))}
+function okD(inp,it){const raw=inp.normalize("NFKC").trim();if(!raw)return false;if(it.ans=="es"){const u=sa(ns(raw));return!!u&&(it.es.has(u)||it.esN.has(ns0(raw).replace(/ /g,"")))}
+if(/[\u3040-\u30ff\u4e00-\u9fff]/.test(raw)){const u=nk(raw);return!!u&&it.jv.some(v=>matchJ(u,v))}
+const r=nr(raw);return!!r&&it.rm.has(r)}
 function startDi(){const w=C.dcont=="w",p=w?ALL.filter(c=>C.cats.includes(c.c)):SENT.filter(s=>!C.lvl||s.lv==C.lvl);G={di:1,c:1,p,q:[],n:0,total:C.drule=="clasico"?Math.min(10,p.length):999,lives:3,score:0,st:0,ms:0,ok:0,miss:[],busy:true};nextD()}
 function nextD(){if(!G)return;const it=G.it=mkD();G.att=0;G.hints=0;G.busy=false;const x=it.x,fl=it.lang=="ja"?"🇯🇵":"🇪🇸",fa=it.ans=="ja"?"🇯🇵":"🇪🇸";
 const info=C.drule=="clasico"?`${G.n+1} / ${G.total}`:hearts(G.lives),ph=it.ans=="ja"?"Escribe en kana, kanji o romaji":"Escribe en español";
-$("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div><span class="tag">${it.w?"🃏 Palabra":"💬 Frase"}</span><div class="lb">ESCUCHA ${fl}</div><div class="row"><button class="sp big" data-a="dsay" title="Escuchar">🔊</button><button class="sp" data-a="dslow" title="Más lento">🐢</button></div>${it.w&&C.dicon?`<div class="em big" style="--cc:${CT[x.c][1]}">${eh(x,"big")}</div>`:""}<div class="cnt">${C.dtask=="copy"?"✍️ Escribe lo que oyes":"🔁 Traduce lo que oyes"} ${fa}</div><input id="di" class="di" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${ph}"><div class="msg" id="msg"></div><div class="acts" id="fa"><button class="act" data-a="dchk">Comprobar ✓</button><button class="f" data-a="dhint">💡 Pista</button></div><div class="acts"><button class="act alt" id="fn" data-a="dnx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;
+$("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div><span class="tag">${it.w?"🃏 Palabra":"💬 Frase"}</span><div class="lb">ESCUCHA ${fl}</div><div class="row"><button class="sp big" data-a="dsay" title="Escuchar">🔊</button><button class="sp" data-a="dslow" title="Más lento">🐢</button></div>${it.w&&C.dicon?`<div class="em big" style="--cc:${CT[x.c][1]}">${eh(x,"big")}</div>`:""}<div class="cnt">${C.dtask=="copy"?"✍️ Escribe lo que oyes":"🔁 Traduce lo que oyes"} ${fa}</div><textarea id="di" class="di" rows="${it.w?1:2}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${ph}"></textarea><div class="msg" id="msg"></div><div class="acts" id="fa"><button class="act" data-a="dchk">Comprobar ✓</button><button class="f" data-a="dhint">💡 Pista</button></div><div class="acts"><button class="act alt" id="fn" data-a="dnx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;
 const i=$("di");if(i&&i.focus)i.focus();sayL(it.say,it.lang,C.dslow)}
 function chkD(){if(!G||G.busy||!G.it)return;const v=$("di").value;if(!v.trim())return;if(okD(v,G.it))return finD(true);G.att++;if(G.att>=2)return finD(false);$("msg").innerHTML="🤔 Casi… escucha otra vez e inténtalo de nuevo. <small>(un intento más)</small>";$("di").select()}
 function hintD(){if(!G||G.busy||!G.it)return;const it=G.it,x=it.x;G.hints++;const n=G.hints*2;let t;
@@ -1656,6 +1801,7 @@ else if(a=="nx")nextQ();
 else if(a=="say")say(v);
 else if(a=="flip")flip(+v)});
 $("sun").onclick=()=>{const dk=document.documentElement.dataset.theme?document.documentElement.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;S.theme=dk?"light":"dark";theme();save()};
+document.addEventListener("input",e=>{const t=e.target;if(t&&t.id=="di"){t.style.height="auto";const h=Math.min(t.scrollHeight+2,Math.round(innerHeight*.5));t.style.height=h+"px";t.style.overflowY=t.scrollHeight+2>h?"auto":"hidden"}});
 document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target&&e.target.id=="di"){e.preventDefault();chkD()}});
 home();
 </script></body></html>
