@@ -85,6 +85,13 @@ button{font:inherit;color:inherit;cursor:pointer}
 #gh{opacity:.22;pointer-events:none}#gh path,#pf path{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}#pf{pointer-events:none}#pf path{stroke:var(--blue);opacity:.85}
 #an{pointer-events:none}#an path{fill:none;stroke:var(--red);stroke-width:4;stroke-linecap:round;stroke-linejoin:round}#an text{font:700 7px sans-serif;fill:var(--blue)}
 .tzbig{font-size:5.4rem;line-height:1.1;color:var(--red);margin:2px 0}#tzc{margin:6px 0 10px}#tzc .f{padding:5px 10px;font-size:.85rem}#tzfb{min-height:2.8em;font-size:.92rem;color:var(--mut);margin:4px 0}#tzfb.ok{color:var(--ok);font-weight:700}#tzfb.bad{color:var(--bad)}
+.bl{display:inline-block;min-width:1.9em;border-bottom:3px solid var(--red);margin:0 3px;text-align:center}
+mark{background:color-mix(in srgb,var(--ok) 28%,transparent);color:inherit;padding:0 5px;border-radius:6px;font-weight:700}mark.n{background:color-mix(in srgb,var(--blue) 25%,transparent)}
+.ptS{font-size:1.7rem;line-height:1.7;margin:6px 0}.ptE{font-size:1.2rem;line-height:1.6;margin:6px 0}
+.pin{width:6em;padding:8px;font:inherit;font-size:1.5rem;text-align:center;border:1.5px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);margin:6px}.pin:focus{outline:none;border-color:var(--red)}.pin.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 20%,var(--bg))}.pin.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 20%,var(--bg))}
+.pto .o{font-size:1.5rem}.o.sel{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 18%,var(--bg))}
+.ptx{text-align:left;background:var(--bg);border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:.9rem;font-weight:400}.ptx small{color:var(--mut)}
+.gl{text-align:left;max-height:62vh;overflow:auto;margin:10px 0}.gp{margin:10px 0 16px}.gh{font-size:1.7rem;color:var(--red);border-bottom:2px solid var(--line);margin-bottom:6px}.gu{padding:8px 4px;border-bottom:1px solid var(--line);font-size:.92rem}.gu .ptE,.gu .jp{margin:3px 0;font-size:1rem}
 [hidden]{display:none!important}
 </style></head><body>
 <header><div class="sun" id="sun" title="Tema claro / oscuro">遊</div><h1>遊び · MINIJUEGOS</h1><p>Aprende japonés jugando</p><div id="st" class="stats"></div></header>
@@ -1105,6 +1112,152 @@ button{font:inherit;color:inherit;cursor:pointer}
 天橋立|-|あまのはしだて|Amanohashidate|lg
 </script>
 <!-- ═══ BANCO DE FRASES · nivel|gramática|español|japonés|trampas|registro|español en bloques libres|español alternativo|japonés alternativo ═══ -->
+<!-- ═══ EJERCICIOS DE PARTÍCULAS: nivel|uso JP|uso ES|frase JP|resp. JP|frase ES|resp. ES|trampas JP|trampas ES ═══ -->
+<script type="text/plain" id="parts">
+# nivel|uso JP|uso ES|frase JP ([] = hueco)|respuestas JP (;)|frase ES ([] = hueco)|respuestas ES (;)|trampas JP|trampas ES
+1|wa_topic|-|私:わたし [] 学生:がくせい です|は|-|-|を に で
+1|wa_topic|-|これ [] 私:わたし の 本:ほん です|は|-|-|を に で
+1|wa_topic|-|田中:たなか さん [] 先生:せんせい です|は|-|-|を に で
+1|wa_topic|-|今日:きょう [] 暑い:あつい です|は|-|-|を に で
+1|wa_topic|-|東京:とうきょう [] 日本:にほん の 首都:しゅと です|は|-|-|を に で
+2|wa_contrast|-|お茶:おちゃ は 飲みます:のみます が コーヒー [] 飲みません:のみません|は;を|-|-|に で と
+2|wa_contrast|-|肉:にく は 食べます:たべます が 野菜:やさい [] 食べません:たべません|は;を|-|-|に で と
+1|ga_subj|-|誰:だれ [] 来:き ました か|が|-|-|は を に
+1|ga_subj|-|どれ [] いい です か|が|-|-|は を に
+1|ga_subj|-|あそこ に 猫:ねこ [] います|が;は|-|-|を で と
+1|ga_subj|-|雨:あめ [] 降って:ふって います|が;は|-|-|を に で
+1|ga_obj|-|私:わたし は 犬:いぬ [] 好き:すき です|が|-|-|を に で
+1|ga_obj|-|兄:あに は サッカー [] 上手:じょうず です|が|-|-|を に で
+2|ga_obj|-|日本語:にほんご [] 分かります:わかります か|が|-|-|を に で
+2|ga_obj|-|私:わたし は 新しい:あたらしい 車:くるま [] ほしい です|が|-|-|を に で
+2|ga_obj|-|弟:おとうと は ピアノ [] 弾けます:ひけます|が;を|-|-|に で と
+1|wo_obj|-|本:ほん [] 読みます:よみます|を|-|-|に で と
+1|wo_obj|-|水:みず [] 飲みます:のみます|を|-|-|に で と
+1|wo_obj|-|映画:えいが [] 見ました:みました|を|-|-|に で と
+1|wo_obj|-|朝:あさ ご飯:ごはん [] 食べます:たべます|を|-|-|に で と
+2|wo_obj|-|毎日:まいにち 日本語:にほんご [] 勉強:べんきょう します|を|-|-|に で と
+2|wo_path|por_lugar|公園:こうえん [] 散歩:さんぽ します|を|Paseo [] el parque.|por;en|に で と|de a con
+2|wo_path|por_lugar|橋:はし [] 渡ります:わたります|を|Paso [] el puente.|por|に で と|a de en
+1|ni_time|a_hora|七時:しちじ [] 起きます:おきます|に|Me levanto [] las siete.|a|で を と|en de con
+1|ni_time|a_hora|八時:はちじ [] 着きました:つきました|に|Llegué [] las ocho.|a|で を と|en de con
+1|ni_time|en_tiempo|三月:さんがつ [] 日本:にほん へ 行きます:いきます|に|Voy a Japón [] marzo.|en|で を と|a de con
+1|ni_time|en_tiempo|私:わたし は 五月:ごがつ [] 生まれました:うまれました|に|Nací [] mayo.|en|で を と|a de con
+1|ni_time|-|日曜日:にちようび [] 友達:ともだち と 会います:あいます|に|-|-|で を と
+1|ni_dest|a_dest|学校:がっこう [] 行きます:いきます|に;へ|Voy [] la escuela.|a|で を と|en de con
+1|ni_dest|a_dest|家:いえ [] 帰ります:かえります|に;へ|Vuelvo [] casa.|a|で を と|de en con
+1|ni_dest|a_dest|東京:とうきょう [] 行きます:いきます|に;へ|Voy [] Tokio.|a|で を と|en de con
+2|ni_dest|a_dest|駅:えき [] 着きました:つきました|に|Llegué [] la estación.|a|で を と|de en con
+2|ni_dest|a_dest|部屋:へや [] 入ります:はいります|に|Entro [] la habitación.|en;a|で を と|de con por
+1|ni_recv|a_ci|友達:ともだち [] 本:ほん を あげます|に|Doy un libro [] mi amigo.|a|で を と|de con por
+2|ni_recv|a_ci|先生:せんせい [] 質問:しつもん します|に|Hago una pregunta [] mi profesor.|a|で を と|de con por
+2|ni_recv|a_pers|母:はは [] 電話:でんわ します|に|Llamo [] mi madre.|a|で を と|de con por
+2|ni_recv|con_comp|友達:ともだち [] 会いました:あいました|に|Me encontré [] un amigo.|con|で を と|a de en
+1|ni_exist|sobre|机:つくえ の 上:うえ [] 本:ほん が あります|に|Hay un libro [] la mesa.|sobre;en|で を と|con de por
+1|ni_exist|en_lugar|公園:こうえん [] 犬:いぬ が います|に|Hay un perro [] el parque.|en|で を と|a de con
+1|ni_exist|en_lugar|私:わたし は 東京:とうきょう [] 住んで:すんで います|に|Vivo [] Tokio.|en|を と へ|a de con
+2|ni_exist|en_lugar|鍵:かぎ は かばん の 中:なか [] あります|に|La llave está [] el bolso.|en|で を と|a de con
+2|ni_purp|a_dest|買い物:かいもの [] 行きます:いきます|に|Voy [] comprar.|a|で を と|para de en
+2|ni_purp|a_dest|映画:えいが を 見:み [] 行きます:いきます|に|Voy [] ver una película.|a|で を と|para de en
+3|ni_pass|por_agente|先生:せんせい [] 叱られました:しかられました|に|Fui regañado [] mi profesor.|por|で を と|de con a
+3|ni_pass|por_agente|犬:いぬ [] 噛まれました:かまれました|に|Fui mordido [] un perro.|por|で を と|de con a
+2|ni_result|-|医者:いしゃ [] なりたい です|に|-|-|で を と
+2|ni_result|-|昼ご飯:ひるごはん は カレー [] します|に|-|-|で を と
+2|ni_freq|a_frec|週:しゅう [] 二回:にかい 行きます:いきます|に|Voy dos veces [] la semana.|a|で を と|en de por
+1|de_place|en_lugar|図書館:としょかん [] 勉強:べんきょう します|で|Estudio [] la biblioteca.|en|に を と|a de con
+1|de_place|en_lugar|レストラン [] 食べます:たべます|で|Como [] el restaurante.|en|に を と|a de con
+2|de_place|en_lugar|駅:えき [] 友達:ともだち に 会いました:あいました|で|Me encontré con un amigo [] la estación.|en|に を と|a de con
+1|de_means|en_medio|電車:でんしゃ [] 行きます:いきます|で|Voy [] tren.|en|に を と|a de con
+1|de_means|con_inst|箸:はし [] 食べます:たべます|で|Como [] palillos.|con|に を と|en de a
+2|de_means|en_medio|日本語:にほんご [] 書きます:かきます|で|Escribo [] japonés.|en|に を と|a de con
+2|de_means|con_inst|鉛筆:えんぴつ [] 書きます:かきます|で|Escribo [] lápiz.|con;a|に を と|en de por
+2|de_means|por_medio|電話:でんわ [] 話しました:はなしました|で|Hablamos [] teléfono.|por|に を と|en de con
+2|de_cause|por_causa|雨:あめ [] 試合:しあい が 中止:ちゅうし に なりました|で|El partido se canceló [] la lluvia.|por|に を と|con de en
+3|de_cause|por_causa|病気:びょうき [] 学校:がっこう を 休みました:やすみました|で|Falté a clase [] enfermedad.|por|に を と|con de en
+2|de_total|entre|三人:さんにん [] 払いました:はらいました|で|Pagamos [] los tres.|entre|に を と|con de por
+2|e_dir|hacia|南:みなみ [] 向かって:むかって 歩きます:あるきます|へ;に|Camino [] el sur.|hacia|で を と|en de con
+2|e_dir|a_dest|東京:とうきょう [] 引っ越します:ひっこします|へ;に|Me mudo [] Tokio.|a|で を と|en de con
+1|to_with|con_comp|友達:ともだち [] 映画:えいが を 見ます:みます|と|Veo una película [] un amigo.|con|で に を|a de en
+1|to_with|con_comp|家族:かぞく [] 住んで:すんで います|と|Vivo [] mi familia.|con|で に を|a de en
+2|to_with|con_comp|先生:せんせい [] 話しました:はなしました|と|Hablé [] mi profesor.|con|で を へ|a de en
+2|to_quote|que_conj|彼:かれ は 行く:いく [] 言いました:いいました|と|Dijo [] iba.|que|で に を|de a con
+2|to_quote|que_conj|明日:あした は 雨:あめ だ [] 思います:おもいます|と|Creo [] mañana lloverá.|que|で に を|de a con
+1|to_and|y|パン [] 牛乳:ぎゅうにゅう を ください|と|Pan [] leche, por favor.|y|で に を|con o de
+1|to_and|y|犬:いぬ [] 猫:ねこ が 好き:すき です|と|Me gustan los perros [] los gatos.|y|で に を|con o pero
+3|to_cond|cuando|春:はる に なる [] 桜:さくら が 咲きます:さきます|と|[] llega la primavera, florecen los cerezos.|cuando;si|で に を|porque mientras aunque
+1|mo_also|tambien|田中:たなか さん は 学生:がくせい です 。 私:わたし [] 学生:がくせい です|も|Tanaka es estudiante. Yo [] soy estudiante.|también;tambien|で に を|ya solo nunca
+1|mo_also|tambien|友達:ともだち は 行きます:いきます 。 私:わたし [] 行きます:いきます|も|Mi amigo va. Yo [] voy.|también;tambien|で に を|ya solo nunca
+1|mo_also|-|コーヒー を 飲みます:のみます 。 お茶:おちゃ [] 飲みます:のみます|も|-|-|で に と
+1|no_poss|de_pos|これ は アナ [] 本:ほん です|の|Este es el libro [] Ana.|de|は を で|a con por
+1|no_poss|de_orig|日本:にほん [] 友達:ともだち|の|Un amigo [] Japón.|de|は を で|a en con
+2|no_poss|de_pos|東京:とうきょう [] 天気:てんき は どう です か|の|¿Cómo está el clima [] Tokio?|de;en|は を で|a con por
+2|no_poss|de_mat|木:き [] 机:つくえ|の|Una mesa [] madera.|de|は を で|con en por
+2|no_nom|-|泳ぐ:およぐ [] が 好き:すき です|の;こと|-|-|を に で
+2|no_nom|-|歌う:うたう [] が 上手:じょうず です|の;こと|-|-|を に で
+1|kara_from|desde|九時:くじ [] 働きます:はたらきます|から|Trabajo [] las nueve.|desde|まで に で|hasta a en
+1|kara_from|desde|ここ [] 駅:えき まで 十分:じゅっぷん です|から|[] aquí hasta la estación son diez minutos.|desde|まで に で|hasta a en
+1|kara_from|de_orig|私:わたし は チリ [] 来ました:きました|から|Vengo [] Chile.|de|に で を|a en con
+2|kara_cause|porque|暑い:あつい [] 窓:まど を 開けます:あけます|から;ので|Abro la ventana [] hace calor.|porque|のに けど と|que si pero
+2|kara_cause|porque|眠い:ねむい [] 寝ます:ねます|から;ので|Me voy a dormir [] tengo sueño.|porque|のに けど と|que si pero
+1|made|hasta|五時:ごじ [] 働きます:はたらきます|まで|Trabajo [] las cinco.|hasta|から に で|desde a en
+1|made|hasta|駅:えき [] 歩きます:あるきます|まで|Camino [] la estación.|hasta|から に で|desde de con
+3|made_ni|antes_de|五時:ごじ [] 来て:きて ください|までに|Venga [] las cinco.|antes de;para|まで から に|después desde hasta
+2|yori|que_comp|今日:きょう は 昨日:きのう [] 暑い:あつい です|より|Hoy hace más calor [] ayer.|que|ほど から まで|de como a
+2|yori|que_comp|電車:でんしゃ は バス [] 速い:はやい です|より|El tren es más rápido [] el autobús.|que|ほど から まで|de como a
+2|ya|y|りんご [] バナナ を 買いました:かいました|や|Compré manzanas [] plátanos, entre otras cosas.|y|か は に|o con de
+2|ka_q|-|学生:がくせい です []|か|-|-|ね よ ぞ
+1|ka_q|-|田中:たなか さん です []|か|-|-|ね よ ぞ
+2|ka_alt|o|お茶:おちゃ [] コーヒー が いい です|か|Quiero té [] café.|o|と や も|y pero que
+2|ka_alt|o|電車:でんしゃ [] バス で 行きます:いきます|か|Voy en tren [] en autobús.|o|と や も|y pero que
+1|ne|-|今日:きょう は 暑い:あつい です ね 。 そう です []|ね|-|-|か が の
+1|yo|-|この ラーメン は おいしい です []|よ;ね|-|-|か が の
+1|dake|solo|水:みず [] ください|だけ|[] agua, por favor.|solo;sólo|しか ばかり ほど|con sin para
+2|dake|solo|百円:ひゃくえん [] あります|だけ|[] tengo cien yenes.|solo;sólo|しか ばかり ほど|con sin para
+2|shika|mas_que|百円:ひゃくえん [] ありません|しか|No tengo [] cien yenes.|más que;sino|だけ ばかり ほど|solo con sin
+3|bakari|solo|甘い:あまい もの [] 食べて:たべて います|ばかり|[] come cosas dulces.|solo;sólo|だけ しか ほど|con sin para
+3|hodo|tanto|昨日:きのう [] 寒く:さむく ありません|ほど|Hoy no hace [] frío como ayer.|tanto|だけ しか ばかり|más muy menos
+2|gurai|unos|二時間:にじかん [] かかります|ぐらい;くらい|Tarda [] dos horas.|unas;como|だけ しか から|en de con
+3|demo|incluso|子供:こども [] できます|でも|[] un niño puede hacerlo.|incluso;hasta|だけ から に|con sin para
+3|zutsu|-|一つ:ひとつ [] 取って:とって ください|ずつ|-|-|だけ ばかり ぐらい
+1|-|a_pers|-|-|Veo [] mi hermano.|a|-|de con por
+1|-|a_pers|-|-|Conozco [] Ana desde hace años.|a|-|de con en
+1|-|a_dest|-|-|Mañana voy [] Madrid.|a|-|en de con
+1|-|a_ci|-|-|Le escribí una carta [] mi abuela.|a|-|de con por
+1|-|en_lugar|-|-|Vivo [] una casa grande.|en|-|a de con
+1|-|en_tiempo|-|-|Nací [] 1990.|en|-|a de por
+1|-|en_medio|-|-|Viajo [] avión.|en|-|por de con
+1|-|de_pos|-|-|El coche [] mi padre es rojo.|de|-|a con para
+1|-|de_orig|-|-|Soy [] Chile.|de|-|en a con
+2|-|de_mat|-|-|Un anillo [] oro.|de|-|con en por
+2|-|de_tema|-|-|Es una película [] terror.|de|-|a con en
+1|-|con_comp|-|-|Voy al cine [] mis amigos.|con|-|en de a
+1|-|con_inst|-|-|Corto el pan [] un cuchillo.|con|-|en de a
+2|-|por_causa|-|-|Llegué tarde [] el tráfico.|por|-|para con de
+2|-|por_lugar|-|-|Paseamos [] el parque.|por;en|-|para con a
+2|-|por_tiempo|-|-|Estudio [] la mañana.|por;en|-|para a de
+2|-|por_medio|-|-|Te llamo [] teléfono.|por|-|en con de
+2|-|para_fin|-|-|Estudio [] aprobar el examen.|para|-|por a de
+2|-|para_dest|-|-|Este regalo es [] ti.|para|-|por a de
+3|-|para_plazo|-|-|Necesito el informe [] el lunes.|para|-|por a en
+3|-|por_causa|-|-|Gracias [] tu ayuda.|por|-|para de con
+2|-|desde|-|-|Vivo aquí [] 2015.|desde|-|hasta en de
+2|-|hasta|-|-|Camina [] la plaza.|hasta|-|desde por con
+3|-|hacia|-|-|El tren va [] el norte.|hacia|-|en de con
+2|-|entre|-|-|La tienda está [] el banco y el café.|entre|-|sobre con en
+2|-|sobre|-|-|Hablamos [] política.|sobre;de|-|bajo con por
+1|-|sin|-|-|Prefiero el café [] azúcar.|sin|-|con por de
+1|-|y|-|-|Quiero pan [] queso.|y|-|o pero que
+1|-|o|-|-|¿Té [] café?|o|-|y pero que
+1|-|pero|-|-|Es barato, [] no está rico.|pero|-|porque y que
+1|-|porque|-|-|No salgo [] llueve.|porque|-|pero que si
+2|-|que_comp|-|-|Eres más alto [] yo.|que|-|de como a
+2|-|que_conj|-|-|Creo [] vendrá mañana.|que|-|de si como
+2|-|si|-|-|[] llueve, no voy.|si|-|que cuando como
+2|-|como|-|-|Habla [] un nativo.|como|-|que si cuando
+2|-|cuando|-|-|[] era niño, vivía aquí.|cuando|-|si como que
+3|-|mientras|-|-|Estudio [] escucho música.|mientras|-|cuando pero porque
+3|-|aunque|-|-|[] llueva, iré.|aunque|-|porque si pero
+3|-|sino|-|-|No quiero té, [] café.|sino|-|pero porque que
+</script>
 <script type="text/plain" id="sents">
 # nivel|gramática|español|japonés (/ separa bloques de orden libre; kanji:lectura)|trampas|registro c/n/cn|español en bloques libres|español alternativo ; …|japonés alternativo ; …
 1|Presentación con です|Yo soy estudiante.|私:わたし は 学生:がくせい です|が を だ
@@ -1510,7 +1663,7 @@ function ro(s){s=s.replace(/[ァ-ヶ]/g,c=>String.fromCharCode(c.charCodeAt(0)-9
 const say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="ja-JP";u.rate=.85;speechSynthesis.speak(u)}catch(e){}};
 const SPEECH="speechSynthesis" in window;
 /* ── Ajustes de partida ── */
-const C={mode:"mix",rule:"clasico",esc:"todo",timer:false,hint:true,ro:true,voice:false,cats:Object.keys(CT),pairs:8,ptype:"ie",dir:"mix",lvl:0,frule:"clasico",traps:true,ftimer:false,sc:false,dal:"ja",dtask:"copy",dcont:"w",drule:"clasico",dslow:false,dicon:false,tsc:["h"],tset:["b"],tsp:["l"],ttask:"same",tguide:"on",tstrat:"all",trule:"clasico",ttimer:false,tsay:false};
+const C={mode:"mix",rule:"clasico",esc:"todo",timer:false,hint:true,ro:true,voice:false,cats:Object.keys(CT),pairs:8,ptype:"ie",dir:"mix",lvl:0,frule:"clasico",traps:true,ftimer:false,sc:false,dal:"ja",dtask:"copy",dcont:"w",drule:"clasico",dslow:false,dicon:false,tsc:["h"],tset:["b"],tsp:["l"],ttask:"same",tguide:"on",tstrat:"all",trule:"clasico",ttimer:false,tsay:false,pl:"jp",pdir:"es2jp",pfmt:"write",pgj:["b","c","q","f"],pge:["p","cj"],prule:"clasico",ptimer:false,pexp:true,phint:false,psay:false,pgv:"jp"};
 const isK=c=>/^[ァ-ヶー]+$/.test(c.h);
 const escOk=c=>C.esc=="hira"?!isK(c):C.esc=="kata"?isK(c):C.esc=="kanji"?!!c.k:true;
 const D=c=>C.esc=="kanji"?c.k:C.esc=="todo"?(c.k||c.h):c.h;
@@ -1524,7 +1677,8 @@ const GAMES=[
 {id:"memo",ico:"🧩",name:"Parejas",desc:"Voltea cartas y une cada icono con su palabra en el menor número de movimientos.",tag:"Memoria",run:()=>setup("memo")},
 {id:"frase",ico:"🧱",name:"Oraciones",desc:"Construye frases con bloques de ひらがな, カタカナ y 漢字, en ambas direcciones. Con bloques trampa.",tag:"Bloques · gramática",run:()=>setup("frase")},
 {id:"dict",ico:"🎧",name:"Dictado",desc:"Escucha en japonés, en español o en ambos y escribe lo que oyes o su traducción. Acepta kana, kanji y romaji.",tag:"Audio · escritura",run:()=>setup("dict")},
-{id:"traz",ico:"✍️",name:"Trazos",desc:"Dibuja el carácter trazo a trazo y en el orden correcto, con revisión automática en colores. Hiragana, katakana y vocales.",tag:"Dibujo · orden de trazos",run:()=>setup("traz")}];
+{id:"traz",ico:"✍️",name:"Trazos",desc:"Dibuja el carácter trazo a trazo y en el orden correcto, con revisión automática en colores. Hiragana, katakana y vocales.",tag:"Dibujo · orden de trazos",run:()=>setup("traz")},
+{id:"part",ico:"🔗",name:"Partículas",desc:"Completa la partícula (は, に, で…) o el conector español (a, en, por…) y aprende cuándo usarla. Escribir, elegir, clasificar, detective y traducción.",tag:"Gramática · usos",run:()=>setup("part")}];
 const MODES=[["mix","🎲"],["ico2es","🖼️ → 🇪🇸"],["ico2jp","🖼️ → 🇯🇵"],["es2ico","🇪🇸 → 🖼️"],["jp2ico","🇯🇵 → 🖼️"],["jp2es","🇯🇵 → 🇪🇸"],["ear2ico","🔊 → 🖼️"]];
 const MIX=["ico2es","ico2jp","es2ico","jp2ico","jp2es"];
 const RULES=[["clasico","🎯 Clásico","15 rondas: suma el mayor puntaje posible."],["super","❤️ Supervivencia","Tienes 3 vidas. Aguanta tantas tarjetas como puedas."],["sprint","⚡ Sprint","60 segundos en total. Cada fallo resta 3 s."]];
@@ -1537,7 +1691,7 @@ function stats(){$("st").innerHTML=`<span class="pill">⭐ ${S.xp} XP</span><spa
 /* ── Inicio ── */
 function home(){clr();stats();$("app").innerHTML=`<div class="stats"><button class="f sm" data-a="tgc">📚 Categorías <b>▾</b></button></div><div class="stats cats" id="cp" hidden>${Object.keys(CT).map(k=>`<span class="pill" style="border-color:${CT[k][1]}">${CT[k][2]} ${CT[k][0]} <b>${ALL.filter(x=>x.c==k).length}</b></span>`).join("")}</div><h2 class="sec">ELIGE UN JUEGO</h2><div class="games">${GAMES.map(g=>`<button class="g" ${g.soon?"disabled":`data-a="game" data-v="${g.id}"`} style="--cc:${g.soon?"var(--mut)":g.id=="memo"?"#2a5d8f":"var(--red)"}" ><span class="gi">${g.ico}</span><b>${g.name}</b><small>${g.desc}</small><i class="tag">${g.tag}</i></button>`).join("")}</div>`}
 /* ── Ajustes ── */
-function setup(g){clr();C.g=g;if(g=="frase")return setupFr();if(g=="dict")return setupDi();if(g=="traz")return setupTz();const n=pool().length,need=g=="memo"?C.pairs:8;let h=`<div class="panel"><div class="em" style="--cc:var(--red)">${g=="memo"?"🧩":"🎴"}</div><h2>${g=="memo"?"Parejas":"Flashcards"}</h2>`;
+function setup(g){clr();C.g=g;if(g=="frase")return setupFr();if(g=="dict")return setupDi();if(g=="traz")return setupTz();if(g=="part")return setupPt();const n=pool().length,need=g=="memo"?C.pairs:8;let h=`<div class="panel"><div class="em" style="--cc:var(--red)">${g=="memo"?"🧩":"🎴"}</div><h2>${g=="memo"?"Parejas":"Flashcards"}</h2>`;
 if(g=="flash")h+=`<p class="lb">MODO</p><div class="row">${MODES.map(m=>chip("mode",m[0],m[1],C.mode==m[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${RULES.map(m=>chip("rule",m[0],m[1],C.rule==m[0])).join("")}</div><div class="note">${RULES.find(r=>r[0]==C.rule)[2]}</div>`;
 else h+=`<p class="lb">PAREJAS</p><div class="row">${[6,8,10].map(v=>chip("pairs",v,v,C.pairs==v)).join("")}</div><p class="lb">UNIR</p><div class="row">${[["ie","🖼️ ↔ 🇪🇸"],["ij","🖼️ ↔ 🇯🇵"],["mj","🇪🇸 ↔ 🇯🇵"]].map(v=>chip("ptype",v[0],v[1],C.ptype==v[0])).join("")}</div>`;
 h+=`<p class="lb">ESCRITURA</p><div class="row">${ESCS.map(m=>chip("esc",m[0],m[1],C.esc==m[0])).join("")}</div><p class="lb">CATEGORÍAS</p><div class="row cats"><button class="f ${C.cats.length==Object.keys(CT).length?"on":""}" data-a="allc">Todas</button><button class="f sm" data-a="tcs" title="Elegir categorías" aria-label="Elegir categorías">${C.csel?"▴":"▾"}</button></div>${C.csel?`<div class="row cats">${Object.keys(CT).map(k=>`<button class="f ic ${C.cats.includes(k)?"on":""}" style="--cc:${CT[k][1]}" data-a="cat" data-v="${k}" title="${CT[k][0]}" aria-label="${CT[k][0]}">${CT[k][2]}</button>`).join("")}</div>`:""}<p class="lb">EXTRAS</p><div class="row">${g=="flash"?tog("timer","⏱️ Contrarreloj (10 s)")+tog("hint","🖼️ Icono en lectura")+tog("voice","🔊 Voz automática"):""}${tog("ro","Aa Romaji")}</div>
@@ -1559,7 +1713,7 @@ function nextQ(){if(!G)return;const c=pull(G.p),m=C.mode=="mix"?rnd(MIX):C.mode,
 const info=C.rule=="clasico"?`${G.n+1} / ${G.total}`:C.rule=="super"?hearts(G.lives):`⏳ <span id="sl">${Math.ceil(G.left)}</span> s`;
 $("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div><div class="tb"><i id="bar"></i></div>${q.p}<div class="og ${q.o[0].i?"ic":""}">${q.o.map(o=>`<button class="o ${o.i?"i":"jp"}" data-a="ans" data-v="${o.v}">${o.h}</button>`).join("")}</div><div class="msg" id="msg"></div><div class="acts"><button class="act" id="nx" data-a="nx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;
 if(q.ear||C.voice&&m!="es2ico"&&m!="ico2es"&&m!="ico2jp")say(c.h)}
-function tick(){if(!G||!G.c)return;if(G.fr)return ftick();if(G.tz)return tzTick();const b=$("bar");if(C.rule=="sprint"){G.left-=.1;const s=$("sl");if(s)s.textContent=Math.max(0,Math.ceil(G.left));if(b){b.style.width=Math.max(0,G.left/60*100)+"%";b.className=G.left<10?"lo":""}if(G.left<=0)return end()}else if(G.tl&&!G.busy){const e=Date.now()-G.t0;if(b){b.style.width=Math.max(0,100-e/G.tl*100)+"%";b.className=e>G.tl*.7?"lo":""}if(e>=G.tl)ans(null)}}
+function tick(){if(!G||!G.c)return;if(G.fr)return ftick();if(G.tz)return tzTick();if(G.pt)return ptTick();const b=$("bar");if(C.rule=="sprint"){G.left-=.1;const s=$("sl");if(s)s.textContent=Math.max(0,Math.ceil(G.left));if(b){b.style.width=Math.max(0,G.left/60*100)+"%";b.className=G.left<10?"lo":""}if(G.left<=0)return end()}else if(G.tl&&!G.busy){const e=Date.now()-G.t0;if(b){b.style.width=Math.max(0,100-e/G.tl*100)+"%";b.className=e>G.tl*.7?"lo":""}if(e>=G.tl)ans(null)}}
 function ans(v){if(!G||G.busy)return;G.busy=true;const c=G.c,ok=v==c.id,el=Date.now()-G.t0;
 document.querySelectorAll(".o").forEach(b=>{b.disabled=true;if(b.dataset.v==c.id)b.classList.add("ok");else if(b.dataset.v==v)b.classList.add("bad")});
 G.n++;if(ok){G.ok++;G.st++;G.ms=Math.max(G.ms,G.st);G.score+=10+Math.min(G.st,5)*2+(G.tl?Math.round(5*(1-el/G.tl)):0);if(S.miss[c.id]&&!--S.miss[c.id])delete S.miss[c.id]}
@@ -1765,6 +1919,128 @@ function setupTz(){const n=tPool().length,ks=C.tsc.includes("h")||C.tsc.includes
 tt={same:"Copia el carácter que ves.",opp:"Dibuja el equivalente: ア → あ, ka → か, あ → a…",mix:"Alterna al azar entre copiar y el equivalente."}[C.ttask],
 gt={on:"Trazos tenues sobre el lienzo para calcarlos.",off:"Lienzo vacío: el modelo solo se ve arriba al copiar.",mem:"El modelo se oculta a los 3 s: dibuja de memoria."}[C.tguide];
 $("app").innerHTML=`<div class="panel"><div class="em" style="--cc:#2a5d8f">✍️</div><h2>Trazos</h2><p class="cnt">Dibuja cada trazo en el orden correcto. Se revisa solo, con colores.</p><p class="lb">QUÉ DIBUJAR</p><div class="row">${mt("tsc","h","ひ ひらがな")}${mt("tsc","k","カ カタカナ")}${mt("tsc","s","🇪🇸 Vocales")}</div>${ks?`<p class="lb">CONJUNTO</p><div class="row">${mt("tset","b","あ Básicos")}${mt("tset","d","が ゛゜")}${mt("tset","p","ゃ Pequeños y combinaciones")}</div>`:""}${sp?`<p class="lb">VOCALES</p><div class="row">${mt("tsp","l","a e i o u")}${mt("tsp","u","A E I O U")}${mt("tsp","t","á é í ó ú")}</div>`:""}<p class="lb">TAREA</p><div class="row">${[["same","✍️ Copiar"],["opp","🔁 Contrario"],["mix","🎲"]].map(v=>chip("ttask",v[0],v[1],C.ttask==v[0])).join("")}</div><div class="note">${tt}</div><p class="lb">GUÍA</p><div class="row">${[["on","👁️ Con guía"],["off","🙈 Sin guía"],["mem","🧠 De memoria"]].map(v=>chip("tguide",v[0],v[1],C.tguide==v[0])).join("")}</div><div class="note">${gt}</div><p class="lb">TRAZOS</p><div class="row">${[["all","✏️ Dibujar todo"],["fill","🧩 Completar los que faltan"]].map(v=>chip("tstrat",v[0],v[1],C.tstrat==v[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${[["clasico","🎯 10 caracteres"],["super","❤️ Supervivencia"],["practica","🆓 Práctica"]].map(v=>chip("trule",v[0],v[1],C.trule==v[0])).join("")}</div><div class="note">${{clasico:"10 caracteres; suma puntos por trazo limpio.",super:"3 vidas: con 4 errores en un carácter lo pierdes.",practica:"Sin puntos ni vidas: practica todo lo que quieras."}[C.trule]}</div><p class="lb">EXTRAS</p><div class="row">${tog("ttimer","⏱️ Contrarreloj")}${tog("ro","Aa Romaji")}${tog("tsay","🔊 Audio")}</div><div class="note">✍️ ${n} caracteres disponibles</div><div class="acts"><button class="act" data-a="start" ${n<2?"disabled":""}>¡A dibujar! ✍️</button><button class="f" data-a="home">← Inicio</button></div></div>`}
+/* ── Partículas y conectores ── */
+const JU={
+wa_topic:["は","Tema","Marca de qué se habla; lo demás es el comentario. Se suele traducir como «en cuanto a…» o no se traduce.","—"],
+wa_contrast:["は","Contraste","Contrapone dos cosas o refuerza un negativo: «esto sí, pero aquello no».","pero / en cambio"],
+ga_subj:["が","Sujeto","Presenta el sujeto como información nueva y es obligatorio tras 誰, 何, どれ…","— (sujeto)"],
+ga_obj:["が","Objeto de gusto o capacidad","Con 好き, 上手, 分かる, ほしい, できる… lo que «gusta» o «se puede» lleva が.","—"],
+wo_obj:["を","Objeto directo","Marca lo que recibe la acción del verbo.","— (objeto directo)"],
+wo_path:["を","Recorrido","Con verbos de movimiento: el lugar por donde se pasa o se camina.","por"],
+ni_time:["に","Momento exacto","Hora, fecha o mes en que ocurre algo (no se usa con hoy, ayer o mañana).","a / en"],
+ni_dest:["に","Destino","Punto de llegada de 行く, 来る, 帰る, 着く, 入る. Con へ se destaca la dirección.","a"],
+ni_recv:["に","Destinatario o persona implicada","Quién recibe o con quién se interactúa: あげる, 教える, 電話する, 会う.","a / con"],
+ni_exist:["に","Lugar de existencia","Dónde está algo con ある, いる o 住む.","en / sobre"],
+ni_purp:["に","Propósito","Verbo (raíz) o sustantivo + に + 行く/来る: ir a hacer algo.","a / para"],
+ni_pass:["に","Agente de la pasiva","Quién realiza la acción en frases pasivas (叱られる, 噛まれる).","por"],
+ni_result:["に","Resultado o elección","Con なる y する: convertirse en algo o elegir algo.","en / —"],
+ni_freq:["に","Frecuencia","Cantidad por período: 週に二回.","a la / por"],
+de_place:["で","Lugar de la acción","Dónde ocurre una acción (verbos de acción, no de existencia).","en"],
+de_means:["で","Medio o instrumento","Con qué o cómo: transporte, herramienta, idioma o método.","en / con / por"],
+de_cause:["で","Causa","Motivo no intencionado: lluvia, enfermedad, accidente.","por"],
+de_total:["で","Total o grupo","Cantidad total o con cuántos se hace algo.","entre / en total"],
+e_dir:["へ","Dirección","Hacia dónde se va; destaca el rumbo, no la llegada.","a / hacia"],
+to_with:["と","Compañía","Con quién se hace algo, sobre todo si se hace entre dos (話す, 結婚する).","con"],
+to_quote:["と","Cita o pensamiento","Contenido de 言う, 思う, 書く, 聞く…","que"],
+to_and:["と","Y (lista cerrada)","Une sustantivos de forma completa: A y B (y nada más).","y"],
+to_cond:["と","Condición natural","Cuando ocurre A, siempre pasa B: leyes naturales y costumbres.","cuando / si"],
+mo_also:["も","También","Añade algo más. Sustituye a は, が o を.","también / tampoco"],
+no_poss:["の","Posesión o relación","Une dos sustantivos: «A de B» (poseedor, origen, tema, material).","de"],
+no_nom:["の","Nominalizador","Convierte un verbo en «cosa»: 歌うのが好き = me gusta (el hecho de) cantar.","el hecho de"],
+kara_from:["から","Punto de partida","Desde dónde o desde cuándo; también procedencia.","desde / de"],
+kara_cause:["から","Causa","Al final de una cláusula: la razón de lo que sigue.","porque"],
+made:["まで","Límite","Hasta dónde o hasta cuándo (incluye el punto final).","hasta"],
+made_ni:["までに","Plazo","Fecha límite: algo ocurre antes de ese momento o justo en él.","antes de / para"],
+yori:["より","Comparación","Lo que se compara en «más… que».","que"],
+ya:["や","Lista abierta","Ejemplos entre más cosas: A, B y otros.","y (entre otros)"],
+ka_q:["か","Pregunta","Al final de la frase la convierte en pregunta.","¿…?"],
+ka_alt:["か","O (alternativa)","Entre dos opciones o más.","o"],
+ne:["ね","Confirmación","Busca acuerdo o empatía del interlocutor.","¿verdad? / ¿no?"],
+yo:["よ","Aviso","Informa de algo que el otro quizá no sabe o refuerza lo dicho.","¡te digo! / ¿sabes?"],
+dake:["だけ","Solo","Limita a eso; no exige negación.","solo"],
+shika:["しか","Solo (con negativa)","Siempre con un verbo negativo: «nada más que…».","no… más que"],
+bakari:["ばかり","Solo / siempre","Insiste en que solo hay eso o que algo se repite.","solo / siempre"],
+hodo:["ほど","Grado","Hasta qué punto; con negación compara: «no tan… como».","tan… como"],
+gurai:["ぐらい","Aproximación","Cantidad o grado aproximado.","unos / más o menos"],
+demo:["でも","Incluso","Ejemplo extremo o suave: «incluso / aunque sea».","incluso / hasta"],
+zutsu:["ずつ","Reparto","Cantidad por vez o por persona.","cada uno / de a"]};
+const EU={
+a_dest:["a","Destino","Hacia dónde se va o se llega.","に / へ"],a_ci:["a","Complemento indirecto","A quién se da, dice o escribe algo.","に"],
+a_pers:["a","Persona como objeto directo","Se antepone a un objeto directo de persona: veo a Ana.","に / —"],a_hora:["a","Hora","Hora exacta: a las siete.","に"],a_frec:["a","Frecuencia","Veces por período: dos veces a la semana.","に"],
+en_lugar:["en","Lugar","Dónde está o sucede algo.","に / で"],en_tiempo:["en","Tiempo","Mes, año o estación: en mayo, en 1990.","に"],en_medio:["en","Medio de transporte","Cómo se viaja: en tren, en avión.","で"],
+de_pos:["de","Posesión o pertenencia","A quién pertenece algo.","の"],de_orig:["de","Origen","Procedencia: soy de Chile.","から / の"],de_mat:["de","Material","De qué está hecho algo.","の / で"],de_tema:["de","Tema","Sobre qué trata algo: una película de terror.","の / について"],
+con_comp:["con","Compañía","Con quién se hace algo.","と"],con_inst:["con","Instrumento","Con qué se hace algo.","で"],
+por_causa:["por","Causa","El motivo de algo.","で / から"],por_lugar:["por","Lugar de paso","Por dónde se pasa o se anda.","を"],por_tiempo:["por","Parte del día","Por la mañana, por la tarde, por la noche.","に"],por_medio:["por","Medio de comunicación","Por teléfono, por correo, por internet.","で"],por_agente:["por","Agente de la pasiva","Quien realiza la acción: fui regañado por mi profesor.","に"],
+para_fin:["para","Finalidad","Con qué objetivo se hace algo.","ために / に"],para_dest:["para","Destinatario","A quién va dirigido.","に / のために"],para_plazo:["para","Plazo","Fecha límite: para el lunes.","までに"],
+desde:["desde","Punto de partida","Origen en el espacio o en el tiempo.","から"],hasta:["hasta","Límite","Punto final en el espacio o en el tiempo.","まで"],hacia:["hacia","Dirección","Rumbo aproximado.","へ"],entre:["entre","Entre o reparto","Posición intermedia o acción compartida.","の間 / で"],sobre:["sobre","Encima o tema","Encima de algo o acerca de un tema.","の上 / について"],sin:["sin","Carencia","Ausencia de algo.","ない / ぬきで"],
+y:["y","Suma","Une elementos.","と / や"],o:["o","Alternativa","Elige entre opciones.","か"],pero:["pero","Contraste","Oposición entre dos ideas.","が / けど"],porque:["porque","Causa","Introduce la razón.","から / ので"],
+que_comp:["que","Comparación","En «más… que».","より"],que_conj:["que","Conjunción de cita","Introduce lo dicho o pensado.","と"],si:["si","Condición","Plantea una hipótesis.","たら / ば / と"],como:["como","Modo o semejanza","Manera de hacer algo.","ように / みたいに"],cuando:["cuando","Tiempo","Momento en que ocurre algo.","とき / と"],mientras:["mientras","Simultaneidad","Dos acciones a la vez.","ながら"],aunque:["aunque","Concesión","A pesar de algo.","けど / のに / ても"],sino:["sino","Corrección","Sustituye lo negado por otra cosa.","ではなく"],
+tambien:["también","Adición","Añade algo más.","も"],solo:["solo","Limitación","Limita a un único elemento: solo, solamente.","だけ / ばかり"],mas_que:["más que","Solo (con negación)","No… más que: solo.","しか…ない"],tanto:["tanto","Igualdad de grado","No… tanto… como.","ほど"],unos:["unos / unas","Aproximación","Cantidad aproximada.","ぐらい"],incluso:["incluso","Énfasis","Hasta lo más extremo.","でも"],antes_de:["antes de","Plazo","Antes de una hora o fecha.","までに"]};
+const JGR={};"はがをにでへともの".split("").forEach(c=>JGR[c]="b");["から","まで","より","や","か"].forEach(c=>JGR[c]="c");["だけ","しか","ばかり","ほど","ぐらい","くらい","でも","ずつ","までに"].forEach(c=>JGR[c]="q");["ね","よ"].forEach(c=>JGR[c]="f");
+const ECJ=new Set(["y","o","pero","porque","que","si","como","cuando","mientras","aunque","sino"]);
+const JC=[["は","が","も"],["に","で","へ","と"],["を","の","が","に"],["から","まで","より","に"],["や","と","か","も"],["だけ","しか","ばかり","ほど","ぐらい"],["ね","よ","か","な"]],ECG=[["a","en","de","con"],["por","para","sin","sobre"],["desde","hasta","hacia","entre"],["y","o","pero","porque"],["que","si","como","cuando"],["mientras","aunque","pero","sino"]];
+const PI=$("parts").textContent.split("\n").filter(l=>l.trim()&&l[0]!="#").map(l=>{const f=l.trim().split("|"),d=x=>!x||x=="-"?null:x;return{lv:+f[0],ju:d(f[1]),eu:d(f[2]),jp:d(f[3])?P(f[3]):null,ja:d(f[4])?f[4].split(";"):[],es:d(f[5]),ea:d(f[6])?f[6].split(";"):[],jd:d(f[7])?f[7].split(" "):null,ed:d(f[8])?f[8].split(" "):null}});
+const pjg=it=>JGR[it.ja[0]]||"b",peg=it=>ECJ.has(it.ea[0].toLowerCase().split(" ")[0])?"cj":"p";
+const mtc=(k,v,l)=>`<button class="f ${C[k].includes(v)?"on":""}" data-a="mt" data-k="${k}" data-v="${v}">${l}</button>`;
+function ptPool(){return PI.filter(it=>{if(C.lvl&&it.lv!=C.lvl)return false;if(C.pl=="jp")return it.jp&&C.pgj.includes(pjg(it));if(C.pl=="es")return it.es&&C.pge.includes(peg(it));return it.jp&&it.es&&C.pgj.includes(pjg(it))})}
+function pOpts(ans,l,given){const acc=new Set(ans.map(a=>a.toLowerCase()));let d=(given||[]).filter(x=>!acc.has(x.toLowerCase()));if(d.length<3){const Gs=l=="jp"?JC:ECG,pool=[...Gs.filter(g=>g.includes(ans[0])).flat(),...Gs.flat()];for(const x of shuf(pool)){if(d.length>=3)break;if(!acc.has(x.toLowerCase())&&!d.includes(x))d.push(x)}}return shuf([ans[0],...d.slice(0,3)])}
+function pCls(key,l){const cat=l=="jp"?JU:EU,p=cat[key][0],ks=Object.keys(cat).filter(k=>k!=key),same=shuf(ks.filter(k=>cat[k][0]==p)),oth=shuf(ks.filter(k=>cat[k][0]!=p));return shuf([key,...[...same,...oth].slice(0,3)]).map(k=>({k,label:`${cat[k][0]} · ${cat[k][1]}`}))}
+const capf=s=>s[0].toUpperCase()+s.slice(1);
+const jpSent=(it,st,x)=>it.jp.map(b=>b.t=="[]"?(st=="blank"?'<span class="bl">&nbsp;</span>':st=="fill"?`<mark>${it.ja[0]}</mark>`:st=="show"?`<mark class="n">${x}</mark>`:it.ja[0]):b.t).join("");
+const jpRom=(it,st,x)=>it.jp.map(b=>b.t=="[]"?(st=="blank"?"( )":rb({t:st=="show"?x:it.ja[0],r:""})):rb(b)).join(" ");
+const esSent=(it,st,x)=>{const w=st=="show"?x:it.ea[0],f=it.es.startsWith("[]")?capf(w):w;return it.es.replace("[]",st=="blank"?'<span class="bl">&nbsp;</span>':st=="fill"?`<mark>${f}</mark>`:st=="show"?`<mark class="n">${f}</mark>`:f)};
+function ptMk(){if(!G.q.length)G.q=shuf(G.p.slice());let it=G.q.pop();if(it===G.last&&G.q.length){const y=G.q.pop();G.q.push(it);it=y}G.last=it;
+const pl=C.pl,fmt=C.pfmt=="mix"?rnd(["write","choose","class","detect"]):C.pfmt,dir=pl=="tr"?(C.pdir=="mix"?rnd(["es2jp","jp2es","both"]):C.pdir):null,main=pl=="es"?"es":"jp",q={it,fmt,pl,dir,main,bl:[],sel:[null,null]};
+if(fmt=="write"||fmt=="choose"){const ls=pl=="jp"?["jp"]:pl=="es"?["es"]:dir=="es2jp"?["jp"]:dir=="jp2es"?["es"]:["jp","es"];q.bl=ls.map(l=>{const ans=l=="jp"?it.ja:it.ea;return{l,ans,opts:fmt=="choose"?pOpts(ans,l,l=="jp"?it.jd:it.ed):null}})}
+else if(fmt=="class"){q.key=main=="jp"?it.ju:it.eu;q.opts=pCls(q.key,main)}
+else{const ans=main=="jp"?it.ja:it.ea,ds=pOpts(ans,main,main=="jp"?it.jd:it.ed).filter(x=>x!=ans[0]),wrong=Math.random()<.5;q.shown=wrong?ds[0]:ans[0];q.corr=wrong?ans[0]:"✅";q.opts=shuf(wrong?["✅",ans[0],ds[1],ds[2]]:["✅",ds[0],ds[1],ds[2]])}
+return q}
+function ptHTML(q){const it=q.it,fl=l=>l=="jp"?"🇯🇵":"🇪🇸",jpB=(st,x)=>`<div class="jp ptS">${jpSent(it,st,x)}</div>${C.ro?`<div class="cnt">${jpRom(it,st,x)}</div>`:""}`,esB=(st,x)=>`<div class="ptE">${esSent(it,st,x)}</div>`;let h=`<span class="tag">${["🌱","🌿","🌳"][it.lv-1]}</span>`,a="";
+if(q.fmt=="write"||q.fmt=="choose"){
+if(q.pl=="jp"){h+=`<div class="lb">COMPLETA · 🇯🇵</div>`+jpB("blank");if(C.phint&&it.es)h+=`<div class="cnt">🇪🇸 ${esSent(it,"plain")}</div>`}
+else if(q.pl=="es"){h+=`<div class="lb">COMPLETA · 🇪🇸</div>`+esB("blank");if(C.phint&&it.jp)h+=`<div class="cnt jp">🇯🇵 ${jpSent(it,"plain")}</div>`}
+else if(q.dir=="es2jp")h+=`<div class="lb">MIRA · 🇪🇸</div>`+esB("fill")+`<div class="lb">COMPLETA · 🇯🇵</div>`+jpB("blank");
+else if(q.dir=="jp2es")h+=`<div class="lb">MIRA · 🇯🇵</div>`+jpB("fill")+`<div class="lb">COMPLETA · 🇪🇸</div>`+esB("blank");
+else h+=`<div class="lb">COMPLETA · 🇯🇵 + 🇪🇸</div>`+jpB("blank")+esB("blank");
+const two=q.bl.length>1;a=q.bl.map((b,i)=>q.fmt=="write"?`<div class="row">${two?fl(b.l):""}<input id="pi${i}" class="pin" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="${b.l=="jp"?"は / ha":"palabra"}"></div>`:`${two?`<div class="cnt">${fl(b.l)}</div>`:""}<div class="og ic pto">${b.opts.map(o=>`<button class="o ${b.l=="jp"?"jp":""}" data-a="pch" data-b="${i}" data-v="${o}">${o}${b.l=="jp"&&C.ro?`<small>${rb({t:o,r:""})}</small>`:""}</button>`).join("")}</div>`).join("")}
+else if(q.fmt=="class"){const par=q.main=="jp"?it.ja[0]:it.ea[0];h+=`<div class="lb">¿QUÉ FUNCIÓN CUMPLE «${par}»?</div>`+(q.main=="jp"?jpB("fill"):esB("fill"));if(q.pl=="tr"&&it.es)h+=esB("fill");else if(C.phint&&q.pl=="jp"&&it.es)h+=`<div class="cnt">🇪🇸 ${esSent(it,"plain")}</div>`;a=`<div class="og">${q.opts.map(o=>`<button class="o" data-a="pcl" data-v="${o.k}">${o.label}</button>`).join("")}</div>`}
+else{h+=`<div class="lb">¿ESTÁ BIEN ASÍ?</div>`+(q.main=="jp"?jpB("show",q.shown):esB("show",q.shown));if(q.pl=="tr"&&it.es)h+=esB("fill");a=`<div class="og ic pto">${q.opts.map(o=>`<button class="o ${o!="✅"&&q.main=="jp"?"jp":""}" data-a="pdt" data-v="${o}">${o=="✅"?"✅ Está bien":o}</button>`).join("")}</div>`}
+return`<div id="pq">${h}</div>${a}`}
+function startPt(){const p=ptPool();G={pt:1,c:1,p,q:[],n:0,total:C.prule=="clasico"?Math.min(10,p.length):999,lives:3,score:0,st:0,ms:0,ok:0,miss:[],left:60,busy:true,hint:0,att:0,over:0};nextPt();if(C.ptimer||C.prule=="sprint")tm=setInterval(tick,100)}
+function nextPt(){if(!G)return;const q=G.cq=ptMk();G.busy=false;G.t0=Date.now();G.hint=0;G.att=0;G.tl=C.ptimer&&C.prule!="sprint"?(q.bl.length>1?20000:12000)+(q.fmt=="write"?4000:0):0;
+const info=C.prule=="clasico"?`${G.n+1} / ${G.total}`:C.prule=="super"?hearts(G.lives):C.prule=="sprint"?`⏳ <span id="sl">${Math.ceil(G.left)}</span> s`:"🆓";
+$("app").innerHTML=`<div class="panel"><div class="hud"><span>${info}</span><span>🔥 ${G.st}</span><span>⭐ ${G.score}</span></div>${G.tl||C.prule=="sprint"?'<div class="tb"><i id="bar"></i></div>':""}${ptHTML(q)}<div class="msg" id="msg"></div><div class="acts" id="pa">${q.fmt=="write"?'<button class="act" data-a="pchk">Comprobar ✓</button>':""}<button class="f" data-a="phint">💡 Pista</button></div><div class="acts"><button class="act alt" id="pn" data-a="pnx" hidden>Siguiente ➜</button><button class="f" data-a="home">✕ Salir</button></div></div>`;
+const i=$("pi0");if(i&&i.focus)i.focus()}
+function ptTick(){if(!G||!G.cq)return;if(C.prule=="sprint"){G.left-=.1;const s=$("sl");if(s)s.textContent=Math.max(0,Math.ceil(G.left));const b=$("bar");if(b){b.style.width=Math.max(0,G.left/60*100)+"%";b.className=G.left<10?"lo":""}if(G.left<=0)endPt()}else if(G.tl&&!G.busy){const e=Date.now()-G.t0,b=$("bar");if(b){b.style.width=Math.max(0,100-e/G.tl*100)+"%";b.className=e>G.tl*.7?"lo":""}if(e>=G.tl)ptFin(G.cq.bl.length?G.cq.bl.map(()=>false):[false],"time")}}
+function ptVal(l,raw,ans){raw=raw.normalize("NFKC").trim();if(!raw)return false;if(l=="es")return ans.some(a=>ns0(a)==ns0(raw));if(/[\u3040-\u30ff]/.test(raw))return ans.some(a=>nk(a)==nk(raw));const r=nr(raw);return ans.some(a=>nr(ro(a))==r||(PR[a]&&nr(PR[a])==r))}
+function ptChk(){const q=G&&G.cq;if(!q||G.busy||q.fmt!="write")return;const v=q.bl.map((b,i)=>($("pi"+i)||{value:""}).value);if(v.some(x=>!x.trim()))return;const res=q.bl.map((b,i)=>ptVal(b.l,v[i],b.ans));if(res.every(Boolean)||G.att>=1||C.prule=="sprint"){q.bl.forEach((b,i)=>{const e=$("pi"+i);if(e){e.className="pin "+(res[i]?"ok":"bad");e.disabled=true}});return ptFin(res)}G.att++;$("msg").innerHTML="🤔 Casi… revisa y vuelve a intentarlo. <small>(un intento más)</small>"}
+function ptMark(sel,ok,bad){document.querySelectorAll(sel).forEach(b=>{if(ok(b.dataset.v))b.classList.add("ok");else if(bad(b.dataset.v))b.classList.add("bad")})}
+function ptPick(i,v){const q=G&&G.cq;if(!q||G.busy)return;q.sel[i]=v;document.querySelectorAll(`.o[data-b="${i}"]`).forEach(b=>b.classList.toggle("sel",b.dataset.v==v));if(q.bl.every((b,j)=>q.sel[j]!=null)){const res=q.bl.map((b,j)=>b.ans.some(a=>a.toLowerCase()==q.sel[j].toLowerCase()));q.bl.forEach((b,j)=>ptMark(`.o[data-b="${j}"]`,x=>b.ans.some(a=>a.toLowerCase()==x.toLowerCase()),x=>x==q.sel[j]));ptFin(res)}}
+function ptCls(v){const q=G&&G.cq;if(!q||G.busy)return;ptMark(".o",x=>x==q.key,x=>x==v);ptFin([v==q.key])}
+function ptDet(v){const q=G&&G.cq;if(!q||G.busy)return;ptMark(".o",x=>x==q.corr,x=>x==v);ptFin([v==q.corr])}
+function ptHint(){const q=G&&G.cq;if(!q||G.busy)return;G.hint++;const it=q.it,u=q.main=="es"?EU[it.eu]:JU[it.ju];$("msg").innerHTML=q.fmt=="class"?`💡 Equivale a: <b>${u[3]}</b>`:`💡 Función: <b>${u[1]}</b>`}
+const ptx=u=>u?`<div class="ptx">🏷️ <b class="${/[\u3040-\u30ff]/.test(u[0])?"jp":""}">${u[0]}</b> · <b>${u[1]}</b><br>${u[2]}<br><small>≈ ${u[3]}</small></div>`:"";
+function ptFin(res,why){if(!G||G.busy)return;G.busy=true;const q=G.cq,it=q.it,all=res.every(Boolean),k=res.filter(Boolean).length/res.length,pr=C.prule=="practica";G.n++;let pts=0;
+if(all){G.ok++;G.st++;G.ms=Math.max(G.ms,G.st);pts=pr?0:Math.max(4,10+Math.min(G.st,5)*2-3*G.hint+(G.tl?Math.round(5*(1-(Date.now()-G.t0)/G.tl)):0));G.score+=pts}
+else{G.st=0;if(!pr)G.miss.push(it);if(C.prule=="super")G.lives--;if(C.prule=="sprint")G.left-=3;if(k>0&&!pr){pts=Math.round(k*5);G.score+=pts}}
+const pq=$("pq");if(pq)pq.innerHTML=`<span class="tag">${["🌱","🌿","🌳"][it.lv-1]}</span>`+(it.jp?`<div class="jp ptS">${jpSent(it,"fill")}</div>${C.ro?`<div class="cnt">${jpRom(it,"fill")}</div>`:""}`:"")+(it.es?`<div class="ptE">${esSent(it,"fill")}</div>`:"");
+const ans=q.fmt=="write"||q.fmt=="choose"?q.bl.map(b=>b.ans[0]).join(" · "):q.fmt=="class"?q.opts.find(o=>o.k==q.key).label:q.corr=="✅"?"ya estaba bien":(q.main=="jp"?it.ja[0]:it.ea[0]);
+const ex=C.pexp&&C.prule!="sprint"?(q.pl=="tr"?ptx(JU[it.ju])+ptx(EU[it.eu]):ptx(q.main=="es"?EU[it.eu]:JU[it.ju])):"";
+$("msg").innerHTML=`${all?"✔ ¡Correcto!":why=="time"?"⏰ ¡Tiempo!":"✖ Incorrecto"}${pts?` +${pts}`:""}${all?"":`<br><small>Respuesta: <b>${ans}</b></small>`}${ex}`;
+const pa=$("pa");if(pa)pa.hidden=true;
+if(C.psay){try{it.jp&&q.pl!="es"?say(it.jp.map(b=>b.t=="[]"?it.ja[0]:(b.r||b.t)).join("")):sayL(it.es.replace("[]",it.ea[0]),"es",false)}catch(e){}}
+G.over=C.prule=="clasico"?G.n>=G.total:C.prule=="super"?G.lives<=0:C.prule=="sprint"?G.left<=0:false;
+if(C.prule=="sprint"){setTimeout(()=>{if(G&&G.cq===q){G.over?endPt():nextPt()}},all?600:1300);return}
+const f=$("pn");if(f){f.textContent=G.over?"Ver resultado ➜":"Siguiente ➜";f.hidden=false}}
+function endPt(){if(!G)return;clearInterval(tm);const acc=G.n?G.ok/G.n:0,key="pt"+C.prule+C.pl,nb=G.score>(S.best[key]||0),rk=rank(acc);if(nb&&C.prule!="practica")S.best[key]=G.score;S.xp+=G.score;S.seen++;save();
+$("app").innerHTML=`<div class="panel"><div class="em big" style="--cc:var(--red)">${rk[0]}</div><h2>${rk[1]}</h2><p>Puntaje <b>${G.score}</b> · Aciertos ${G.ok}/${G.n} (${Math.round(acc*100)}%) · Racha máx. 🔥${G.ms}</p><p class="cnt">${nb?"🎉 ¡Nuevo récord!":"Récord: "+(S.best[key]||0)} · +${G.score} XP</p>${G.miss.length?`<p class="lb">PARA REPASAR</p><div class="ml">${[...new Set(G.miss)].map(it=>`<div>${it.jp?`<span class="jp">${jpSent(it,"fill")}</span><br>`:""}${it.es?esSent(it,"fill"):""}<br><small>🏷️ ${(it.ju&&JU[it.ju]?JU[it.ju][1]:EU[it.eu][1])}</small></div>`).join("")}</div>`:""}<div class="acts"><button class="act" data-a="start">Jugar otra vez</button><button class="f" data-a="set">⚙️ Ajustes</button><button class="f" data-a="home">Inicio</button></div></div>`;G=null}
+function ptGuide(){clr();const v=C.pgv,cat=v=="jp"?JU:EU,by={};Object.keys(cat).forEach(k=>(by[cat[k][0]]=by[cat[k][0]]||[]).push(k));
+const ex=k=>{const it=PI.find(i=>(v=="jp"?i.ju:i.eu)==k);if(!it)return"";return v=="jp"?`<div class="jp">${jpSent(it,"fill")}</div>${C.ro?`<div class="cnt">${jpRom(it,"fill")}</div>`:""}${it.es?`<div class="ptE">${esSent(it,"fill")}</div>`:""}`:`<div class="ptE">${esSent(it,"fill")}</div>${it.jp?`<div class="jp cnt">${jpSent(it,"fill")}</div>`:""}`};
+$("app").innerHTML=`<div class="panel"><h2>📖 Guía</h2><div class="row"><button class="f ${v=="jp"?"on":""}" data-a="ptgv" data-v="jp">🇯🇵 Partículas</button><button class="f ${v=="es"?"on":""}" data-a="ptgv" data-v="es">🇪🇸 Conectores</button></div><div class="gl">${Object.keys(by).map(p=>`<div class="gp"><div class="gh ${v=="jp"?"jp":""}">${p}</div>${by[p].map(k=>`<div class="gu"><b>${cat[k][1]}</b><br>${cat[k][2]}<br><small>≈ ${cat[k][3]}</small>${ex(k)}</div>`).join("")}</div>`).join("")}</div><div class="acts"><button class="act" data-a="ptgb">← Volver a ajustes</button></div></div>`}
+function setupPt(){const jp=C.pl!="es",n=ptPool().length,tr=C.pl=="tr",
+fn={write:"Escribes la partícula (o el conector).",choose:"Eliges entre 4 opciones coherentes.",class:"Eliges qué función cumple la partícula resaltada.",detect:"Una palabra puede estar mal puesta: ¿está bien o cuál va?",mix:"Alterna los cuatro formatos."}[C.pfmt],
+dn={es2jp:"Ves la frase en español con el conector resaltado y completas la partícula japonesa.",jp2es:"Ves la frase en japonés con la partícula resaltada y completas el conector español.",both:"Completas las dos a la vez, partícula y conector.",mix:"Alterna las tres formas."}[C.pdir];
+$("app").innerHTML=`<div class="panel"><div class="em" style="--cc:#2a5d8f">🔗</div><h2>Partículas</h2><p class="cnt">Completa la palabra que une la frase y aprende cuándo usarla.</p><p class="lb">IDIOMA</p><div class="row">${[["jp","🇯🇵"],["es","🇪🇸"],["tr","🔀 Traducción"]].map(v=>chip("pl",v[0],v[1],C.pl==v[0])).join("")}</div>${tr?`<p class="lb">DIRECCIÓN</p><div class="row">${[["es2jp","🇪🇸 → 🇯🇵"],["jp2es","🇯🇵 → 🇪🇸"],["both","🇯🇵 + 🇪🇸"],["mix","🎲"]].map(v=>chip("pdir",v[0],v[1],C.pdir==v[0])).join("")}</div><div class="note">${dn}</div>`:""}<p class="lb">FORMATO</p><div class="row">${[["write","✍️ Escribir"],["choose","🔘 Elegir"],["class","🏷️ Función"],["detect","🔍 Detective"],["mix","🎲"]].map(v=>chip("pfmt",v[0],v[1],C.pfmt==v[0])).join("")}</div><div class="note">${fn}</div><p class="lb">GRUPO</p><div class="row">${jp?`${mtc("pgj","b","は が を に で へ と も の")}${mtc("pgj","c","から まで より や か")}${mtc("pgj","q","だけ しか ばかり…")}${mtc("pgj","f","ね よ")}`:`${mtc("pge","p","a en de con por para…")}${mtc("pge","cj","y o pero que si…")}`}</div><p class="lb">NIVEL</p><div class="row">${[[0,"Todos"],[1,"🌱 Básico"],[2,"🌿 Intermedio"],[3,"🌳 Avanzado"]].map(v=>chip("lvl",v[0],v[1],C.lvl==v[0])).join("")}</div><p class="lb">REGLAS</p><div class="row">${[["clasico","🎯 10 preguntas"],["super","❤️ Supervivencia"],["sprint","⚡ Sprint 60 s"],["practica","🆓 Práctica"]].map(v=>chip("prule",v[0],v[1],C.prule==v[0])).join("")}</div><p class="lb">EXTRAS</p><div class="row">${tog("ptimer","⏱️ Contrarreloj")}${tog("pexp","📖 Explicaciones")}${tog("phint","🌐 Traducción de apoyo")}${tog("ro","Aa Romaji")}${tog("psay","🔊 Audio")}</div><div class="note">🔗 ${n} ejercicios disponibles${n<4?" · amplía grupos o nivel":""}</div><div class="acts"><button class="act" data-a="start" ${n<4?"disabled":""}>¡A completar! 🔗</button><button class="f" data-a="ptg">📖 Guía</button><button class="f" data-a="home">← Inicio</button></div></div>`}
 /* ── Eventos ── */
 document.addEventListener("click",e=>{const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,v=t.dataset.v,k=t.dataset.k;
 if(a=="game")GAMES.find(g=>g.id==v).run();
@@ -1773,7 +2049,7 @@ else if(a=="tg"){C[k]=!C[k];setup(C.g)}
 else if(a=="cat"){if(C.cats.length==Object.keys(CT).length)C.cats=[v];else{const i=C.cats.indexOf(v);if(i<0)C.cats.push(v);else if(C.cats.length>1)C.cats.splice(i,1)}setup(C.g)}
 else if(a=="allc"){C.cats=Object.keys(CT);setup(C.g)}
 else if(a=="tcs"){C.csel=!C.csel;setup(C.g)}
-else if(a=="start"){clr();C.g=="memo"?startMemo():C.g=="frase"?startFr():C.g=="dict"?startDi():C.g=="traz"?startTz():startFlash()}
+else if(a=="start"){clr();C.g=="memo"?startMemo():C.g=="frase"?startFr():C.g=="dict"?startDi():C.g=="traz"?startTz():C.g=="part"?startPt():startFlash()}
 else if(a=="mt"){const ar=C[k],i=ar.indexOf(v);if(i<0)ar.push(v);else if(ar.length>1)ar.splice(i,1);setup(C.g)}
 else if(a=="tzhint")tzHint();
 else if(a=="tzplay")tzPlay();
@@ -1782,6 +2058,15 @@ else if(a=="tzrs")tzReset();
 else if(a=="tzskip")tzSkip();
 else if(a=="tznx"){if(G.over)endTz();else nextTz()}
 else if(a=="tzsay")tzSay();
+else if(a=="pch")ptPick(+t.dataset.b,v);
+else if(a=="pcl")ptCls(v);
+else if(a=="pdt")ptDet(v);
+else if(a=="pchk")ptChk();
+else if(a=="phint")ptHint();
+else if(a=="pnx"){if(G.over)endPt();else nextPt()}
+else if(a=="ptg")ptGuide();
+else if(a=="ptgv"){C.pgv=v;ptGuide()}
+else if(a=="ptgb")setupPt();
 else if(a=="dsay"){if(G&&G.it)sayL(G.it.say,G.it.lang,C.dslow)}
 else if(a=="dslow"){if(G&&G.it)sayL(G.it.say,G.it.lang,true)}
 else if(a=="dchk")chkD();
@@ -1802,6 +2087,6 @@ else if(a=="say")say(v);
 else if(a=="flip")flip(+v)});
 $("sun").onclick=()=>{const dk=document.documentElement.dataset.theme?document.documentElement.dataset.theme=="dark":matchMedia("(prefers-color-scheme:dark)").matches;S.theme=dk?"light":"dark";theme();save()};
 document.addEventListener("input",e=>{const t=e.target;if(t&&t.id=="di"){t.style.height="auto";const h=Math.min(t.scrollHeight+2,Math.round(innerHeight*.5));t.style.height=h+"px";t.style.overflowY=t.scrollHeight+2>h?"auto":"hidden"}});
-document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target&&e.target.id=="di"){e.preventDefault();chkD()}});
+document.addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target&&e.target.id=="di"){e.preventDefault();chkD()}else if(e.key=="Enter"&&e.target&&/^pi\d$/.test(e.target.id)){e.preventDefault();ptChk()}});
 home();
 </script></body></html>
